@@ -1,0 +1,50 @@
+table {
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #a0b6c4 #94a8b5 #94a8b5 #a0b6c4;
+    margin-bottom: 20px;
+}
+table thead  { display: table-header-group; }
+
+td, th {
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    background-color: white;
+    vertical-align: middle;
+}
+
+td input[type=text], th input[type=text]
+{
+    vertical-align: middle;
+    margin:0;
+}
+
+
+th.image,       td.image,
+th.image img,   td.image img,
+th.image a img, td.image a img
+{
+    padding: 3px;
+    margin: 0;
+    text-align: center;
+    display:inline-block;
+    overflow:hidden;
+}
+
+
+th {
+    background-color: #b2cada;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #0061a1;
+}
+
+th:first-child {
+    border-width:0 0 1px 0;
+}
+
+

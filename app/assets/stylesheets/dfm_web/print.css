@@ -1,0 +1,26 @@
+@media print and (color) {
+  * {
+    /* Prevent browsers from discarding the majority of color info */
+    -webkit-print-color-adjust: exact;
+    -moz-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html        { font-size: 75%;}
+  body        { background-color: white;}
+  a           { text-decoration: none;}
+  table th,
+  table td    { padding: 3px; }
+  #menu_bar   { background: none; border:none;}
+  #menu       { border-radius:5px; height: 50px; overflow: hidden; background-color: #005288;}
+  .container  { width: 100%; padding:0; margin:0;}
+  .full_print { width: 100%;}
+
+  /* Stuff to hide */
+  #menu ul,
+  .button,
+  #chart_div,
+  .no_print
+  { display: none !important;}
+
+}

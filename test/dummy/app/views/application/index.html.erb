@@ -1,0 +1,17 @@
+<!-- Kitchen Sink -->
+
+<div id='menu_bar'>
+  <div id='menu'>
+    <h1><%= link_to_unless_current 'Root', root_path %></a></h1>
+    <ul>
+      <%= content_tag( :li, yield(:excel), :class => :excel) if content_for?(:excel) %>
+      <%= menu_tag('People', "#")   %>
+      <%= menu_tag('Stuff', "#")   %>
+      <%= menu_tag('Things', "#")   %>
+    </ul>
+  </div>
+</div>
+<div style='clear:both;'></div>
+
+
+<%= image_tag "dfm_web/clippy.jpg" %>

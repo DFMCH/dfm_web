@@ -1,0 +1,357 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, textarea, input
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+
+  /* FIX BOX SIZING FOR RESPONSIVE DESIGNS */
+  /* http://css-tricks.com/box-sizing/ */
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+{
+  display: block;
+}
+
+
+ol, ul
+{
+  list-style: none;
+}
+
+
+#onready  {display:none; margin: 25px 0 50px 0;}
+.hidden   { display: none; }
+.full     { width: 100%; }
+.half     { width: 50%; }
+.w150     { width: 150px !important;}
+.right    { float: right;}
+.left     { float: left;}
+.r        { text-align: right;}
+.l        { text-align: left;}
+
+
+
+
+/* Stuff with light blue borders */
+#chart_div,
+.pie,
+.important,
+.nested-fields,
+.fields,
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]
+{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #a0b6c4 #94a8b5 #94a8b5 #a0b6c4;
+}
+
+
+.pie
+{
+  background-color: white;
+  height: 300px;
+}
+
+.important
+{
+  padding: 20px;
+  background-color: #fff4f4;
+  margin-bottom: 20px;
+}
+
+
+
+#menu_bar
+{
+  background-color: #005288;  /* UW Health logo Blue */
+  color:white;
+  height: 50px;
+  width: 100%;
+  float:left;
+  border-bottom: 1px;
+  border-color: #00426e;
+  border-style:solid;
+  overflow:hidden;
+}
+
+#menu_bar menu
+{
+  padding: 5px;
+}
+
+#menu_bar h1
+{
+  background-image: url(<%= asset_path('uwcrest.png') %>);
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position:left center;
+  float:left;
+  padding: 5px 5px 5px 50px;
+}
+
+.ie #menu_bar h1
+{
+  /* IE can't scale background images. */
+  background-image: url(<%= asset_path('uwcrest_ie.png') %>);
+  background-position: left top;
+}
+
+#menu_bar ul
+{
+  float: right;
+  padding-right:15px;
+}
+
+#menu_bar ul li
+{
+  color:white;
+  display: inline-block;
+  padding: 15px 10px 15px 10px;
+  margin: 0;
+  vertical-align:middle;
+  transition:text-shadow .5s;
+}
+#menu_bar ul li:hover, #menu_bar h1 *:hover
+{
+  color:white;
+  text-shadow: 0 0 20px rgba(255,255,255,.75);
+  transition:text-shadow .2s;
+}
+#menu_bar h1 *
+{
+  color:white;
+  transition:text-shadow .5s;
+}
+
+#menu_bar ul li.excel
+{
+  padding:5px 10px 0 0;
+}
+#menu_bar ul li.excel img:hover
+{
+  /* Excel Icon etc.  Only works in Chrome & Safari as of 2013.  Will be standard soon. */
+  -webkit-filter: drop-shadow(0 0 5px rgba(255,255,255,.5));
+  filter:         drop-shadow(0 0 5px rgba(255,255,255,.5));
+}
+
+
+@media only screen and (max-width: 479px)
+{
+  #menu_bar ul
+  {
+    display: none;
+  }
+}
+
+
+#ie_bar
+{
+  background-color: #f4f4f4;
+  float:left;
+  width: 100%;
+  padding: 15px 0 30px 30px;
+}
+
+#ie_bar p
+{
+  background-color: #ffffcc;
+  float: left;
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid black;
+}
+
+#chart_div
+{
+  width: 100%;
+  height: 400px;
+  overflow:hidden;
+  margin: 0;
+}
+
+#notice, #alert
+{
+  width:100%;
+  padding: 5px;
+  background-color:white;
+  min-height: 30px;
+}
+
+#alert
+{
+  /* flash[:alert] */
+  background-color: indianred;
+  padding: 15px;
+}
+
+.alert
+{
+  /* :_destroy etc */
+  color: red;
+}
+
+.button.alert
+{
+  border-color: red;
+  background-color: #F8B8B8;
+  color: red;
+}
+
+
+
+
+
+
+
+/* #Basic Styles
+================================================== */
+body {
+  background: #eee;
+  font-family:"Trebuchet MS", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+  line-height: 150%;
+}
+
+
+/* #Typography
+================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: inherit; }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+h1 { font-size: 2em; line-height: 40px; margin-bottom: 10px; clear:both;}
+h2 { font-size: 1.6em; line-height: 34px; margin-bottom: 8px; }
+h3 { font-size: 1.2em; line-height: 30px; margin-bottom: 4px; }
+
+p { margin: 0 0 20px 0; }
+img { margin: 0; vertical-align: top;}   /* vertical align fixes the mystery padding below img tags. */
+
+
+em { font-style: italic; }
+small { font-size: 80%; }
+
+
+hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+
+
+/* #Links
+================================================== */
+a, a:visited { color: inherit; text-decoration: none; outline: 0; transition:color .33s; }
+a:hover, a:focus { color: #b4e1ff; transition:color .12s;}
+p a, p a:visited { line-height: inherit; }
+.button, a.button{ color:#00426e;}
+
+
+/* #Lists
+================================================== */
+ul, ol { margin-bottom: 20px; }
+ul { list-style: none outside; }
+ol { list-style: decimal; }
+ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+ul.square { list-style: square outside; }
+ul.circle { list-style: circle outside; }
+ul.disc { list-style: disc outside; }
+ul ul, ul ol,
+ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
+ul ul li, ul ol li,
+ol ol li, ol ul li { margin-bottom: 6px; }
+li { line-height: 18px; margin-bottom: 12px; }
+ul.large li { line-height: 21px; }
+li p { line-height: 21px; }
+
+/* #Images
+================================================== */
+
+img.scale-with-grid {
+  max-width: 100%;
+  height: auto; }
+
+
+/* #Buttons
+================================================== */
+
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background: #b2cada;
+  display: inline-block;
+  text-align: center;
+  font-size: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  line-height: normal;
+  padding: 10px 12px 10px 12px;
+  width: 100%;
+  transition:background .5s;
+}
+
+.button.tiny
+{
+  width: auto;
+  padding: 5px 15px 5px 15px;
+  margin: 5px 5px 5px 0;
+}
+
+table tr td .button
+{
+  min-width: 0;
+  margin:0;
+}
+
+
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover
+{
+  background: #cfe0eb;
+  transition:background .2s;
+}
+
+
+.button.full-width,
+button.full-width,
+input[type="submit"].full-width,
+input[type="reset"].full-width,
+input[type="button"].full-width {
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  text-align: center; }
+
+/* Fix for odd Mozilla border & padding issues */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
+/* Page Copyright notice */
+/* TODO: This looks kinda dumb */
+#copyright{
+  text-align: right;
+  position: fixed;
+  background: #005288;  /* UW Health logo Blue */
+  color: white;
+  width: 100%;
+  bottom: 0;
+  padding: 3px 20px 3px 0;
+}
