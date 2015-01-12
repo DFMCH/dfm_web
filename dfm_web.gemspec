@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = DfmWeb::VERSION
   s.authors     = ["Jacob Duffy"]
   s.email       = ["duffy.jp@gmail.com"]
-  s.homepage    = "TODO"
+  s.homepage    = "http://fammed.wisc.edu"
   s.summary     = "CSS/JS Framework for DFM Web Apps"
   s.description = "CSS/JS Framework for DFM Web Apps"
   s.license     = "MIT"
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 4.1.8"
+  s.add_dependency "rails", ">= 3.2"
   s.add_dependency "coffee-rails", "~> 4.1.0"
 
 
