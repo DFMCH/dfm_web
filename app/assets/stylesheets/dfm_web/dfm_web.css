@@ -1,7 +1,10 @@
 /*
+ *= require ./pure/pure
+ *= require ./pure/grids-responsive
  *= require ./layout.css
  *= require ./style.css
  *= require ./forms.css
  *= require ./tables.css
+ 
  *= require ./print.css
  */

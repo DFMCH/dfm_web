@@ -3,9 +3,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
+  font-size: 100%;
   vertical-align: baseline;
+
+  font-family:"Trebuchet MS", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+  -webkit-text-size-adjust: 100%;
+  line-height: 150%;
+
 
   /* FIX BOX SIZING FOR RESPONSIVE DESIGNS */
   /* http://css-tricks.com/box-sizing/ */
@@ -14,7 +20,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+article, aside, details, figcaption, figure, header, hgroup, menu, nav, section
 {
   display: block;
 }
@@ -23,6 +29,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 ol, ul
 {
   list-style: none;
+}
+
+
+/* html tag should really only have background styles */
+html {
+  background-color: #cbdeeb;
+  background-image: url(<%= asset_path 'dfm_web/bg_over.png' %>), url(<%= asset_path 'dfm_web/defective_monitor.jpg' %>);
+  background-repeat: repeat, no-repeat;
+  background-size: auto, 100%;
+  background-attachment: fixed;
 }
 
 
@@ -217,11 +233,7 @@ input[type="button"]
 /* #Basic Styles
 ================================================== */
 body {
-  background: #eee;
-  font-family:"Trebuchet MS", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-  -webkit-text-size-adjust: 100%;
-  line-height: 150%;
+  background: none;
 }
 
 
@@ -344,14 +356,3 @@ input::-moz-focus-inner {
 }
 
 
-/* Page Copyright notice */
-/* TODO: This looks kinda dumb */
-#copyright{
-  text-align: right;
-  position: fixed;
-  background: #005288;  /* UW Health logo Blue */
-  color: white;
-  width: 100%;
-  bottom: 0;
-  padding: 3px 20px 3px 0;
-}

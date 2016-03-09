@@ -17,9 +17,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", ">= 3.2"           # This has only ever been used on Rails 4.1 and 4.2
+  s.add_dependency "rails", ">= 3.2"           # Tested 3.2, 4.1, 4.2, 5.0
   s.add_dependency "coffee-rails", ">= 3.2"    # But it should work on 3.2+ with the Asset Pipeline enabled.
-
 
   s.add_development_dependency "sqlite3"
 end
