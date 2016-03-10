@@ -1,9 +1,9 @@
 /* html tag should really only have background styles */
 html {
   background-color: #8a94ab;  /* Average color of defective_monitor.jpg */
-  background-image: url(<%= asset_path 'dfm_web/bg_over.png' %>), url(<%= asset_path 'dfm_web/defective_monitor.jpg' %>);
+  background-image: url(<%= asset_path 'dfm_web/molecule.png' %>), url(<%= asset_path 'dfm_web/defective_monitor.jpg' %>);
   background-repeat: repeat, no-repeat;
-  background-size: auto, 100%;
+  background-size: auto, cover;
   background-attachment: fixed;
 }
 
@@ -23,6 +23,7 @@ html {
 /* #Typography
 ================================================== */
 h1, h2, h3, h4, h5, h6 {
+  margin: 0;
   font-weight: inherit; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
