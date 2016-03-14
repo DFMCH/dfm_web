@@ -69,3 +69,15 @@ nav {
   padding-left: 20px;
 }
 
+.pure-g > div {
+  box-sizing: border-box;
+  padding: 0 1em;
+}
+
+.pure-g > div:first-child {
+  padding-left: 0;
+}
+
+.pure-g > div:last-child {
+  padding-right: 0;
+}
