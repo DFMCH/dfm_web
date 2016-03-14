@@ -46,8 +46,12 @@ footer {
 }
 #footer {
   height: 1em;
-  padding: 10px;
+  padding: 10px 0;  /* Set footer's height */
 }
+#footer > div {
+  padding: 0 10px;  /* Space out any child divs within the footer */
+}
+
 
 nav {
   position:fixed;

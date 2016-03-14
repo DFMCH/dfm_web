@@ -1,0 +1,75 @@
+/*
+
+Foundation's Visibility Classes ported to Pure CSS
+This is for Foundation 5, they changed it totally in 6
+I only did the show-for classes, not the hide-for
+ -- JPD
+
+
+show-for-small-up
+show-for-small-only
+
+show-for-medium-up
+show-for-medium-only
+
+show-for-large-up
+show-for-large-only
+
+show-for-xlarge-up
+show-for-xlarge-only
+*/
+
+
+/* Pure Extra Small */
+@media screen and (max-width:35.438em) {
+  .show-for-small-up{display:none}
+  .show-for-medium-up{display:none}
+  .show-for-large-up{display:none}
+  .show-for-xlarge-up{display:none}
+
+  .show-for-small-only{display:none}
+  .show-for-medium-only{display:none}
+  .show-for-large-only{display:none}
+  .show-for-xlarge-only{display:none}
+}
+
+/* Pure Small */
+@media screen and (min-width:35.5em) and (max-width:47.938em) {
+  .show-for-medium-up{display:none}
+  .show-for-large-up{display:none}
+  .show-for-xlarge-up{display:none}
+
+  .show-for-xsmall-only{display:none}
+  .show-for-medium-only{display:none}
+  .show-for-large-only{display:none}
+  .show-for-xlarge-only{display:none}
+}
+
+/* Pure Medium */
+@media screen and (min-width:48em) and (max-width:63.938em) {
+  .show-for-large-up{display:none}
+  .show-for-xlarge-up{display:none}
+
+  .show-for-xsmall-only{display:none}
+  .show-for-small-only{display:none}
+  .show-for-large-only{display:none}
+  .show-for-xlarge-only{display:none}
+}
+
+/* Pure Large */
+@media screen and (min-width:64em) and (max-width:79.938em) {
+  .show-for-xlarge-up{display:none}
+
+  .show-for-xsmall-only{display:none}
+  .show-for-small-only{display:none}
+  .show-for-medium-only{display:none}
+  .show-for-xlarge-only{display:none}
+}
+
+/* Pure Extra Large */
+@media screen and (min-width:80em) {
+  .show-for-xsmall-only{display:none}
+  .show-for-small-only{display:none}
+  .show-for-medium-only{display:none}
+  .show-for-large-only{display:none}
+}

@@ -1,6 +1,7 @@
 /*
  *= require ./pure/pure
  *= require ./pure/grids-responsive
+ *= require ./pure/visibility
  *= require ./layout.css
  *= require ./style.css
  *= require ./forms.css
