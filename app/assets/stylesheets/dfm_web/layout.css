@@ -73,15 +73,17 @@ nav {
   padding-left: 20px;
 }
 
+/* Add a gutter to Pure's Columns */
 .pure-g > div {
   box-sizing: border-box;
   padding: 0 1em;
 }
-
 .pure-g > div:first-child {
   padding-left: 0;
 }
-
 .pure-g > div:last-child {
   padding-right: 0;
 }
+
+/* Prevent unbreakable elements from expanding outside their pure column (tables etc) */
+.pure-u-1 { overflow: hidden; }
