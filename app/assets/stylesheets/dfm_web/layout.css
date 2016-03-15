@@ -63,15 +63,33 @@ nav {
   box-shadow: 0 0 60px rgba(255,255,255,.5);
 }
 
-#nav {
+#nav{
   margin: 20px 25px;
-  display:block;
+  height: 40px;
+  display: inline-block;
+  position: relative;
 }
 
-#nav h1 {
-  display: inline;
-  padding-left: 20px;
+#nav * {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  margin: 0;
 }
+
+#nav .left > * { margin: 0 1em; }
+#nav .left > *:first-child { margin: 0 1em 0 0; }
+#nav .left img { margin-right: 1em; }
+
+#nav form {
+  height: 40px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+#nav form input[type=text] {
+  padding-left: 15px;
+}
+
 
 /* Add a gutter to Pure's Columns */
 .pure-g > div {

@@ -1,10 +1,20 @@
 # DFM Web Common Javascript
 
+# Method to filter Table rows by a search query
+# Your table must have the class live_table
+# Your search field must have the class live_search
+# See below for the binding.
+filter_table_rows = (searched) ->
+  $('#live_table > tbody > tr').show().filter(->
+    text = $(this).text()
+    ! ~text.indexOf(searched)
+  ).hide()
+
 
 $(document).on 'ready page:load', ->
 
   # Activate Tablesorter (add to table)
-  $('.tablesorter').tablesorter({widgets: ['zebra']})
+  $('.tablesorter').tablesorter({widgets: ['zebra']}) unless typeof(tablesorter) == "undefined"
 
   # Hide the flash[:notice] after 5 seconds
   $('#notice').delay(5000).slideUp('slow')
@@ -14,4 +24,9 @@ $(document).on 'ready page:load', ->
     $(this).load( $(this).data('path') )
 
   # Activate DatePicker (add to text_field)
-  $('.datepicker').datepicker dateFormat: "yy-mm-dd"
+  $('.datepicker').datepicker dateFormat: "yy-mm-dd"  unless typeof(datepicker) == "undefined"
+
+  # Live search a table
+  filter_table_rows($('#live_search').val())  # Initial Page Load
+  $('#live_search').keyup ->                  # Refresh with user input.
+    filter_table_rows($(this).val())
