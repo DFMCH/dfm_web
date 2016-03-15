@@ -3,10 +3,11 @@
     * Nav
     * Main
     * Footer
-
 */
 
 
+/* Default to the same box sizing model for all tags */
+* { box-sizing: border-box; }
 
 html {
   position: relative;
@@ -26,11 +27,7 @@ main {
   margin: 0 auto;           /* Centered with max width */
   max-width: 1800px;
   padding: 20px;
-  background-color: rgb(255, 250, 242);       /* Shouldn't really define colors etc here */
-  border-width: 6px;
-  border-color: rgba(59, 96, 140, 0.59);
-  border-style: solid;
-  box-shadow: -10px 10px 60px rgba(0,0,0,.5);
+  overflow: hidden;
 }
 
 
@@ -39,14 +36,11 @@ footer {
   left: 0;
   bottom: 0;
   padding: 0;
-  color: white;
   width: 100%;
-  background: #002f47;  /* UW Health logo Blue */
-  box-shadow: 0 0 60px rgba(255,255,255,.5);
 }
 #footer {
-  height: 1em;
-  padding: 10px 0;  /* Set footer's height */
+  height: 2em;
+  padding: .5em 0;
 }
 #footer > div {
   padding: 0 10px;  /* Space out any child divs within the footer */
@@ -57,17 +51,16 @@ nav {
   position:fixed;
   top: 0;
   width: 100%;
+  padding: 20px 25px;
   height: 75px;
-  background-color: #005288;
-  color: white;
-  box-shadow: 0 0 60px rgba(255,255,255,.5);
+  overflow: hidden;
 }
 
 #nav{
-  margin: 20px 25px;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
   height: 40px;
-  display: inline-block;
-  position: relative;
 }
 
 #nav * {
@@ -76,10 +69,15 @@ nav {
   display: inline-block;
   margin: 0;
 }
+#nav li {
+  line-height: 2em;
+}
 
 #nav .left > * { margin: 0 1em; }
 #nav .left > *:first-child { margin: 0 1em 0 0; }
 #nav .left img { margin-right: 1em; }
+
+
 
 #nav form {
   height: 40px;
@@ -87,13 +85,13 @@ nav {
   margin: 0 20px;
 }
 #nav form input[type=text] {
+  margin-top: 4px;
   padding-left: 15px;
 }
 
 
 /* Add a gutter to Pure's Columns */
 .pure-g > div {
-  box-sizing: border-box;
   padding: 0 1em;
 }
 .pure-g > div:first-child {

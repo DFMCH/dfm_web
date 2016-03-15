@@ -9,6 +9,11 @@ table {
 }
 table thead  { display: table-header-group; }
 
+table thead td, table thead th {
+  border: none;
+  white-space: nowrap
+}
+
 td, th {
     border-top: 1px solid #ccc;
     padding: 10px;
@@ -37,10 +42,10 @@ th.image a img, td.image a img
 
 
 th {
-    background-color: #b2cada;
+    background-color: #d4e7fa;
     border-width: 0 0 1px 1px;
     border-style: solid;
-    border-color: #0061a1;
+    border-color: #cbdae2;
 }
 
 th:first-child {
