@@ -38,6 +38,20 @@ footer {
   padding: 0;
   width: 100%;
 }
+
+/* Footer elements you want to float in position instead of being only at the bottom */
+footer .fixed {
+  position: fixed;
+  bottom: 6px;  /* Why is .5em here too big? */
+  left: 0;
+  text-shadow: 1px 1px 2px rgb(0, 82, 136);
+}
+
+/* Space out the floating elements */
+footer .fixed > div {
+  padding: 0 1em 0 0;
+}
+
 #footer {
   height: 2em;
   padding: .5em 0;
