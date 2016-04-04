@@ -96,9 +96,19 @@ input[type="checkbox"]
   display: inline;
 }
 
-input[type=submit]
+input[type=submit], .button
 {
   min-width:100px;
+  padding: 10px 20px;
+  background-color: rgba(59, 96, 140, 0.59);
+  border: none;
+  color: white !important;
+  text-decoration: none;
+  transition: background-color .1s;
+}
+input[type=submit]:hover, .button:hover {
+  background-color: rgba(59, 96, 140, 1);
+  transition: background-color .3s;
 }
 
 label[for]
