@@ -19,7 +19,7 @@ body {
 }
 
 main {
-  margin: 110px 25px;       /* Space for the NAV, and min side margin */
+  margin: 100px 25px;       /* Space for the NAV, and min side margin */
   display: block;
 }
 

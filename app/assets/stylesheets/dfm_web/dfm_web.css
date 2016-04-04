@@ -4,6 +4,7 @@
  *= require ./pure/visibility
  *= require ./pure/gutter
  *= require ./layout.css
+ *= require ./layout_media.css
  *= require ./style.css
  *= require ./forms.css
  *= require ./tables.css
