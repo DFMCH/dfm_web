@@ -5,15 +5,15 @@
 
 /* Medium and below, remove the extra space around <main> */
 @media screen and (max-width:63.938em) {
+  body {
+    margin-bottom: 2em;      /* space for footer only */
+  }
+
   main {
-    margin: 75px 0; /* Space for the NAV, and min side margin */
-    display: block;
+    margin: 75px 0 0 0; /* Space for the NAV, and min side margin */
   }
 
   #main {
-    margin: 0 auto; /* Centered with max width */
-    max-width: 1800px;
-    padding: 20px;
-    overflow: hidden;
+    border-width: 0 !important;
   }
 }
