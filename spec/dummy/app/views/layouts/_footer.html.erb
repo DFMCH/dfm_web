@@ -1,0 +1,31 @@
+<footer>
+  <div id="footer">
+    <div class="fixed">
+      <div class="left">
+        <%= current_user if signed_in? rescue nil %>
+      </div>
+      <div class="left">
+        <div><%= Duffy::Git.branch rescue nil %></div>
+      </div>
+
+      <div class="left">
+        <div class="show-for-xsmall-only">XS</div>
+        <div class="show-for-small-only">S</div>
+        <div class="show-for-medium-only">M</div>
+        <div class="show-for-large-only">L</div>
+        <div class="show-for-xlarge-only">XL</div>
+      </div>
+
+      <div class="left">
+        <div class="left show-for-xsmall-up">I</div>
+        <div class="left show-for-small-up">I</div>
+        <div class="left show-for-medium-up">I</div>
+        <div class="left show-for-large-up">I</div>
+        <div class="left show-for-xlarge-up">I</div>
+      </div>
+    </div>
+    <div class="right">
+      Copyright &copy; 2016, UW-Madison<span class="show-for-medium-up">, Department of Family Medicine<span class="show-for-large-up"> and Community Health</span></span>
+    </div>
+  </div>
+</footer>

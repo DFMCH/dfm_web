@@ -81,9 +81,13 @@ textarea:focus
 label,
 legend
 {
-  display: block;
+  display: inline-block;
   font-weight: bold;
   font-size: 13px;
+  vertical-align: middle;
+  width: 140px;
+  color:#444;
+  margin: 0 14px 0 5px;
 }
 
 select
@@ -98,8 +102,10 @@ input[type="checkbox"]
 
 input[type=submit], .button
 {
+  display: inline-block;
   min-width:100px;
   padding: 10px 20px;
+  margin: 10px 0;
   background-color: rgba(59, 96, 140, 0.59);
   border: none;
   color: white !important;
@@ -111,27 +117,13 @@ input[type=submit]:hover, .button:hover {
   transition: background-color .3s;
 }
 
-label[for]
-{
-  display:inline-block;
-}
-
-
-
-label span,
-legend span
-{
-  font-weight: normal;
-  font-size: 13px;
-  color: #444;
-}
-
-label
-{
-  width: 140px;
-  color:#444;
-  vertical-align:top;
-  margin: 0 14px 0 5px;
+/* If you have a button right before an H1, slide the H1 up in line with the button.  */
+.button + h1 {
+  position: relative;
+  top: -40px;
+  margin-bottom: -20px;
+  box-shadow: 0 0 1px red;
+  width: 0;
 }
 
 .field_with_errors label
@@ -139,9 +131,24 @@ label
   color: red;
 }
 
-.nested-fields, .fields
+.nested-fields, .field, .actions
 {
-  margin-bottom: 35px;
-  padding: 20px;
-  background-color: #f6f6ff;
+  box-shadow: 0 0 1px red;
+  display: block;
+  overflow-y: auto;  /* This makes floated elements such as checkboxes still consume vertical space */
 }
+
+
+/* Make Checkbox, Radio, and specifically their labels float left */
+input[type=checkbox], input[type=checkbox] + label,
+input[type=radio], input[type=radio] + label
+{
+  height: 1em;
+  margin-bottom: .5em;
+  float: left;
+}
+/* Wrap the float with each Checkbox and Radio to ensure they get a new line */
+input[type=checkbox], input[type=radio] {
+  clear: both;
+}
+

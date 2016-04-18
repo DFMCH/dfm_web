@@ -1,0 +1,42 @@
+<%= form_tag do %>
+  <div class="field">
+    <%= label_tag :text_field %>
+    <%= text_field_tag :text_field %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :password_field %>
+    <%= password_field_tag :password_field %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :text_area %>
+    <%= text_area_tag :text_area %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :file_field %>
+    <%= file_field_tag :file_field %>
+  </div>
+
+  <div class="field">
+    <%= check_box_tag :check_box %>
+    <%= label_tag :check_box %>
+
+    <%= check_box_tag :check_box %>
+    <%= label_tag :check_box %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag :example, :radio_button %>
+    <%= label_tag :radio_button %>
+
+    <%= radio_button_tag :example, :radio_button %>
+    <%= label_tag :radio_button %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Submit' %>
+  </div>
+
+<% end %>

@@ -1,19 +1,32 @@
 <!-- Kitchen Sink -->
 
-<div id='menu_bar'>
-  <div id='menu'>
-    <h1><%= link_to_unless_current 'Root', root_path %></a></h1>
-    <ul>
-      <%= content_tag( :li, yield(:excel), :class => :excel) if content_for?(:excel) %>
-      <%= menu_tag('People', "#")   %>
-      <%= menu_tag('Stuff', "#")   %>
-      <%= menu_tag('Things', "#")   %>
-    </ul>
+
+<h1>H1: No Pure classes</h1>
+<h2>H2: Full page width</h2>
+<h3>H3: Easy as pie</h3>
+<%= render partial: 'table' %>
+
+<hr>
+
+<h1>H1: pure-g then three pure-u-*</h1>
+<h2>H2: Full page width below Large, two columns at or above</h2>
+<h3>H3: See how there's three sections but only two columns?  That's fine.</h3>
+<h4>H4: To use Pure's columns you <b>must</b> have a pure-g div container, and you <b>must</b> only use pure-u-* children.</h4>
+<div class="pure-g">
+  <div class="pure-u-1 pure-u-lg-1-2">
+    <%= render partial: 'table' %>
+  </div>
+  <div class="pure-u-1 pure-u-lg-1-2">
+    <%= render partial: 'table' %>
+  </div>
+  <div class="pure-u-1 pure-u-lg-1-2">
+    <%= render partial: 'table' %>
   </div>
 </div>
-<div style='clear:both;'></div>
 
+<hr>
 
-<%= image_tag "dfm_web/clippy.jpg" %>
+<h1>H1: Forms</h1>
+<%= render partial: 'form' %>
 
-<hr/>
+<hr>
