@@ -84,7 +84,13 @@ nav {
   margin: 0;
 }
 #nav li {
-  line-height: 2em;
+  top: -20px;
+  padding: 0 1em;
+  line-height: 75px;
+  font-size: 1.1em;
+}
+#nav li:hover {
+  background-color: #00426e;
 }
 
 #nav .left > * { margin: 0 1em; }
