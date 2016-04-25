@@ -5,7 +5,7 @@
 # Your search field must have the class live_search
 # See below for the binding.
 filter_table_rows = (searched) ->
-  $('#live_table > tbody > tr').show().filter(->
+  $('.live_table > tbody > tr').show().filter(->
     text = $(this).text()
     ! ~text.indexOf(searched)
   ).hide()
