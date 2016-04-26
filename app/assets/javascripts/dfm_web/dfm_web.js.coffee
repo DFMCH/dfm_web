@@ -30,3 +30,10 @@ $(document).on 'ready page:load', ->
   filter_table_rows($('#live_search').val())  # Initial Page Load
   $('#live_search').keyup ->                  # Refresh with user input.
     filter_table_rows($(this).val())
+
+  # Submit Form on element change
+  $(".auto_submit").change ->
+    if this.form.hasAttribute("data-remote")
+      $(this).submit()  # Remote form must call submit on a JQuery object
+    else
+      this.form.submit()  # Regular HTML submit
