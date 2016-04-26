@@ -8,6 +8,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="number"],
+input[type="file"],
 textarea,
 select
 {
@@ -19,7 +20,7 @@ select
   border-radius: 2px;
   font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
-  margin: 0 0 20px 0;
+  margin: 0;
   width: 100%;
   max-width: 500px;
   display: block;
@@ -134,7 +135,7 @@ input[type=submit]:hover, .button:hover {
 
 .nested-fields, .field, .actions
 {
-  
+  margin-bottom: 1em;
   display: block;
   overflow-y: auto;  /* This makes floated elements such as checkboxes still consume vertical space */
 }
