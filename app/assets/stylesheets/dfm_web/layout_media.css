@@ -3,7 +3,8 @@
   transition: margin .3s;
 }
 
-/* Medium and below, remove the extra space around <main> */
+/* Medium (iPad) and below, * remove the extra space around <main> */
+/*                          * disabled the fixed nav */
 @media screen and (max-width:63.938em) {
   body {
     margin-bottom: 2em;      /* space for footer only */
@@ -15,5 +16,10 @@
 
   #main {
     border-width: 0 !important;
+  }
+
+  nav {
+    position: relative;
+    margin-bottom: -75px;
   }
 }
