@@ -1,9 +1,9 @@
 table {
-    *border-collapse: collapse; /* IE7 and lower */
-    border-spacing: 0;
-    width: 100%;
-    border: 1px solid rgba(0,0,0,.2);
-    margin-bottom: 20px;
+  *border-collapse: collapse; /* IE7 and lower */
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.2);
+  margin-bottom: 20px;
 }
 table thead  { display: table-header-group; }
 
@@ -13,11 +13,11 @@ table thead td, table thead th {
 }
 
 td, th {
-    border-top: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-    background-color: white;
-    vertical-align: middle;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  background-color: white;
+  vertical-align: middle;
 }
 
 th {
@@ -32,29 +32,50 @@ th:first-child {
   border-left: 1px;
 }
 
-
 tr.warn td, tr.warn th {
   color: red;
-  background-color: rgba(255, 0, 0, 0.04);
+  background-color: rgba(255, 0, 0, 0.04) !important; /* important needed to override zebra */
 }
-
 
 td input[type=text], th input[type=text]
 {
-    vertical-align: middle;
-    margin:0;
+  vertical-align: middle;
+  margin:0;
 }
-
 
 th.image,       td.image,
 th.image img,   td.image img,
 th.image a img, td.image a img
 {
-    padding: 3px;
-    margin: 0;
-    text-align: center;
-    display:inline-block;
-    overflow:hidden;
+  padding: 3px;
+  margin: 0;
+  text-align: center;
+  display:inline-block;
+  overflow:hidden;
 }
 
+/* Minimal Tablesorter Styles */
+table.tablesorter thead th {
+  padding-left: 20px;
+  background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+  background-position: center left;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
 
+.tablesorter-default thead .tablesorter-headerAsc {
+  background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+}
+.tablesorter-default thead .tablesorter-headerDesc {
+  background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+}
+
+table.tablesorter thead th.sorter-false {
+  background-image: none;
+  padding-left: 10px;
+  cursor: default;
+}
+
+.tablesorter-default tr.even td {
+  background-color: rgba(255,255,255,.5);
+}

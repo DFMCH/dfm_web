@@ -28,5 +28,15 @@
 
 <h1>H1: Forms</h1>
 <%= render partial: 'form' %>
-
 <hr>
+
+<h1>H1: Errors</h1>
+<h4>...not yet implemented</h4>
+<%= form_tag do %>
+  <%= submit_tag 'Break Something', class: 'alert' %>     <!-- TODO: Create nice Error templates -->
+<% end %>
+<hr>
+
+<h1 class="hover_span">H1: H<span>over&nbsp;</span>over<span>&nbsp;me to see the</span> Span<span>&nbsp;content</span></h1>
+<h1 class="hover_span">LD<span>AP&nbsp;</span>E<span>n</span>R<span>ichment&nbsp;</span>P<span>rogram</span></h1>
+<h1 class="hover_span">P<span>eople&nbsp;</span>I<span>nformation&nbsp;</span>M<span>anagement&nbsp;</span>S<span>ystem</span></h1>

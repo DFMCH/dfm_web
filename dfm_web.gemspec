@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "coffee-rails", ">= 3.2"    # But it should work on 3.2+ with the Asset Pipeline enabled.
 
   spec.add_development_dependency "rspec-rails", '>= 3.5.0beta3'
-
+  spec.add_development_dependency 'jquery-rails'  # Javascript library.
 end

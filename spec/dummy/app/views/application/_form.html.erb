@@ -1,4 +1,4 @@
-<%= form_tag do %>
+<%= form_tag nil, method: :get do %>
   <div class="field">
     <%= label_tag :text_field %>
     <%= text_field_tag :text_field, ' ' %> <!-- The space is a Chrome workaround.  Don't do that in practice -->
@@ -37,6 +37,8 @@
 
   <div class="actions">
     <%= submit_tag 'Submit' %>
+    <%= submit_tag 'Warn', class: 'warn' %>
+    <%= link_to "Alert", "#", class: 'button alert' %>      <!-- link with class "button" looks the same. -->
   </div>
 
 <% end %>

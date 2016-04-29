@@ -104,5 +104,16 @@ img.scale-with-grid {
 /* Reveal subtext on hover */
 /* transitions don't work with width: auto, so a large-enough max-width is used instead */
 /* Example: <h1 class="hover_span">LD<span>AP&nbsp;</span>E<span>n</span>R<span>ichment&nbsp;</span>P<span>rogram</span></h1>  */
-.hover_span span { max-width: 0; overflow: hidden; transition: max-width .75s; }
-.hover_span:hover span { max-width: 300px; transition: max-width 1.5s; }
+.hover_span { float: left; }
+.hover_span span {
+  white-space: nowrap;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width .75s;
+  vertical-align: top;
+  display: inline-block;
+}
+.hover_span:hover span {
+  max-width: 300px;
+  transition: max-width 1.5s;
+}
