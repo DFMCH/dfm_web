@@ -16,10 +16,19 @@
 
   #main {
     border-width: 0 !important;
+    box-shadow: none;
   }
 
   nav {
     position: relative;
     margin-bottom: -75px;
+    transition: margin 0s;
   }
+
+  html {
+    background-image: none;
+    background-color: rgb(255, 250, 242);  /* color copied from main */
+    transition: background-color .6s; /* Reduce the color jump */
+  }
+
 }

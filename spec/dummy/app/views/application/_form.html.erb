@@ -1,7 +1,7 @@
 <%= form_tag do %>
   <div class="field">
     <%= label_tag :text_field %>
-    <%= text_field_tag :text_field %>
+    <%= text_field_tag :text_field, ' ' %> <!-- The space is a Chrome workaround.  Don't do that in practice -->
   </div>
 
   <div class="field">
