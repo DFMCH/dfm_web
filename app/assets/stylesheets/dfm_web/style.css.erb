@@ -45,13 +45,28 @@ footer {
 /* #Typography
 ================================================== */
 h1, h2, h3, h4, h5, h6 {
+  display: table; /* like block, but doesn't use 100% width when undefined */
   margin: 0;
-  font-weight: inherit; }
+  font-weight: inherit;
+}
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
-h1 { font-size: 2em; line-height: 40px; margin-bottom: 10px; clear:both;}
+h1 { font-size: 2em; line-height: 40px; margin: 10px 0; clear:both;}
 h2 { font-size: 1.6em; line-height: 34px; margin-bottom: 8px; }
 h3 { font-size: 1.2em; line-height: 30px; margin-bottom: 4px; }
+
+/* Header right before .button  */
+h1 + .button {
+  float: right;
+  margin-top: -3em;
+}
+
+/* Header right after .button  */
+.button + h1 {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
 
 p { margin: 0 0 20px 0; }
 img { margin: 0; vertical-align: top;}   /* vertical align fixes the mystery padding below img tags. */
