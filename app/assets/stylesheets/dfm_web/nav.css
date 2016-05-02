@@ -1,0 +1,67 @@
+nav {
+  position:fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 25px;
+  height: 75px;
+  overflow: hidden;
+}
+
+#nav{
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  height: 40px;
+}
+
+#nav * {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+#nav li {
+  top: -20px;
+  padding: 0 1em;
+  line-height: 75px;
+  font-size: 1.1em;
+}
+#nav li:hover {
+  background-color: #00426e;
+}
+
+#nav .left > * { margin: 0 1em; }
+#nav .left > *:first-child { margin: 0 1em 0 0; }
+#nav .left img { margin-right: 1em; }
+
+
+#nav form {
+  height: 40px;
+  overflow: hidden;
+  margin: 0 20px;
+}
+#nav form input[type=text] {
+  margin-top: 4px;
+  padding-left: 15px;
+}
+
+#nav li > div {
+  position: fixed; /* This is the only way to break out of the overflow: hidden nav */
+  float: right;
+  top: 75px;
+  margin-left: -1em;
+  display: none;
+  min-width: 150px;
+  max-width: 200px;
+
+}
+
+#nav li > div a {
+  padding: 0 20px;
+  width: 100%;
+  white-space:nowrap;
+}
+
+#nav li:hover > div {
+  display: block;
+}

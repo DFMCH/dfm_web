@@ -8,9 +8,27 @@
     </div>
 
     <ul class="right">
-      <li><%= link_to("Actions", '#') %></li>
-      <li><%= link_to("News", '#') %></li>
+      <li>
+        <%= link_to("Actions", '#') %>
+        <div>
+          <%= link_to('Notices', '#notices') %>
+          <%= link_to('Warnings', '#warnings') %>
+          <%= link_to('Email', '#email') %>
+        </div>
+      </li>
+
+      <li>
+        <%= link_to "News", "#" %>
+        <div>
+          <%= link_to("#{Date.today.strftime("%A")}'s Weather", '#weather') %>
+          <%= link_to('Sasuke Flips Car', '#sasuke') %>
+          <%= link_to('Ricky Faces Jailtime', '#ricky') %>
+        </div>
+      </li>
+
+      <!-- The last item can't really be a menu because there isn't space. -->
       <li><%= link_to("Logout", '#') %></li>
+
     </ul>
   </div>
 </nav>

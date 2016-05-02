@@ -1,6 +1,6 @@
 /*
     Layout
-    * Nav
+    * Nav ( now in it's own file )
     * Main
     * Footer
 */
@@ -61,52 +61,6 @@ footer .fixed > div {
 }
 
 
-nav {
-  position:fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px 25px;
-  height: 75px;
-  overflow: hidden;
-}
-
-#nav{
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
-  height: 40px;
-}
-
-#nav * {
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  margin: 0;
-}
-#nav li {
-  top: -20px;
-  padding: 0 1em;
-  line-height: 75px;
-  font-size: 1.1em;
-}
-#nav li:hover {
-  background-color: #00426e;
-}
-
-#nav .left > * { margin: 0 1em; }
-#nav .left > *:first-child { margin: 0 1em 0 0; }
-#nav .left img { margin-right: 1em; }
-
-
-#nav form {
-  height: 40px;
-  overflow: hidden;
-  margin: 0 20px;
-}
-#nav form input[type=text] {
-  margin-top: 4px;
-  padding-left: 15px;
-}
 
 /* Prevent unbreakable elements from expanding outside their pure column (tables etc) */
 .pure-u-1 { overflow: hidden; }
