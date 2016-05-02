@@ -47,13 +47,11 @@ nav {
 
 #nav li > div {
   position: fixed; /* This is the only way to break out of the overflow: hidden nav */
-  float: right;
   top: 75px;
   margin-left: -1em;
   display: none;
   min-width: 150px;
   max-width: 200px;
-
 }
 
 #nav li > div a {
