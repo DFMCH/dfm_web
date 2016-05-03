@@ -38,3 +38,7 @@ $(document).on 'ready page:load', ->
       $(this).submit()  # Remote form must call submit on a JQuery object
     else
       this.form.submit()  # Regular HTML submit
+
+  # Show the Mobile Menu on Hamburger Click
+  $('nav #nav').click ->
+    $("nav #nav .right").toggle()

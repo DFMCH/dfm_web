@@ -30,5 +30,40 @@
     background-color: rgb(255, 250, 242);  /* color copied from main */
     transition: background-color .6s; /* Reduce the color jump */
   }
+}
+
+
+/* Pure Small */
+@media screen and (max-width:47.938em) {
+
+  /* Menu Items */
+  nav #nav .right {
+    position: absolute;
+    background-color: rgb(0, 82, 136);
+    width: 100%;
+    height: 75px;
+    top: 0;
+    right: 0;
+    padding: 20px 0;
+    z-index: 99;
+    display: none;
+  }
+
+  nav #nav:after {
+    display: block;
+    content: "☰";
+    font-size: 3em;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75px;
+    height: 75px;
+    z-index: 999999;
+  }
+
+  /* Sub Menus */
+  nav #nav .right li > div {
+  }
 
 }
