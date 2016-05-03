@@ -5,6 +5,8 @@ nav {
   padding: 20px 25px;
   height: 75px;
   overflow: hidden;
+  z-index: 999;
+
 }
 
 #nav{
@@ -57,7 +59,7 @@ nav {
 #nav li > div a {
   padding: 0 20px;
   width: 100%;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 #nav li:hover > div {

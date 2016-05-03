@@ -17,7 +17,8 @@ $(document).on 'ready page:load', ->
   $('.tablesorter').tablesorter({widgets: ['zebra']}) unless typeof(tablesorter) == "undefined"
 
   # Hide the flash[:notice] after 5 seconds
-  $('#notice').delay(5000).slideUp('slow')
+  $('#notice, #alert').click ->
+    $(this).slideUp('slow')
 
   # Load anything you want with ajax easily.  Add ajax_load class to a div and set path html5 data attrib.
   $(".ajax_load").each ->

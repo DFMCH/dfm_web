@@ -8,4 +8,14 @@ class ApplicationController < ActionController::Base
 
   end
 
+  def notice
+    flash[:notice] = "This is a notice message"
+    redirect_to root_url
+  end
+
+  def alert
+    flash[:alert] = "This is an alert message"
+    redirect_to root_url
+  end
+
 end
