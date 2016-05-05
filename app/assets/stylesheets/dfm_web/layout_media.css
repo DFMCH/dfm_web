@@ -11,7 +11,8 @@
   }
 
   main {
-    margin: 75px 0 0 0; /* Space for the NAV, and min side margin */
+    margin: 0;
+    transition: margin 0s;
   }
 
   #main {
@@ -21,7 +22,7 @@
 
   nav {
     position: relative;
-    margin-bottom: -75px;
+    top:0;
     transition: margin 0s;
   }
 
@@ -49,17 +50,8 @@
     display: none;
   }
 
-  nav #nav:after {
+  #nav #hamburger {
     display: block;
-    content: "☰";
-    font-size: 3em;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 75px;
-    height: 75px;
-    z-index: 999999;
   }
 
   /* Sub Menus */
