@@ -15,29 +15,10 @@ nav, #notice, #alert {
 }
 
 #notice, #alert {
-  width: 100%;
-  position: relative;
-  top: 75px;
-  height: 75px;
-  font-size: 1.5em;
-  padding: 25px;
-  z-index: 1;
   background: none;
   background-color: #338932;
-  pointer-events: none;
 }
 
-/* HTML-free close button */
-#notice:after, #alert:after {
-  float: right;
-  margin-top: -30px;
-  content: "\00d7";
-  cursor: pointer;
-  pointer-events: auto;
-  padding: 0 10px 3px 10px;
-  background-color: rgba(255,255,255,.2);
-  transition: background-color .3s;
-}
 
 /* Hover the close button to add visual cue */
 #notice:hover:after, #alert:hover:after {

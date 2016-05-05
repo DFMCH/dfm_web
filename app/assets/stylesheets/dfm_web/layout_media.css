@@ -26,6 +26,10 @@
     transition: margin 0s;
   }
 
+  #notice, #alert {
+    margin-top: 0;
+  }
+
   html {
     background-image: none;
     background-color: rgb(255, 250, 242);  /* color copied from main */
