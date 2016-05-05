@@ -38,3 +38,11 @@ $(document).on 'ready page:load', ->
       $(this).submit()  # Remote form must call submit on a JQuery object
     else
       this.form.submit()  # Regular HTML submit
+
+  # Show the Mobile Menu on Hamburger Click
+  $('nav #hamburger').click ->
+    $("nav #nav .right").toggle()
+
+  # iPads don't have :hover really, so hide the menu if the user clicks anything in <main>
+  $('main').click ->
+    $("#nav li div:hover").css('display', 'none')
