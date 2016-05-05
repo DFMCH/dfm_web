@@ -68,12 +68,17 @@ nav {
 
 #nav #hamburger {
   display: none;
-  font-size: 3em;
-  text-align: center;
-  position: fixed;
+  position: absolute;
+  margin: 20px;
   top: 0;
   right: 0;
-  width: 75px;
-  height: 75px;
+  width: 35px;
+  height: 35px;
   z-index: 999999;
+  background:linear-gradient(to bottom, #fff 0%, #fff 15%,
+                                        transparent 15%, transparent 42.5%,
+                                        #fff 42.5%, #fff 57.7%,
+                                        transparent 57.7%, transparent 85%,
+                                        #fff 85%, #fff 100% );
+
 }
