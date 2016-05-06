@@ -21,6 +21,21 @@ nav {
   display: inline-block;
   margin: 0;
 }
+
+/* Prevent Menu items from popping out of place on slightly too small windows */
+#nav .right {
+  position: absolute;
+  right: 25px;
+}
+
+#nav .left {
+  position: absolute;
+  left: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
 #nav li {
   top: -20px;
   padding: 0 1em;
