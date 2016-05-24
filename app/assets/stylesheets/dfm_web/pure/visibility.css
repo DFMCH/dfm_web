@@ -45,7 +45,7 @@ show-for-xlarge-only
   .show-for-xlarge-only{display:none}
 }
 
-/* Pure Medium */
+/* Pure Medium (iPad Portrait) */
 @media screen and (min-width:48em) and (max-width:63.938em) {
   .show-for-large-up{display:none}
   .show-for-xlarge-up{display:none}
@@ -56,7 +56,7 @@ show-for-xlarge-only
   .show-for-xlarge-only{display:none}
 }
 
-/* Pure Large */
+/* Pure Large (iPad Landscape) */
 @media screen and (min-width:64em) and (max-width:79.938em) {
   .show-for-xlarge-up{display:none}
 

@@ -3,9 +3,9 @@
   transition: margin .3s;
 }
 
-/* Medium (iPad) and below, * remove the extra space around <main> */
+/* Large (iPad) and below,  * remove the extra space around <main> */
 /*                          * disabled the fixed nav */
-@media screen and (max-width:63.938em) {
+@media screen and (max-width:79.938em) {
   body {
     margin-bottom: 2em;      /* space for footer only */
   }
