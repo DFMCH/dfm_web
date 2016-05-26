@@ -61,6 +61,11 @@ nav {
   padding-left: 15px;
 }
 
+/* Ignore styles for links within the nav */
+nav a, nav a:visited {
+  color: white;
+}
+
 #nav li > div {
   position: fixed; /* This is the only way to break out of the overflow: hidden nav */
   top: 75px;
