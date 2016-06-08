@@ -23,12 +23,12 @@ nav {
 }
 
 /* Prevent Menu items from popping out of place on slightly too small windows */
-#nav.right {
+#nav .right {
   position: absolute;
   right: 25px;
 }
 
-#nav.left {
+#nav .left {
   position: absolute;
   left: 25px;
   overflow: hidden;
