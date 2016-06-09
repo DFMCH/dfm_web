@@ -20,7 +20,8 @@ $(document).on 'ready page:load', ->
   $('#notice, #alert').click ->
     $(this).slideUp('slow')
   $(document).keyup (e) ->
-    $('#notice, #alert').slideUp('slow')
+    if e.keyCode == 27
+      $('#notice, #alert').slideUp('slow')
 
   # Load anything you want with ajax easily.  Add ajax_load class to a div and set path html5 data attrib.
   $(".ajax_load").each ->
