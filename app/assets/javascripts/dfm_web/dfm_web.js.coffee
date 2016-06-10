@@ -49,3 +49,7 @@ $(document).on 'ready page:load', ->
   # iPads don't have :hover really, so hide the menu if the user clicks anything in <main>
   $('main').click ->
     $("#nav li div:hover").css('display', 'none')
+
+  # Override an HTML autofocus attribute (nav search bar etc) by adding class: autofocus
+  # Javascript is a bad language, so we have to set a zero second delay for this to work.
+  setTimeout (-> $('.autofocus').focus()), 0
