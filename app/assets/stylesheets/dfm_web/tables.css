@@ -28,6 +28,10 @@ th {
   border-color: rgba(0,0,0,.2);
 }
 
+td .button, th .button {
+  margin: 0 5px 0 0;
+}
+
 th:first-child {
   border-left: 1px;
 }

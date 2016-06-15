@@ -205,3 +205,28 @@
 </div>
 
 <hr>
+
+<h1>Links / Buttons within Tables</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th><%= link_to "TH Link", "#" %></th>
+    <td><%= link_to "TD Link", "#" %></td>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <%= link_to "TH Button", "#", class: 'button' %>
+        <%= link_to "TH Button", "#", class: 'button warn' %>
+        <%= link_to "TH Button", "#", class: 'button alert' %>
+      </th>
+      <td>
+        <%= link_to "TD Button", "#", class: 'button' %>
+        <%= link_to "TD Button", "#", class: 'button warn' %>
+        <%= link_to "TD Button", "#", class: 'button alert' %>
+      </td>
+    </tr>
+  </tbody>
+</table>
