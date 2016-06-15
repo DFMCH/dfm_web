@@ -42,6 +42,16 @@ $(document).on 'ready page:load', ->
     else
       this.form.submit()  # Regular HTML submit
 
+  # Override an HTML autofocus attribute (nav search bar etc) by adding class: autofocus
+  # Javascript is a bad language, so we have to set a zero second delay for this to work.
+  setTimeout (-> $('.autofocus').focus()), 0
+
+  ### NAV BAR ###
+
+  # Show the Hamburger if there are menu items
+  if $('#nav ul.right li').length
+    $('ul.right').after('<div id="hamburger"></div>')
+
   # Show the Mobile Menu on Hamburger Click
   $('nav #hamburger').click ->
     $("nav #nav .right").toggle()
@@ -50,6 +60,3 @@ $(document).on 'ready page:load', ->
   $('main').click ->
     $("#nav li div:hover").css('display', 'none')
 
-  # Override an HTML autofocus attribute (nav search bar etc) by adding class: autofocus
-  # Javascript is a bad language, so we have to set a zero second delay for this to work.
-  setTimeout (-> $('.autofocus').focus()), 0
