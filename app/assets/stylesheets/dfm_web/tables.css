@@ -41,6 +41,12 @@ tr.warn td, tr.warn th {
   background-color: rgba(255, 0, 0, 0.04) !important; /* important needed to override zebra */
 }
 
+td.active::before {
+  content: "☑";
+  color: green;
+  font-size: 1.5em;
+}
+
 td input[type=text], th input[type=text]
 {
   vertical-align: middle;
