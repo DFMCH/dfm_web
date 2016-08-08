@@ -79,6 +79,19 @@ footer {
   background-color: rgb(255, 255, 247);
 }
 
+/* Special style for warn and alert.  box-shadow instead of border-width so the content doesn't shift */
+.panel.warn{
+  box-shadow: inset 3px 0 0 0 rgb(199, 122, 0);
+  border-color: rgba(199, 122, 0, .25);
+  background-color: rgba(199, 122, 0, .08);
+}
+
+.panel.alert{
+  box-shadow: inset 3px 0 0 0 rgb(168, 1, 14);
+  border-color: rgba(168, 1, 0, .25);
+  background-color: rgba(168, 1, 0, .05);
+}
+
 .hide,
 .hidden   { display: none; }
 .full     { width: 100%; }
@@ -100,9 +113,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
-h1 { font-size: 2em; line-height: 40px; margin: 10px 0; clear:both;}
-h2 { font-size: 1.6em; line-height: 34px; margin-bottom: 8px; }
-h3 { font-size: 1.2em; line-height: 30px; margin-bottom: 4px; }
+h1 { font-size: 2em; line-height: 1.3em; margin-bottom: 10px; clear:both;}
+h2 { font-size: 1.6em; line-height: 1.3em; margin-bottom: 8px; }
+h3 { font-size: 1.2em; line-height: 1.3em; margin-bottom: 6px; }
+p  { font-size: 1em;  line-height: 1.3em; margin: 0; }
+
+
+/* Alert and Warn rules are added to specific elements.  Buttons, Typography, panels all are totally different */
+h1.alert, h2.alert, h3.alert, p.alert, span.alert {
+  color: rgb(168, 1, 14);
+}
+h1.warn, h2.warn, h3.warn, p.warn, span.warn {
+  color: rgb(199, 122, 0);
+}
+
 
 /* Header right before .button  */
 h1 + .button {
