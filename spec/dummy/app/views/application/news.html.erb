@@ -1,0 +1,30 @@
+<!-- Second page for validating flash messages go away etc. -->
+
+<h1>News</h1>
+
+<hr>
+
+<h2>Weather</h2>
+<div class="panel" id="weather">
+  <h2><%= Date.today.strftime("%B %-d, %Y") %></h2>
+  <p>The temperature today is <%= rand(-20 .. 100) %> degrees.</p>
+  <%= render 'lorem' %>
+</div>
+
+
+<h2>Headlines</h2>
+
+<div class="panel" id="sasuke">
+  <h2>Sasuke Flips Car</h2>
+  <% 2.times do %>
+    <%= render 'lorem' %>
+  <% end %>
+</div>
+
+
+<div class="panel" id="ricky">
+  <h2>Ricky Faces Jail Time</h2>
+  <% 3.times do %>
+    <%= render 'lorem' %>
+  <% end %>
+</div>

@@ -17,11 +17,11 @@
       </li>
 
       <li>
-        <%= link_to "News", "#" %>
+        <%= link_to "News", news_path %>
         <div>
-          <%= link_to("#{Date.today.strftime("%A")}'s Weather", '#weather') %>
-          <%= link_to('Sasuke Flips Car', '#sasuke') %>
-          <%= link_to('Ricky Faces Jailtime', '#ricky') %>
+          <%= link_to("#{Date.today.strftime("%A")}'s Weather", news_path + "#weather") %>
+          <%= link_to('Sasuke Flips Car', news_path + "#sasuke") %>
+          <%= link_to('Ricky Faces Jail Time', news_path + "#ricky") %>
         </div>
       </li>
 

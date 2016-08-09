@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
 
 
   def index
+  end
 
+  def news
   end
 
   def notice
