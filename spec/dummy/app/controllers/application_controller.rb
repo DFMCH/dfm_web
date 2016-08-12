@@ -10,6 +10,9 @@ class ApplicationController < ActionController::Base
   def news
   end
 
+  def pure
+  end
+
   def notice
     flash[:notice] = "This is a notice message"
     redirect_to root_url

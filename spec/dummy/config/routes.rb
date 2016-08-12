@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'alert'  => 'application#alert'
   get 'notice' => 'application#notice'
   get 'news'   => 'application#news'
+  get 'pure'   => 'application#pure'
   root 'application#index' #You can have the root of your site routed with "root"
 
 
