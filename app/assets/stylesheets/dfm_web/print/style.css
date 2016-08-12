@@ -7,7 +7,8 @@
   }
 
   /* Prevent Page Breaks inside the following: */
-  .panel, table, .actions, .field {
+  /* Note: Chrome/Safari don't support page-break on table rows. */
+  .panel, tr td, tr th, .actions, .field {
     page-break-inside: avoid;
   }
 

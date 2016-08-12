@@ -53,6 +53,7 @@
   /******  MAIN ******/
 
   main {
+    font-size: .75em;
     margin: 0 !important;
   }
 
@@ -66,11 +67,11 @@
 
   /******  FOOTER ******/
 
-  footer {
-    position: relative;
+  footer, footer * {
     background: none;
     color: black;
-    height: 1em;
+    height: auto;
+    position: relative !important;
   }
 
 }
