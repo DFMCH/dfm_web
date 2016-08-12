@@ -1,0 +1,25 @@
+@media print and (color) {
+  * {
+    /* Prevent browsers from discarding the majority of color info */
+    -webkit-print-color-adjust: exact;
+    -moz-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Prevent Page Breaks inside the following: */
+  .panel, table, .actions, .field {
+    page-break-inside: avoid;
+  }
+
+
+  /* Stuff to hide */
+  input[type=submit], .button, .no_print {
+    display: none !important;
+  }
+
+  /* Unhide print_only */
+  .print_only {
+    display: inherit;
+  }
+
+}

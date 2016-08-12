@@ -9,7 +9,8 @@
  *= require ./forms.css
  *= require ./tables.css
  *= require ./layout_media.css
- *= require ./print.css
+ *= require ./print/layout.css
+ *= require ./print/style.css
  */
 
 .debug { box-shadow: 0 0 1px red; }

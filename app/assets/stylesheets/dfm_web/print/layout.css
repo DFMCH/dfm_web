@@ -1,0 +1,62 @@
+@media print and (color) {
+
+  * {
+    text-shadow: none !important;
+  }
+
+  html {
+    background: none;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  /******  NAVIGATION ******/
+
+  /* Position Normally and remove the background */
+  nav {
+    position: relative;
+    top:0;
+    background: none;
+  }
+
+  #nav > .left > a img{
+    display: none;
+  }
+
+  /* Print Black instead of White */
+  #nav * {
+    color: black;
+  }
+
+  /* Hide Menus */
+  #nav ul {
+    display: none;
+  }
+
+  /******  MAIN ******/
+
+
+  main {
+    margin: 0;
+  }
+
+  #main {
+    border-width: 0 !important;
+    box-shadow: none;
+    background: none;
+  }
+
+  /******  FOOTER ******/
+
+
+  footer {
+    position: relative;
+    background: none;
+    color: black;
+    height: 1em;
+  }
+
+}
