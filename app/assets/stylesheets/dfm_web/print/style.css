@@ -11,6 +11,10 @@
     page-break-inside: avoid;
   }
 
+  hr {
+    height: 1px;
+    background: black;
+  }
 
   /* Stuff to hide */
   input[type=submit], .button, .no_print {

@@ -6,11 +6,11 @@
 
   html {
     background: none;
-    margin: 0;
+    margin: 0 !important;
   }
 
   body {
-    margin: 0;
+    margin: 0 !important;
   }
 
   /******  NAVIGATION ******/
@@ -22,6 +22,13 @@
     background: none;
   }
 
+  /* Remove space to the left of the first .left (the nav title) */
+  #nav > .left {
+    left: 0;
+  }
+
+  /* Hide the white on white UW Logo */
+  /* Todo: Replace with a black one */
   #nav > .left > a img{
     display: none;
   }
@@ -33,24 +40,25 @@
 
   /* Hide Menus */
   #nav ul {
-    display: none;
+    display: none !important;
   }
+
 
   /******  MAIN ******/
 
-
   main {
-    margin: 0;
+    margin: 0 !important;
   }
 
   #main {
-    border-width: 0 !important;
     box-shadow: none;
     background: none;
+    border: none !important;
+    padding: 1px; /*  Content vanishes without this, huh? */
   }
 
-  /******  FOOTER ******/
 
+  /******  FOOTER ******/
 
   footer {
     position: relative;
