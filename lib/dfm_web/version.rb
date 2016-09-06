@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "1.0.2"
+  VERSION = "1.0.3"
 end
 
 
 # Version History
 
+# 1.0.3   Made the iPad and below background styles !important so you don't have to duplicate them in your host app.
 # 1.0.2   Made the background image a transparent png so you can set it's color in CSS.
 # 1.0.1   Added "Pure" page to demonstrate the column behavior.
 # 1.0.0   Version bump.  We're in production on three apps already.
