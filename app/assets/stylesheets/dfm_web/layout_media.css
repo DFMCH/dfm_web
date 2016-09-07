@@ -49,7 +49,7 @@
     height: 75px;
     top: 0;
     right: 0;
-    padding: 20px 0;
+    padding: 0;
     z-index: 99;
     display: none;
   }
