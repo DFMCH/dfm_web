@@ -53,6 +53,13 @@ td input[type=text], th input[type=text]
   margin:0;
 }
 
+td input + .button, td select + .button, th input + .button, th select + .button
+{
+  margin-top: -2em;
+  float: right;
+}
+
+
 th.image,       td.image,
 th.image img,   td.image img,
 th.image a img, td.image a img

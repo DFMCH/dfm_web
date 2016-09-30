@@ -200,11 +200,12 @@
     <h1>Unordered List</h1>
     <ul>
       <li>Wisconsin</li>
-      <li>Hawaii</li>
-      <ul>
-        <li>Waikiki</li>
-        <li>Punaluu</li>
-      </ul>
+      <li>Hawaii
+        <ul>
+          <li>Waikiki</li>
+          <li>Punaluu</li>
+        </ul>
+      </li>
       <li>Florida</li>
       <li>California</li>
     </ul>
@@ -228,11 +229,12 @@
     <div class="panel">
       <ul>
         <li>Wisconsin</li>
-        <li>Hawaii</li>
-        <ol>
-          <li>Waikiki</li>
-          <li>Punaluu</li>
-        </ol>
+        <li>Hawaii
+          <ol>
+            <li>Waikiki</li>
+            <li>Punaluu</li>
+          </ol>
+        </li>
         <li>Florida</li>
         <li>California</li>
       </ul>
@@ -264,5 +266,28 @@
         <%= link_to "TD Button", "#", class: 'button alert' %>
       </td>
     </tr>
+
+    <tr>
+      <th>
+        <%= text_field_tag "input", "Text Field" %>
+        <%= link_to "TH Button", "#", class: 'button' %>
+      </th>
+      <td>
+        <%= text_field_tag "input", "Text Field" %>
+        <%= link_to "TD Button", "#", class: 'button' %>
+      </td>
+    </tr>
+
+    <tr>
+      <th>
+        <%= select_tag "input", options_for_select(["Select Tag"]) %>
+        <%= link_to "TH Button", "#", class: 'button' %>
+      </th>
+      <td>
+        <%= select_tag "input", options_for_select(["Select Tag"]) %>
+        <%= link_to "TD Button", "#", class: 'button' %>
+      </td>
+    </tr>
+
   </tbody>
 </table>
