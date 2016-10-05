@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dfm_web (1.0.5)
+    dfm_web (1.0.6)
       coffee-rails (>= 3.2)
       rails (>= 3.2)
 
