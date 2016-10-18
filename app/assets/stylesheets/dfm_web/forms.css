@@ -35,35 +35,17 @@ input[type="checkbox"]
   margin: 0 0 10px 0;
 }
 
-.ie input[type="text"],
-.ie input[type="password"],
-.ie input[type="email"],
-.ie input[type="number"],
-.ie textarea,
-.ie select,
-.ie .fake_field
-{
-  /* IE, you make me sad. */
-  padding: 15px 15px 0 15px;
-}
-
-
-.locked {
-  background-image: url(<%= asset_path("lock.png") %>);
+input.locked {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAWCAYAAADJqhx8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAplJREFUeNqUVE9PE1EQ33n7t1uJpN1uGw5gDPFCaUOT9iCJxBQTGnrwBBfAg5+hH0MOfIJ+BBMjxYQDJnjGSE00XqyxngA1Le1uu+xzpvQ1S9kanebl7Zs/vzczv3mVpTHRdA2urq4kBiwOAPdx2Rw4R1NH065tQYHgwTAM5nqubCjGU93QTZnJDul939cdF39d5yVe0Hdd1xcxchAgOZ+UeIfvYLCXtJPeUm7pfG52rtvr9VS364KiKLmZuZkPF2cXXAqThJV4jGtj+eHy+mn91BR6/I6sPFopkc2KW6vBGBY8YKr3OOf68bvjw8bXRlfo8ds5ent0yBjT0Gf2FsD29jbUarUIGv1UKtXCxrnlcnmUJn2jrm8n7d94gbe3t3dnc2MTRgC6rkvAgBScQKQJwn0+sCETgNmMGTln03enny2mF8uTALLZbAl9dtBXvUEjZrCOlCVM03Q9zwO35+phALqm95AJv9Pt6JjoueM4ryAWi+UweB5RZen/xOMSbzA7YUfG2bgxaQCTTDI23GSIQvWTCCrFDvl8/heun2gDsgufYc84YAcYxtMtIG6i7hJIcbX4pXZQO9iv7b9ZK619Il0wGxGghOWGNFF6ja2tLZiampKshNVA3YIsy964r0I8DEsYgNJNqqp61Wo132q1XpMTghQ0VesR1SKLYc0QWsLAAMyqf6wbxDmylEQ7CymBs0AGAlk8bZ5eSDs0wtFo1Atr4vUo89tU0dmyrLY4x+Nxeh/8b00clUA7gTebzUjUjD4fvMZvDUeVVV8KGQllmAkf/3eikcWudyYN0qhnxSfFH5eXlyq+AaJP6vf7g52W0Al98Nxut+VCofB9ALP7YvfByfsTGyT4p0dA05vJZM4qlcrnPwIMALO/WDIAWJ7vAAAAAElFTkSuQmCC');
   background-repeat: no-repeat;
+  background-size: 8px 11px;
   color: #444;
-  padding-left: 27px;
-  background-position: left center;
-}
-
-.ie .locked {
-  /* Are you serious IE?  It's right up there */
-  padding-left: 27px;
+  padding-left: 20px;
+  background-position: left 5px center;
 }
 
 select {
-  padding: 0;
-  width: 220px;
+  height: 2.3em;
 }
 
 input[type="text"]:focus,
@@ -84,14 +66,20 @@ label, legend {
   display: inline-block;
   font-weight: bold;
   font-size: 13px;
-  vertical-align: middle;
-  width: 140px;
+  max-width: 495px;
   color:#444;
-  margin: 0 14px 0 5px;
+  margin: 0 0 0 5px;
 }
 
 input[type="checkbox"] {
   display: inline;
+}
+
+/* Checkbox plus "wall of text" */
+input[type="checkbox"] + p {
+  padding-left: 1.2em;
+  line-height: 1.3em;     /* This is already the normal line-height, we're just confirming that here. */
+  margin: -.14em 0 0 0;   /* We can't adjust the checkbox, so make the first line of text line up with 1em */
 }
 
 input[type=submit], .button
@@ -138,6 +126,10 @@ input[type=submit].warn, .button.warn {
   overflow-y: auto;  /* This makes floated elements such as checkboxes still consume vertical space */
 }
 
+/* The last field doesn't need the extra bottom-margin */
+div .field:last-child, div .nested-fields:last-child, div .actions:last-child {
+  margin-bottom: 0;
+}
 
 /* Make Checkbox, Radio, and specifically their labels float left */
 input[type=checkbox], input[type=checkbox] + label,
@@ -147,6 +139,14 @@ input[type=radio], input[type=radio] + label
   margin-bottom: .5em;
   float: left;
 }
+
+/* The last checkbox / radio button of a parent should not get the margin-bottom added. */
+input[type=checkbox]:last-of-type, input[type=checkbox] + label:last-of-type,
+input[type=radio]:last-of-type, input[type=radio] + label:last-of-type {
+  margin-bottom: 0;
+}
+
+
 /* Wrap the float with each Checkbox and Radio to ensure they get a new line */
 input[type=checkbox], input[type=radio] {
   clear: both;

@@ -25,6 +25,8 @@ nav {
 /* Prevent Menu items from popping out of place on slightly too small windows */
 #nav .right {
   position: absolute;
+  top: 0;
+  height: 75px;
   right: 25px;
 }
 
@@ -37,9 +39,10 @@ nav {
 
 
 #nav li {
-  top: -20px;
+  top: 0;
   padding: 0 1em;
   line-height: 75px;
+  height: 75px;
   font-size: 1.1em;
 }
 #nav li:hover {

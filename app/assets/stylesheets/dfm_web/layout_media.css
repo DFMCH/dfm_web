@@ -31,8 +31,8 @@
   }
 
   html {
-    background-image: none;
-    background-color: rgb(255, 250, 242);  /* color copied from main */
+    background-image: none !important;
+    background-color: rgb(255, 250, 242) !important;  /* color copied from main */
     transition: background-color .6s; /* Reduce the color jump */
   }
 }
@@ -49,7 +49,7 @@
     height: 75px;
     top: 0;
     right: 0;
-    padding: 20px 0;
+    padding: 0;
     z-index: 99;
     display: none;
   }

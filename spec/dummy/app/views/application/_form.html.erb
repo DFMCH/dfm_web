@@ -5,6 +5,12 @@
   </div>
 
   <div class="field">
+    <%= label_tag :text_field %>
+    <%= text_field_tag :text_field, "Locked", class: 'locked' %>
+  </div>
+
+
+  <div class="field">
     <%= label_tag :password_field %>
     <%= password_field_tag :password_field %>
   </div>
@@ -12,6 +18,11 @@
   <div class="field">
     <%= label_tag :date_field %>
     <%= date_field_tag :date_field %>
+  </div>
+
+  <div class="field">
+    <%= label_tag :select %>
+    <%= select_tag :select, options_for_select(['Item 1', 'Item 2']) %>
   </div>
 
   <div class="field">
