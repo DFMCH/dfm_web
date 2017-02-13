@@ -1,5 +1,5 @@
 <main>
-  <div id="main">
-    <%= yield %>
+  <div id="main" class="<%= 'paper' if content_for?(:paper) %>">
+    <%= content_for?(:paper) ? yield(:paper) : yield %>
   </div>
 </main>

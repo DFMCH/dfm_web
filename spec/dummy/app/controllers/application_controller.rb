@@ -13,6 +13,9 @@ class ApplicationController < ActionController::Base
   def pure
   end
 
+  def paper
+  end
+
   def notice
     flash[:notice] = "This is a notice message"
     redirect_to root_url
