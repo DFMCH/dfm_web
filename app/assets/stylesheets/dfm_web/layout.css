@@ -13,6 +13,7 @@
 html {
   position: relative;
   min-height: 100%;         /* Needed for the footer to be placed correctly */
+  transition: background-color .6s; /* Reduce the color jump */
 }
 
 body {
@@ -53,17 +54,17 @@ main {
   margin: 0 auto;           /* Centered with max width */
   max-width: 1800px;
   padding: 20px;
-  overflow: hidden;
 }
 
 /* Alternative Layout: Simulate a printed page */
 #main.paper {
-  margin: 0 auto 50px auto;
   max-width: 8.5in;
   padding: .5in;
   background-color: #fcfcfc;
   border: 1px solid #ddd;
   box-shadow: 8px 8px 30px rgba(0,0,0,.4);
+  transition: margin 0s !important;
+
 }
 
 

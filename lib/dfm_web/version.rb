@@ -5,6 +5,7 @@ end
 
 # Version History
 
+# 1.0.7   Paper class updated for media queries and flash messages.
 # 1.0.6   Added "paper" class to simulate printed content.
 # 1.0.5   Form element style improvements.  Added optional Mailer Template.
 # 1.0.4   Found the mystery 20px and removed it, then removed the two 20px workarounds in the nav.

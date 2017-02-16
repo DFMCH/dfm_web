@@ -16,6 +16,16 @@ class ApplicationController < ActionController::Base
   def paper
   end
 
+  def paper_notice
+    flash[:notice] = "This is a notice message"
+    redirect_to paper_url
+  end
+
+  def paper_alert
+    flash[:alert] = "This is an alert message"
+    redirect_to paper_url
+  end
+
   def notice
     flash[:notice] = "This is a notice message"
     redirect_to root_url
