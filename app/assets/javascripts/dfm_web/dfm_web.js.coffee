@@ -18,10 +18,10 @@ $(document).on 'ready page:load', ->
 
   # Hide the #notice and #alert messages by clicking the [X] or pressing escape key
   $('#notice, #alert').click ->
-    $(this).slideUp('slow')
+    $(this).fadeOut()
   $(document).keyup (e) ->
     if e.keyCode == 27
-      $('#notice, #alert').slideUp('slow')
+      $('#notice, #alert').fadeOut()
 
   # Load anything you want with ajax easily.  Add ajax_load class to a div and set path html5 data attrib.
   $(".ajax_load").each ->

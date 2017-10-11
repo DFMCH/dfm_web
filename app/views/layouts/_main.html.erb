@@ -1,5 +1,6 @@
 <main>
   <div id="main" class="<%= 'paper' if content_for?(:paper) %>">
+    <%= render 'layouts/flash' %>
     <%= content_for?(:paper) ? yield(:paper) : yield %>
   </div>
 </main>

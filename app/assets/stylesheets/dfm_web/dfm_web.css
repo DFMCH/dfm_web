@@ -6,6 +6,7 @@
  *= require ./layout.css
  *= require ./nav.css
  *= require ./style.css
+ *= require ./flash.css
  *= require ./forms.css
  *= require ./tables.css
  *= require ./layout_media.css

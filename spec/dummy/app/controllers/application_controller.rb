@@ -17,23 +17,23 @@ class ApplicationController < ActionController::Base
   end
 
   def paper_notice
-    flash[:notice] = "This is a notice message"
-    redirect_to paper_url
+    flash.now[:notice] = "This is a notice message"
+    render :paper
   end
 
   def paper_alert
-    flash[:alert] = "This is an alert message"
-    redirect_to paper_url
+    flash.now[:alert] = "This is an alert message\nIt's intentionally really long.  You have some errors with your form.  You should fix them."
+    render :paper
   end
 
   def notice
-    flash[:notice] = "This is a notice message"
-    redirect_to root_url
+    flash.now[:notice] = "This is a notice message"
+    render :index
   end
 
   def alert
-    flash[:alert] = "This is an alert message"
-    redirect_to root_url
+    flash.now[:alert] = "This is an alert message"
+    render :index
   end
 
 end

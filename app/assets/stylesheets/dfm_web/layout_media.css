@@ -26,11 +26,6 @@
     transition: margin 0s;
   }
 
-  #notice, #alert {
-    margin: 0;
-    float: none;
-  }
-
   html {
     background-image: none !important;
     background-color: rgb(255, 250, 242) !important;  /* color copied from main */
@@ -68,6 +63,19 @@
     box-shadow: none;
     padding: 14px;
   }
+
+  #notice, #alert {
+
+  }
+
+  /* HTML-free close button */
+  #notice > div:before, #alert > div:before {
+
+  }
+
+
+
+
 
 
 

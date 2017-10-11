@@ -1,0 +1,47 @@
+#notice, #alert {
+  color: white;
+  background-color: #338932;
+  background: linear-gradient(rgb(51, 137, 50), rgba(51, 137, 50, 0.9));
+  border-radius: 10px;
+  margin: 0 0 20px 0;
+  width: 100%;
+  min-height: 75px;
+  font-size: 1.5em;
+  padding: 25px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+  /* Hover the close button to add visual cue */
+#notice:hover:after, #alert:hover:after {
+  background-color: rgba(0,0,0,.2);
+  transition: background-color 0s;
+}
+
+#alert {
+  background-color: rgba(185, 74, 72, 0.90);
+  background: linear-gradient(rgb(185, 74, 72), rgba(185, 74, 72, 0.9));
+}
+
+/* Give the notice content the same max width as the Nav */
+#notice > div, #alert > div {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* HTML-free close button */
+#notice > div:before, #alert > div:before {
+  float: right;
+  content: "\00d7";
+  cursor: pointer;
+  pointer-events: auto;
+  margin: -25px -25px 0 0;
+  padding: 0 10px 3px 10px;
+  background-color: rgba(255,255,255,.2);
+  transition: background-color .3s;
+  border-width: 0 0 1px 1px;
+  border-color: rgba(255,255,255,.2);
+  border-style: solid;
+  border-bottom-left-radius: 10px;
+}
