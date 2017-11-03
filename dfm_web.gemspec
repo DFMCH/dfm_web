@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.version     = DfmWeb::VERSION
   spec.authors     = ["Jacob Duffy"]
   spec.email       = ["duffy.jp@gmail.com"]
-  spec.homepage    = "http://fammed.wisc.edu"
-  spec.summary     = "CSS/JS Framework for DFM Web Apps"
-  spec.description = "CSS/JS Framework for DFM Web Apps"
+  spec.homepage    = "https://github.com/DFMCH/dfm_web"
+  spec.summary     = "CSS/JS Framework for DFMCH Web Apps"
+  spec.description = "CSS/JS Framework for DFMCH Web Apps"
   spec.license     = "MIT"
 
   spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
