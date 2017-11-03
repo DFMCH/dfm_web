@@ -10,3 +10,4 @@ spec/dummy/.sass-cache
 .DS_Store
 Thumbs.db*
 Desktop.ini
+Gemfile.lock

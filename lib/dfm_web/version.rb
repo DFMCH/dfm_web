@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "1.0.6"
+  VERSION = "1.0.7"
 end
 
 
 # Version History
 
+# 1.0.7   Copied simple versions of _nav and _footer from the dummy app so they won't be missing assets on new apps.
 # 1.0.6   Added "paper" class to simulate printed content.
 # 1.0.5   Form element style improvements.  Added optional Mailer Template.
 # 1.0.4   Found the mystery 20px and removed it, then removed the two 20px workarounds in the nav.
