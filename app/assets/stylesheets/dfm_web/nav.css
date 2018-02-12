@@ -2,10 +2,10 @@ nav {
   position:fixed;
   width: 100%;
   top: 0;
-  padding: 20px 25px;
   height: 75px;
   z-index: 999;
   float: left;
+  line-height: 75px;
 }
 
 #nav{
@@ -16,37 +16,43 @@ nav {
 }
 
 #nav * {
-  vertical-align: top;
+  vertical-align: middle;
   position: relative;
   display: inline-block;
   margin: 0;
 }
 
 /* Prevent Menu items from popping out of place on slightly too small windows */
-#nav .right {
+#nav .right, #nav .left {
   position: absolute;
   top: 0;
   height: 75px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#nav .right {
   right: 25px;
 }
 
 #nav .left {
-  position: absolute;
   left: 25px;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 
 #nav li {
   top: 0;
   padding: 0 1em;
-  line-height: 75px;
   height: 75px;
   font-size: 1.1em;
 }
 #nav li:hover {
   background-color: #00426e;
+}
+
+/* If you don't want your item's background to change on hover use the "no_hover" class */
+#nav li.no_hover:hover {
+  background-color: inherit;
 }
 
 #nav .left > * { margin: 0 1em; }

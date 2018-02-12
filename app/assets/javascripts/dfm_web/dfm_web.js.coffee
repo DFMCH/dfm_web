@@ -1,5 +1,9 @@
 # DFM Web Common Javascript
 
+# DfmWeb Namespace
+# https://robots.thoughtbot.com/module-pattern-in-javascript-and-coffeescript
+window.DfmWeb = {};
+
 # Method to filter Table rows by a search query
 # Your table must have the class live_table
 # Your search field must have the class live_search
@@ -11,7 +15,15 @@ filter_table_rows = (searched) ->
   ).hide()
 
 
-$(document).on 'ready page:load', ->
+# Add this method within your initialization block:
+# Vanilla:
+# $(document).on 'ready page:load', ->
+#   DfmWeb.activate_dfm_web();
+#
+# Turbolinks: $(document).on 'turbolinks:load', ->
+#   DfmWeb.activate_dfm_web();
+#
+DfmWeb.activate_dfm_web = ->
 
   # Activate Tablesorter (add to table)
   $('.tablesorter').tablesorter({widgets: ['zebra']}) unless typeof(tablesorter) == "undefined"
