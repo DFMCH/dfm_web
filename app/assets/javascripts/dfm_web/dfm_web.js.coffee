@@ -20,7 +20,8 @@ filter_table_rows = (searched) ->
 # $(document).on 'ready page:load', ->
 #   DfmWeb.activate_dfm_web();
 #
-# Turbolinks: $(document).on 'turbolinks:load', ->
+# Turbolinks:
+# $(document).on 'turbolinks:load', ->
 #   DfmWeb.activate_dfm_web();
 #
 DfmWeb.activate_dfm_web = ->
