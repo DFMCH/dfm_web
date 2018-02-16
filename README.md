@@ -14,10 +14,27 @@ gem 'dfm_web'
 bundle install
 ```
 
-applicaiton.css
+application.css
 ```
  *= require dfm_web/dfm_web
 ```
+
+application.coffee (Turbolinks)
+```
+#= require dfm_web/dfm_web
+
+$(document).on 'turbolinks:load', ->
+  DfmWeb.activate_dfm_web();
+```
+
+application.coffee (Vanilla)
+```
+#= require dfm_web/dfm_web
+
+$(document).on 'ready page:load', ->
+  DfmWeb.activate_dfm_web();
+```
+
 
 application.html.erb
 ```
