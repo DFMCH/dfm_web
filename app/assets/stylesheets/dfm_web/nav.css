@@ -45,9 +45,6 @@ nav {
   height: 75px;
   font-size: 1.1em;
 }
-#nav li:hover {
-  background-color: #00426e;
-}
 
 /* If you don't want your item's background to change on hover use the "no_hover" class */
 #nav li.no_hover:hover {
