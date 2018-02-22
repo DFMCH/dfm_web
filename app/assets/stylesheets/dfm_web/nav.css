@@ -3,47 +3,86 @@ nav {
   width: 100%;
   top: 0;
   height: 75px;
-  z-index: 999;
   float: left;
-  line-height: 75px;
 }
 
 #nav{
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
-  height: 40px;
 }
 
-#nav * {
+#nav img {
   vertical-align: middle;
-  position: relative;
+  margin-right: 1em;
+}
+
+/* We used h1 for the logo in the past, but that's treated as a section heading by screen readers. */
+/*  Please use <span>TITLE<span> */
+
+#nav h1,
+#nav span {
+  padding: 0;
+  margin-right: 20px;
   display: inline-block;
-  margin: 0;
+  vertical-align: middle;
+  line-height: 73px;
+  font-size: 2em;
 }
 
-/* Prevent Menu items from popping out of place on slightly too small windows */
-#nav .right, #nav .left {
-  position: absolute;
-  top: 0;
-  height: 75px;
-  overflow: hidden;
+/* TODO: Input fields don't want to vertically center */
+/* TODO: Had to eyeball it. */
+nav #nav form input[type="text"] {
+  margin-top: 19px;
 }
 
-#nav .right {
-  right: 25px;
-}
-
-#nav .left {
-  left: 25px;
-}
-
-
+#nav ul,
 #nav li {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+    font-size: 20px;
+}
+
+#nav ul {
+  position: relative;
+  z-index: 597;
+}
+
+#nav ul li {
+  float: left;
+  min-height: 1px;
+  vertical-align: middle;
+}
+
+#nav ul li.hover,
+#nav ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
+}
+
+#nav ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 598;
+  width: 100%;
+}
+
+#nav ul ul li {
+  float: none;
+}
+
+#nav ul ul ul {
   top: 0;
-  padding: 0 1em;
-  height: 75px;
-  font-size: 1.1em;
+  left: 190px;
+  width: 190px;
+}
+
+#nav ul li:hover > ul {
+  visibility: visible;
 }
 
 /* If you don't want your item's background to change on hover use the "no_hover" class */
@@ -51,44 +90,87 @@ nav {
   background-color: inherit;
 }
 
-#nav .left > * { margin: 0 1em; }
-#nav .left > *:first-child { margin: 0 1em 0 0; }
-#nav .left img { margin-right: 1em; }
 
-
-#nav form {
-  height: 40px;
-  overflow: hidden;
-  margin: 0 20px;
-}
-#nav form input[type=text] {
-  margin-top: 4px;
-  padding-left: 15px;
+#nav ul ul {
+  bottom: 0;
+  left: 0;
 }
 
-/* Ignore styles for links within the nav */
-nav a, nav a:visited {
-  color: white;
+#nav ul ul {
+  margin-top: 0;
 }
 
-#nav li > div {
-  position: fixed; /* This is the only way to break out of the overflow: hidden nav */
-  top: 75px;
-  margin-left: -1em;
-  display: none;
-  min-width: 150px;
-  max-width: 200px;
+#nav ul ul li {
+  font-weight: normal;
 }
 
-#nav li > div a {
+#nav a {
   padding: 0 20px;
-  width: 100%;
-  white-space: nowrap;
+  display: block;
+  line-height: 1em;
+  text-decoration: none;
 }
 
-#nav li:hover > div {
-  display: block;
+
+#nav > ul {
+  *display: inline-block;
 }
+
+#nav:after,
+#nav ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#nav ul ul {
+  min-width: 190px;
+}
+
+#nav ul ul a {
+
+  border-top: 0 none;
+  line-height: 150%;
+  padding: 16px 20px;
+}
+#nav ul ul ul {
+  border-top: 0 none;
+}
+#nav ul ul li {
+  position: relative;
+}
+
+
+#nav ul ul li:last-child > a {
+  -moz-border-radius: 0 0 3px 3px;
+  -webkit-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#nav ul ul li:last-child:hover > a {
+  -moz-border-radius: 0 0 0 3px;
+  -webkit-border-radius: 0 0 0 3px;
+  border-radius: 0 0 0 3px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+#nav ul li.last ul {
+  left: auto;
+  right: 0;
+}
+#nav ul li.last ul ul {
+  left: auto;
+  right: 99.5%;
+}
+
+#nav > ul > li > a {
+  line-height: 75px;
+}
+
 
 #nav #hamburger {
   display: none;
