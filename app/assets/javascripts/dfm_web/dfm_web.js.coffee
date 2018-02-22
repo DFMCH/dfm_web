@@ -61,8 +61,10 @@ DfmWeb.activate_dfm_web = ->
 
   ### NAV BAR ###
 
-  # Show the Hamburger if there are menu items
+  # Insert the Hamburger if there are menu items
+
   if $('#nav ul.right li').length
+    console.log($('#nav ul.right li').length);
     $('ul.right').after('<div id="hamburger"></div>')
 
   # Show the Mobile Menu on Hamburger Click
@@ -78,5 +80,5 @@ DfmWeb.activate_dfm_web = ->
 
   # iPads don't have :hover really, so hide the menu if the user clicks anything in <main>
   $('main').click ->
-    $("#nav li div:hover").css('display', 'none')
+    $("nav #nav .right").css('display', 'none')
 

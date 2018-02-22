@@ -43,23 +43,19 @@
 
   /* Menu Items */
   nav #nav .right {
-    position: absolute;
-    background-color: rgb(0, 82, 136);
-    width: 100%;
-    height: 75px;
+    position: relative;
+    background-color: rgba(0, 82, 136, .98);
     top: 0;
     right: 0;
-    padding: 0;
-    z-index: 99;
     display: none;
   }
+  nav #nav ul.right {
+    float: right;
+  }
+
 
   #nav #hamburger {
     display: block;
-  }
-
-  /* Sub Menus */
-  nav #nav .right li > div {
   }
 
 }
