@@ -31,7 +31,7 @@ show-for-xlarge-only
   .show-for-small-only{display:none !important;}
   .show-for-medium-only{display:none !important;}
   .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{}
+  .show-for-xlarge-only{display:inherit !important;}
 }
 
 /* Pure Large (iPad Landscape) */
@@ -41,7 +41,7 @@ show-for-xlarge-only
   .show-for-xsmall-only{display:none !important;}
   .show-for-small-only{display:none !important;}
   .show-for-medium-only{display:none !important;}
-  .show-for-large-only{}
+  .show-for-large-only{display:inherit !important;}
   .show-for-xlarge-only{display:none !important;}
 }
 
@@ -58,7 +58,7 @@ show-for-xlarge-only
 }
 
 /* Pure Small */
-@media screen and (max-width:768px) {
+@media screen and (max-width:640px) {
   .show-for-medium-up{display:none !important;}
   .show-for-large-up{display:none !important;}
   .show-for-xlarge-up{display:none !important;}
@@ -71,13 +71,13 @@ show-for-xlarge-only
 }
 
 /* Pure Extra Small */
-@media screen and (max-width:320px) {
+@media screen and (max-width:400px) {
   .show-for-small-up{display:none !important;}
   .show-for-medium-up{display:none !important;}
   .show-for-large-up{display:none !important;}
   .show-for-xlarge-up{display:none !important;}
 
-  .show-for-xsmall-only{}
+  .show-for-xsmall-only{display:inherit !important;}
   .show-for-small-only{display:none !important;}
   .show-for-medium-only{display:none !important;}
   .show-for-large-only{display:none !important;}

@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.0.1"
+  VERSION = "2.0.2"
 end
 
 
 # Version History
 
+# 2.0.2   Made small and extra small a little smaller.
 # 2.0.1   Switched from em to px for visibility classes.  No more 1px deadzones.  Rightmost nav can be a menu now.
 # 2.0.0   Near total rewrite of Nav.  Smarter and more foolproof.  NOTE: Removes optional div/a menus and leaves only the ul/li style.
 # 1.1.1   Added dfm_web assets to the pipeline so you don't have to.
