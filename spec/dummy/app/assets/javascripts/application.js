@@ -14,3 +14,7 @@
 //= require     dfm_web/dfm_web
 //= require_tree .
 
+// See dfm_web/dfm_web.js.coffee for information
+$(document).on('ready page:load', function() {
+    return DfmWeb.activate_dfm_web();
+});
