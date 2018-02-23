@@ -48,11 +48,11 @@
     top: 0;
     right: 0;
     display: none;
+    clear: both;  /* Make sure to drop the menu down below the nav even if it would otherwise fit. */
   }
   nav #nav ul.right {
     float: right;
   }
-
 
   #nav #hamburger {
     display: block;
