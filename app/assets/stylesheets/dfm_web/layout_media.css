@@ -41,8 +41,16 @@
 /* Pure Small */
 @media screen and (max-width:48em) {
 
-  /* Menu Items */
-  nav #nav .right {
+  /* Nav with 1 or 0 items in ul.right */
+  nav #nav ul.right {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: inline-block;
+  }
+
+  /* Nav with 2 or more menu items has_hamburger added via javascript */
+  nav #nav ul.has_hamburger {
     position: relative;
     background-color: rgba(0, 82, 136, .98);
     top: 0;
