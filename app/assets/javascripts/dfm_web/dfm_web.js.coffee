@@ -73,12 +73,17 @@ DfmWeb.activate_dfm_web = ->
 
   # If you've toggled the Mobile menu it breaks larger sizes.  Reset on resize.
   window.onresize = ->
-    if ($(window).width() / parseFloat($("body").css("font-size"))) > 47.938
+
+
+    console.log($(window).width() / parseFloat($("html").css("font-size")));
+
+    if ($(window).width() / parseFloat($("body").css("font-size"))) > 48.0
       $("nav #nav .right").css('display', 'inline-block')
     else
       $("nav #nav .right").css('display', 'none')
 
   # iPads don't have :hover really, so hide the menu if the user clicks anything in <main>
   $('main').click ->
-    $("nav #nav .right").css('display', 'none')
+    if ($(window).width() / parseFloat($("body").css("font-size"))) < 48.0
+      $("nav #nav .right").css('display', 'none')
 

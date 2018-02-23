@@ -5,7 +5,7 @@
 
 /* Large (iPad) and below,  * remove the extra space around <main> */
 /*                          * disabled the fixed nav */
-@media screen and (max-width:79.938em) {
+@media screen and (max-width:80em) {
   body {
     margin-bottom: 2em;      /* space for footer only */
   }
@@ -39,7 +39,7 @@
 
 
 /* Pure Small */
-@media screen and (max-width:47.938em) {
+@media screen and (max-width:48em) {
 
   /* Menu Items */
   nav #nav .right {
