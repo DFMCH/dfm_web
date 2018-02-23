@@ -15,6 +15,8 @@
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.
 #
+ENV["RAILS_ENV"] ||= 'test'
+
 require 'action_controller/railtie'     # So we can test the Helper.
 require 'rspec/rails'                   # So we can test the Helper.
 require 'dfm_web'
