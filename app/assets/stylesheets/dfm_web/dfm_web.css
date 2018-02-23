@@ -5,6 +5,7 @@
  *= require ./pure/gutter
  *= require ./layout.css
  *= require ./nav.css
+ *= require ./nav_colors.css
  *= require ./style.css
  *= require ./forms.css
  *= require ./tables.css

@@ -61,22 +61,26 @@ DfmWeb.activate_dfm_web = ->
 
   ### NAV BAR ###
 
-  # Show the Hamburger if there are menu items
-  if $('#nav ul.right li').length
+  # Insert the Hamburger if there are menu 2+ items
+  # Add "has_hamburger" class to the ul so CSS can know which way to show it.
+  if $('#nav ul.right li').length > 1
+    console.log("Hamburger! " + $('#nav ul.right li').length );
     $('ul.right').after('<div id="hamburger"></div>')
+    $('ul.right').addClass('has_hamburger')
 
   # Show the Mobile Menu on Hamburger Click
   $('nav #hamburger').click ->
-    $("nav #nav .right").toggle()
+    $("nav #nav ul.has_hamburger").toggle()
 
   # If you've toggled the Mobile menu it breaks larger sizes.  Reset on resize.
   window.onresize = ->
-    if ($(window).width() / parseFloat($("body").css("font-size"))) > 47.938
-      $("nav #nav .right").css('display', 'inline-block')
+    if ($(window).width() / parseFloat($("body").css("font-size"))) > 48.0
+      $("nav #nav ul.has_hamburger").css('display', 'inline-block')
     else
-      $("nav #nav .right").css('display', 'none')
+      $("nav #nav ul.has_hamburger").css('display', 'none')
 
   # iPads don't have :hover really, so hide the menu if the user clicks anything in <main>
   $('main').click ->
-    $("#nav li div:hover").css('display', 'none')
+    if ($(window).width() / parseFloat($("body").css("font-size"))) < 48.0
+      $("nav #nav ul.has_hamburger").css('display', 'none')
 

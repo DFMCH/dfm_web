@@ -5,7 +5,7 @@
 
 /* Large (iPad) and below,  * remove the extra space around <main> */
 /*                          * disabled the fixed nav */
-@media screen and (max-width:79.938em) {
+@media screen and (max-width:80em) {
   body {
     margin-bottom: 2em;      /* space for footer only */
   }
@@ -39,27 +39,31 @@
 
 
 /* Pure Small */
-@media screen and (max-width:47.938em) {
+@media screen and (max-width:48em) {
 
-  /* Menu Items */
-  nav #nav .right {
-    position: absolute;
-    background-color: rgb(0, 82, 136);
-    width: 100%;
-    height: 75px;
+  /* Nav with 1 or 0 items in ul.right */
+  nav #nav ul.right {
+    position: relative;
     top: 0;
     right: 0;
-    padding: 0;
-    z-index: 99;
+    display: inline-block;
+  }
+
+  /* Nav with 2 or more menu items has_hamburger added via javascript */
+  nav #nav ul.has_hamburger {
+    position: relative;
+    background-color: rgba(0, 82, 136, .98);
+    top: 0;
+    right: 0;
     display: none;
+    clear: both;  /* Make sure to drop the menu down below the nav even if it would otherwise fit. */
+  }
+  nav #nav ul.right {
+    float: right;
   }
 
   #nav #hamburger {
     display: block;
-  }
-
-  /* Sub Menus */
-  nav #nav .right li > div {
   }
 
 }

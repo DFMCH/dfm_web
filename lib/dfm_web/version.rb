@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "1.1.1"
+  VERSION = "2.0.0"
 end
 
 
 # Version History
 
+# 2.0.0   Near total rewrite of Nav.  Smarter and more foolproof.  NOTE: Removes optional div/a menus and leaves only the ul/li style.
 # 1.1.1   Added dfm_web assets to the pipeline so you don't have to.
 # 1.1.0   In order to support both Turbolinks and non-Turbolinks sites, DfmWeb must be manually activated now.
 # 1.0.7   Copied simple versions of _nav and _footer from the dummy app so they won't be missing assets on new apps.

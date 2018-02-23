@@ -1,0 +1,14 @@
+/* Top Menus */
+#nav a {
+  color: white;
+}
+
+/* Drop down menus */
+#nav ul ul li {
+  background: rgba(0, 82, 136, 0.98);
+}
+
+/* Hover Color */
+#nav li:hover  {
+  background-color: #00426e;
+}
