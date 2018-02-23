@@ -3,9 +3,9 @@
   transition: margin .3s;
 }
 
-/* Large (iPad) and below,  * remove the extra space around <main> */
+/* Large and below,         * remove the extra space around <main> */
 /*                          * disabled the fixed nav */
-@media screen and (max-width:80em) {
+@media screen and (max-width:1279px) {
   body {
     margin-bottom: 2em;      /* space for footer only */
   }
@@ -38,8 +38,8 @@
 }
 
 
-/* Pure Small */
-@media screen and (max-width:48em) {
+/* Pure Medium and below - show a menu */
+@media screen and (max-width:1023px) {
 
   /* Nav with 1 or 0 items in ul.right */
   nav #nav ul.right {

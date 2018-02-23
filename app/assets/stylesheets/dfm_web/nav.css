@@ -111,7 +111,6 @@ nav #nav form input[type="text"] {
   text-decoration: none;
 }
 
-
 #nav > ul {
   *display: inline-block;
 }
@@ -167,6 +166,11 @@ nav #nav form input[type="text"] {
   line-height: 75px;
 }
 
+nav > #nav > ul.right {
+  position: absolute;
+  right: 0;
+  z-index: 99999;
+}
 
 #nav #hamburger {
   display: none;

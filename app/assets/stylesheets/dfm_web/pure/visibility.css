@@ -34,7 +34,7 @@ show-for-xlarge-only
   .show-for-xlarge-only{display:inherit !important;}
 }
 
-/* Pure Large (iPad Landscape) */
+/* Pure Large */
 @media screen and (max-width:1280px) {
   .show-for-xlarge-up{display:none !important;}
 
