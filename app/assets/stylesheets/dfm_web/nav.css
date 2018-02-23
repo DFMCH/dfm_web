@@ -19,15 +19,15 @@ nav {
 
 /* We used h1 for the logo in the past, but that's treated as a section heading by screen readers. */
 /*  Please use <span>TITLE<span> */
+/*  Firefox renders text vertial-align: middle a little too high.  Goes back to at least 2009 */
 
 #nav h1,
 #nav span {
   padding: 0;
   margin-right: 20px;
-  display: inline-block;
   vertical-align: middle;
   line-height: 73px;
-  font-size: 2em;
+  font-size: 1.9em;
 }
 
 /* TODO: Input fields don't want to vertically center */
@@ -142,27 +142,23 @@ nav #nav form input[type="text"] {
 
 
 #nav ul ul li:last-child > a {
-  -moz-border-radius: 0 0 3px 3px;
-  -webkit-border-radius: 0 0 3px 3px;
-  border-radius: 0 0 3px 3px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
 #nav ul ul li:last-child:hover > a {
-  -moz-border-radius: 0 0 0 3px;
-  -webkit-border-radius: 0 0 0 3px;
-  border-radius: 0 0 0 3px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
 
-#nav ul li.last ul {
+/* Prevent the right-most item's drop down from going off screen */
+#nav ul.right li:last-child ul {
   left: auto;
   right: 0;
 }
-#nav ul li.last ul ul {
+
+#nav ul li:last-child ul ul {
   left: auto;
   right: 99.5%;
 }

@@ -24,56 +24,62 @@ show-for-xlarge-only
 */
 
 
-/* Pure Extra Small */
-@media screen and (max-width:35.5em) {
-  .show-for-small-up{display:none !important;}
-  .show-for-medium-up{display:none !important;}
+
+/* Pure Extra Large */
+@media screen and (min-width:1280px) {
+  .show-for-xsmall-only{display:none !important;}
+  .show-for-small-only{display:none !important;}
+  .show-for-medium-only{display:none !important;}
+  .show-for-large-only{display:none !important;}
+  .show-for-xlarge-only{}
+}
+
+/* Pure Large (iPad Landscape) */
+@media screen and (max-width:1280px) {
+  .show-for-xlarge-up{display:none !important;}
+
+  .show-for-xsmall-only{display:none !important;}
+  .show-for-small-only{display:none !important;}
+  .show-for-medium-only{display:none !important;}
+  .show-for-large-only{}
+  .show-for-xlarge-only{display:none !important;}
+}
+
+/* Pure Medium (iPad Portrait) */
+@media screen and (max-width:1024px) {
   .show-for-large-up{display:none !important;}
   .show-for-xlarge-up{display:none !important;}
 
+  .show-for-xsmall-only{display:none !important;}
   .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:none !important;}
+  .show-for-medium-only{display:inherit !important;}
   .show-for-large-only{display:none !important;}
   .show-for-xlarge-only{display:none !important;}
 }
 
 /* Pure Small */
-@media screen and (min-width:35.5em) and (max-width:48em) {
+@media screen and (max-width:768px) {
   .show-for-medium-up{display:none !important;}
   .show-for-large-up{display:none !important;}
   .show-for-xlarge-up{display:none !important;}
 
   .show-for-xsmall-only{display:none !important;}
+  .show-for-small-only{display:inherit !important;}
   .show-for-medium-only{display:none !important;}
   .show-for-large-only{display:none !important;}
   .show-for-xlarge-only{display:none !important;}
 }
 
-/* Pure Medium (iPad Portrait) */
-@media screen and (min-width:48em) and (max-width:64em) {
+/* Pure Extra Small */
+@media screen and (max-width:320px) {
+  .show-for-small-up{display:none !important;}
+  .show-for-medium-up{display:none !important;}
   .show-for-large-up{display:none !important;}
   .show-for-xlarge-up{display:none !important;}
 
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{display:none !important;}
-}
-
-/* Pure Large (iPad Landscape) */
-@media screen and (min-width:64em) and (max-width:80em) {
-  .show-for-xlarge-up{display:none !important;}
-
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:none !important;}
-  .show-for-xlarge-only{display:none !important;}
-}
-
-/* Pure Extra Large */
-@media screen and (min-width:80em) {
-  .show-for-xsmall-only{display:none !important;}
+  .show-for-xsmall-only{}
   .show-for-small-only{display:none !important;}
   .show-for-medium-only{display:none !important;}
   .show-for-large-only{display:none !important;}
+  .show-for-xlarge-only{display:none !important;}
 }
