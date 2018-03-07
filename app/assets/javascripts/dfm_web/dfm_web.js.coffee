@@ -64,7 +64,7 @@ DfmWeb.activate_dfm_web = ->
   # Insert the Hamburger if there are menu 2+ items
   # Add "has_hamburger" class to the ul so CSS can know which way to show it.
   if $('#nav ul.right li').length > 1
-    console.log("Hamburger! " + $('#nav ul.right li').length );
+    # console.log("Hamburger! " + $('#nav ul.right > li').length );
     $('ul.right').after('<div id="hamburger"></div>')
     $('ul.right').addClass('has_hamburger')
 
@@ -84,3 +84,8 @@ DfmWeb.activate_dfm_web = ->
     if $(window).width() <= 1023
       $("nav #nav ul.has_hamburger").css('display', 'none')
 
+  # Deal with Really long menus
+  $("#nav > ul > li > ul").each ->
+    if $(this).children('li').length > 10
+      # console.log("REALLY LONG MENU DETECTED! " + $(this).children('li').length);
+      $(this).addClass('crowded')
