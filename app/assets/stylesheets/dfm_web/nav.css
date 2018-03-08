@@ -198,6 +198,7 @@ nav > #nav > ul.right {
 #nav ul.crowded{
   max-height: 80vh !important;
   overflow-y: scroll;
-  position: relative;
-  border: 1px solid rgba(255,255,255,.2);
+  position: absolute;
+  display: inline-block;
+  bottom: auto;
 }
