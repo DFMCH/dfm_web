@@ -1,0 +1,30 @@
+@media print and (color) {
+  * {
+    /* Prevent browsers from discarding the majority of color info */
+    -webkit-print-color-adjust: exact;
+    -moz-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Prevent Page Breaks inside the following: */
+  /* Note: Chrome/Safari don't support page-break on table rows. */
+  .panel, tr td, tr th, .actions, .field {
+    page-break-inside: avoid;
+  }
+
+  hr {
+    height: 1px;
+    background: black;
+  }
+
+  /* Stuff to hide */
+  input[type=submit], .button, .no_print {
+    display: none !important;
+  }
+
+  /* Unhide print_only */
+  .print_only {
+    display: inherit;
+  }
+
+}
