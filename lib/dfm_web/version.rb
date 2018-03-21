@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.0.5"
+  VERSION = "2.0.6"
 end
 
 
 # Version History
 
+# 2.0.6   Robust ajax_load method imported.  Will not render errors / huge responses.
 # 2.0.5   Improved the long menu CSS.  No more side-effects!
 # 2.0.4   Really long menus will now show with a compact scrollable menu instead of the default.
 # 2.0.3   No ugly layout flow in the event your right nav ul overlaps with the left.  They just kinda clobber now.  You have too many menus.

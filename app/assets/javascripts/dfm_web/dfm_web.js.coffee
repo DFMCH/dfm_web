@@ -36,9 +36,21 @@ DfmWeb.activate_dfm_web = ->
     if e.keyCode == 27
       $('#notice, #alert').slideUp('slow')
 
-  # Load anything you want with ajax easily.  Add ajax_load class to a div and set path html5 data attrib.
+  # Load anything you want with ajax easily.
+  # Add ajax_load class to a div and set path html5 data attrib.
+  # Response limited to 2KB.
+  #
+  # Example: <div class="ajax_load" data-path="/api/v1/people/time.text"></div>
   $(".ajax_load").each ->
-    $(this).load( $(this).data('path') )
+    data_target = $(this)
+    data_path = data_target.data('path')
+    $.get data_path, (response, status, xhr) ->
+      # If the response is big something probably went wrong.
+      if status == 'success' && response.length < 2048
+        data_target.html(response)
+      else
+        console.log("failed to load " + data_path)
+        return false
 
   # Activate DatePicker (add to text_field)
   $('.datepicker').datepicker dateFormat: "yy-mm-dd"  unless typeof(datepicker) == "undefined"
