@@ -1,60 +1,62 @@
 <%= form_tag nil, method: :get do %>
-  <div class="field">
-    <%= label_tag :text_field %>
-    <%= text_field_tag :text_field, ' ' %> <!-- The space is a Chrome workaround.  Don't do that in practice -->
-  </div>
+  <!-- Random Namespace to avoid id conflicts -->
+  <%= fields_for nil, nil, namespace: "rand_#{rand(100)}" do |f|  %>
+    <div class="field">
+      <%= f.label :text_field %>
+      <%= f.text_field :text_field %> <!-- The space is a Chrome workaround.  Don't do that in practice -->
+    </div>
 
-  <div class="field">
-    <%= label_tag :text_field %>
-    <%= text_field_tag :text_field, "Locked", class: 'locked' %>
-  </div>
+    <div class="field">
+      <%= f.label :locked_field %>
+      <%= f.text_field :locked_field, value: "Locked", class: 'locked' %>
+    </div>
 
+    <div class="field">
+      <%= f.label :password_field %>
+      <%= f.password_field :password_field %>
+    </div>
 
-  <div class="field">
-    <%= label_tag :password_field %>
-    <%= password_field_tag :password_field %>
-  </div>
+    <div class="field">
+      <%= f.label :date_field %>
+      <%= f.date_field :date_field %>
+    </div>
 
-  <div class="field">
-    <%= label_tag :date_field %>
-    <%= date_field_tag :date_field %>
-  </div>
+    <div class="field">
+      <%= f.label :select %>
+      <%= f.select :select, options_for_select(['Item 1', 'Item 2']) %>
+    </div>
 
-  <div class="field">
-    <%= label_tag :select %>
-    <%= select_tag :select, options_for_select(['Item 1', 'Item 2']) %>
-  </div>
+    <div class="field">
+      <%= f.label :text_area %>
+      <%= f.text_area :text_area %>
+    </div>
 
-  <div class="field">
-    <%= label_tag :text_area %>
-    <%= text_area_tag :text_area %>
-  </div>
+    <div class="field">
+      <%= f.label :file_field %>
+      <%= f.file_field :file_field %>
+    </div>
 
-  <div class="field">
-    <%= label_tag :file_field %>
-    <%= file_field_tag :file_field %>
-  </div>
+    <div class="field">
+      <%= f.check_box :check_box_1 %>
+      <%= f.label :check_box_1 %>
 
-  <div class="field">
-    <%= check_box_tag :check_box %>
-    <%= label_tag :check_box %>
+      <%= f.check_box :check_box_2 %>
+      <%= f.label :check_box_2 %>
+    </div>
 
-    <%= check_box_tag :check_box %>
-    <%= label_tag :check_box %>
-  </div>
+    <div class="field">
+      <%= f.radio_button :example, :radio_button_1 %>
+      <%= f.label :radio_button_1 %>
 
-  <div class="field">
-    <%= radio_button_tag :example, :radio_button %>
-    <%= label_tag :radio_button %>
+      <%= f.radio_button :example, :radio_button_2 %>
+      <%= f.label :radio_button_2 %>
+    </div>
 
-    <%= radio_button_tag :example, :radio_button %>
-    <%= label_tag :radio_button %>
-  </div>
+    <div class="actions">
+      <%= f.submit 'Submit' %>
+      <%= f.submit 'Warn', class: 'warn' %>
+      <%= link_to "Alert", "#", class: 'button alert' %>      <!-- link with class "button" looks the same. -->
+    </div>
 
-  <div class="actions">
-    <%= submit_tag 'Submit' %>
-    <%= submit_tag 'Warn', class: 'warn' %>
-    <%= link_to "Alert", "#", class: 'button alert' %>      <!-- link with class "button" looks the same. -->
-  </div>
-
+  <% end %>
 <% end %>

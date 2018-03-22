@@ -98,10 +98,10 @@
     </div>
     <div class="panel">
       <div class="field">
-        <%= text_field_tag :one,  "The space above me should equal.." %>
+        <%= text_field_tag :two,  "The space above me should equal.." %>
       </div>
       <div class="field">
-        <%= text_field_tag :one,  "..the space below me." %>
+        <%= text_field_tag :three,  "..the space below me." %>
       </div>
     </div>
     <div class="panel">
@@ -117,13 +117,13 @@
     <h2>H2: Labels</h2>
     <div class="panel">
       <div class="field">
-        <%= check_box_tag :check %>
+        <%= check_box_tag :example_check %>
         <%= label_tag "Checkboxes should have really wide labels." %>
       </div>
     </div>
     <div class="panel">
       <div class="field">
-        <%= radio_button_tag :radio, "1" %>
+        <%= radio_button_tag :example_radio, "1" %>
         <%= label_tag "Radio buttons should have really wide labels." %>
       </div>
     </div>
@@ -326,6 +326,14 @@
 
 <hr>
 
+<h1>Tables</h1>
+
+<%= render partial: 'tablesorter' %>
+
+
+
+<hr>
+
 <h1>Links / Buttons within Tables</h1>
 
 <table>
@@ -351,11 +359,11 @@
 
     <tr>
       <th>
-        <%= text_field_tag "input", "Text Field" %>
+        <%= text_field_tag "th_input", "Text Field" %>
         <%= link_to "TH Button", "#", class: 'button' %>
       </th>
       <td>
-        <%= text_field_tag "input", "Text Field" %>
+        <%= text_field_tag "td_input", "Text Field" %>
         <%= link_to "TD Button", "#", class: 'button' %>
       </td>
     </tr>
