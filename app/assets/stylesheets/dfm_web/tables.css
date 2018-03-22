@@ -4,6 +4,8 @@ table {
   width: 100%;
   border: 1px solid rgba(0,0,0,.2);
   margin-bottom: 20px;
+  font-weight: lighter;
+  background-color: white; /* Override this in your app to match your style. */
 }
 table thead  { display: table-header-group; }
 
@@ -20,13 +22,20 @@ td, th {
   vertical-align: middle;
 }
 
-th {
-  background-color: rgba(0,0,0,.1);
+thead th {
+  background-color: rgba(0, 0, 0, 0.15);
   color:  rgba(0,0,0,.6);
-  border-width: 0 0 1px 1px;
-  border-style: solid;
-  border-color: rgba(0,0,0,.2);
+  font-weight: normal;
 }
+
+tbody th {
+  background-color: rgba(0, 0, 0, 0.08);
+  font-weight: lighter;
+}
+tfoot th {
+  font-weight: bold;
+}
+
 
 td .button, th .button {
   margin: 0 5px 0 0;
@@ -36,16 +45,30 @@ th:first-child {
   border-left: 1px;
 }
 
-tr.warn td, tr.warn th {
-  color: red;
-  background-color: rgba(255, 0, 0, 0.04) !important; /* important needed to override zebra */
-}
+
 
 td.active::before {
   content: "☑";
   color: green;
   font-size: 1.5em;
 }
+
+tfoot tr td, tfoot tr th {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-top-width: 0;
+}
+
+tfoot tr:first-child td, tfoot tr:first-child th{
+  border-top-color: #aaa;
+  border-top-width: 1px;
+}
+
+
+tfoot tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+
 
 td input[type=text], th input[type=text]
 {
@@ -93,6 +116,42 @@ table.tablesorter thead th.sorter-false {
   cursor: default;
 }
 
-.tablesorter-default tr.even td {
-  background-color: rgba(255,255,255,.5);
+
+/* Zebra & modifier classes */
+
+tr.highlight td {
+  background-color: rgba(255, 255, 0, 0.16);
+  border-color: rgba(128, 128, 0, 0.25);
+}
+.tablesorter-default tr.highlight.even td,
+tbody tr.highlight:nth-child(even) td {
+  /* tablesorter zebra highlight need to be a little darker */
+  background-color: rgba(200, 200, 0, 0.16);
+}
+
+tr.warn td {
+  color: #cd0000;
+  background-color: rgba(255, 230, 230, .3);
+  border-color: rgba(255, 0, 0, 0.25);
+}
+.tablesorter-default tr.warn.even td,
+tbody tr.warn:nth-child(even) td {
+  /* tablesorter zebra warn need to be a little darker */
+  background-color: rgba(255, 150, 150, .12);
+}
+
+
+/* darken even rows */
+.tablesorter-default tr.even td,
+tbody tr:nth-child(even) td {
+  background-color: rgba(128,128,128,.03);
+}
+
+table tfoot tr{
+  transition: box-shadow 0.4s;
+}
+
+table tfoot tr:hover {
+  box-shadow: inset 0 0 2px black;
+  transition: box-shadow 0.05s;
 }

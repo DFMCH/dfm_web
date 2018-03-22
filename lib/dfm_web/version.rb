@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.0.6"
+  VERSION = "2.0.7"
 end
 
 
 # Version History
 
+# 2.0.7   Added table to kitchen sink.  Tablesorter is now a added to the dummy app.
 # 2.0.6   Robust ajax_load method imported.  Will not render errors / huge responses.
 # 2.0.5   Improved the long menu CSS.  No more side-effects!
 # 2.0.4   Really long menus will now show with a compact scrollable menu instead of the default.

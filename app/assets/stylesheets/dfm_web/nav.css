@@ -14,6 +14,10 @@ nav {
 
 #nav img {
   vertical-align: middle;
+}
+
+/* If your first nav item has a logo, give it extra margin */
+#nav ul.left li:first-child img {
   margin-right: 1em;
 }
 
