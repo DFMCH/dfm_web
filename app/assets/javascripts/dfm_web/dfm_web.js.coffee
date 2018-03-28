@@ -30,10 +30,15 @@ DfmWeb.activate_dfm_web = ->
   $('.tablesorter').tablesorter({widgets: ['zebra']})
 
   # Hide the #notice and #alert messages by clicking the [X] or pressing escape key
+  # stop(true) removes any pending animations.
+  # This allows you to have an autohide in your app without breaking the click / ESC action.
+  # Example: $('#notice').delay(5000).slideUp('slow')
   $('#notice, #alert').click ->
+    $(this).stop(true)
     $(this).slideUp('slow')
   $(document).keyup (e) ->
     if e.keyCode == 27
+      $('#notice, #alert').stop(true)
       $('#notice, #alert').slideUp('slow')
 
   # Load anything you want with ajax easily.
