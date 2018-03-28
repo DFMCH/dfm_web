@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.0.8"
+  VERSION = "2.0.9"
 end
 
 
 # Version History
 
+# 2.0.9   Added a animation clear on the notice/alert close javascript. This allows you to add new actions in your app.
 # 2.0.8   Refreshed Print styles.  Hides Nav, Footer and removes empty space around major elements.
 # 2.0.7   Added table to kitchen sink.  Tablesorter is now a added to the dummy app.
 # 2.0.6   Robust ajax_load method imported.  Will not render errors / huge responses.
