@@ -1,6 +1,6 @@
 /* Smooth out any changes made from media queries */
 * {
-  transition: margin .3s;
+  transition: margin-left .3s, margin-right .3s;
 }
 
 /* Large and below,         * remove the extra space around <main> */
