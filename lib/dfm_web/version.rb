@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.1.1"
+  VERSION = "2.1.2"
 end
 
 
 # Version History
 
+# 2.1.2   Add submit buttons w/ modifier classes below "button" links with the same classes to the kitchen sink.
 # 2.1.1   Eliminate a visual jump when resizing from L to XL.
 # 2.1.0   Updated the print version of the "paper" class so it matches the screen version as it should.
 # 2.0.9   Added a animation clear on the notice/alert close javascript. This allows you to add new actions in your app.

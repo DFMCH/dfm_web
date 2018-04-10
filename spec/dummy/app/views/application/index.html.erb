@@ -267,11 +267,25 @@
   </div>
   <div class="pure-u-1 pure-u-lg-1-2">
     <h1>Modifier Classes</h1>
-    <br/>
+
+    <h2>Links with button</h2>
     <%= link_to "button", "#", class: 'button' %>
     <%= link_to "button alert", "#", class: 'button alert' %>
     <%= link_to "button warn", "#", class: 'button warn' %>
+
+    <h2>Form Submit</h2>
+    <%= form_tag nil, method: :get do %>
+      <%= submit_tag "submit" %>
+      <%= submit_tag "submit alert", class: 'alert' %>
+      <%= submit_tag "submit warn", class: 'warn' %>
+    <% end %>
+
+
+
   </div>
+
+
+
 </div>
 
 <hr>
