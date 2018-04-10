@@ -1,11 +1,13 @@
 <nav>
   <div id="nav">
-    <div class="left">
-      <%= link_to main_app.root_url do %>
-        <%= image_tag "dfm_web/uwcrest.png", size: '25x40' %>
-        <h1 class='hover_span'>DFM<span>CH</span> Web</h1>
-      <% end %>
-    </div>
+    <ul class="left">
+      <li class="no_hover">
+        <%= link_to main_app.root_url do %>
+          <%= image_tag "dfm_web/uwcrest.png", size: '25x40' %>
+          <span>DFM Web</span>
+        <% end %>
+      </li>
+    </ul>
 
     <ul class="right">
       <li><%= link_to "Example", '#' %></li>
