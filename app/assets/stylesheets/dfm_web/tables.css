@@ -119,33 +119,46 @@ table.tablesorter thead th.sorter-false {
 
 /* Zebra & modifier classes */
 
-tr.highlight td {
-  background-color: rgba(255, 255, 0, 0.16);
-  border-color: rgba(128, 128, 0, 0.25);
-}
-.tablesorter-default tr.highlight.even td,
-tbody tr.highlight:nth-child(even) td {
-  /* tablesorter zebra highlight need to be a little darker */
-  background-color: rgba(200, 200, 0, 0.16);
-}
-
-tr.warn td {
-  color: #cd0000;
-  background-color: rgba(255, 230, 230, .3);
-  border-color: rgba(255, 0, 0, 0.25);
-}
-.tablesorter-default tr.warn.even td,
-tbody tr.warn:nth-child(even) td {
-  /* tablesorter zebra warn need to be a little darker */
-  background-color: rgba(255, 150, 150, .12);
-}
+/* Backgrounds */
+table tr.okay td      { background-color: rgba(0, 255, 0, 0.11); }
+table tr.highlight td { background-color: rgba(255, 255, 0, 0.16); }
+table tr.warn td      { background-color: rgba(255, 147, 0, 0.11); }
+table tr.alert td     { background-color: rgba(255, 0, 0, 0.09); }
+table tr.gray td      { background-color: rgba(0, 0, 0, 0.1); }
 
 
 /* darken even rows */
-.tablesorter-default tr.even td,
-tbody tr:nth-child(even) td {
+
+/* No modifier */
+.tablesorter-default tr.even td, tbody tr:nth-child(even) td {
   background-color: rgba(128,128,128,.03);
 }
+
+/* okay */
+.tablesorter-default tr.okay.even td, tbody tr.okay:nth-child(even) td {
+  background-color: rgba(0, 200, 0, 0.11);
+}
+
+/* highlight */
+.tablesorter-default tr.highlight.even td, tbody tr.highlight:nth-child(even) td {
+  background-color: rgba(200, 200, 0, 0.16);
+}
+
+/* warn */
+.tablesorter-default tr.warn.even td, tbody tr.warn:nth-child(even) td {
+  background-color: rgba(200, 120, 0, 0.14);
+}
+
+/* alert */
+.tablesorter-default tr.alert.even td, tbody tr.alert:nth-child(even) td {
+  background-color: rgba(200, 0, 0, .12);
+}
+
+/* gray */
+.tablesorter-default tr.gray.even td, tbody tr.gray:nth-child(even) td {
+  background-color: rgba(0, 0, 0, 0.12)
+}
+
 
 table tfoot tr{
   transition: box-shadow 0.4s;
