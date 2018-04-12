@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.1.2"
+  VERSION = "2.1.3"
 end
 
 
 # Version History
 
+# 2.1.3   New Table TR modifier classes: okay, highlight, warn, alert, gray.
 # 2.1.2   Add submit buttons w/ modifier classes below "button" links with the same classes to the kitchen sink.
 # 2.1.1   Eliminate a visual jump when resizing from L to XL.
 # 2.1.0   Updated the print version of the "paper" class so it matches the screen version as it should.
