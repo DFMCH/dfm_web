@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.1.3"
+  VERSION = "2.1.4"
 end
 
 
 # Version History
 
+# 2.1.4   Fixed menu bug when browser was exactly 1037px wide with a scrollbar.
 # 2.1.3   New Table TR modifier classes: okay, highlight, warn, alert, gray.
 # 2.1.2   Add submit buttons w/ modifier classes below "button" links with the same classes to the kitchen sink.
 # 2.1.1   Eliminate a visual jump when resizing from L to XL.
