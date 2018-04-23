@@ -24,7 +24,6 @@ body {
   height: 75px;
   margin: -25px 0 25px 0;  /* This doesn't seem right */
   float: left;
-  position: relative;
   font-size: 1.5em;
   padding: 25px;
   pointer-events: none;
