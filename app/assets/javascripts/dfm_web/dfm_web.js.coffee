@@ -82,7 +82,6 @@ DfmWeb.activate_dfm_web = ->
   # Add "has_hamburger" class to the ul so CSS can know which way to show it.
   if $('#nav ul.right li').length > 1
     # console.log("Hamburger! " + $('#nav ul.right > li').length );
-    $('ul.right').after('<div id="hamburger"></div>')
     $('ul.right').addClass('has_hamburger')
 
   # Show the Mobile Menu on Hamburger Click
