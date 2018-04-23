@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   def index
   end
 
+  def nav
+  end
+
   def news
   end
 

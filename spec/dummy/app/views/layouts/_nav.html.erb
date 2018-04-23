@@ -9,9 +9,13 @@
           <span>DFM Web</span>
         <% end %>
       </li>
+      <%= yield(:nav_left) if content_for?(:nav_left) -%>
     </ul>
 
     <ul class="right">
+      <%= yield(:nav_right) if content_for?(:nav_right) -%>
+
+      <li><%= link_to "Nav", nav_path %></li>
       <li><%= link_to "Pure", pure_path %></li>
 
       <li>

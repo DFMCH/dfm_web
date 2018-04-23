@@ -1,0 +1,18 @@
+<h1>Crowded Navigation Test</h1>
+
+<!-- Demo overly crowded nav behavior -->
+<%= content_for :nav_left do %>
+  <li><%= link_to "Search", "#" %></li>
+  <li><%= link_to "Breadcrumb", "#" %></li>
+<% end %>
+
+<%= content_for :nav_right do %>
+  <li><%= link_to(image_tag("dfm_web/excel.png", size: "40x40"), "#") %></li>
+  <li><%= link_to(image_tag("dfm_web/word.png", size: "40x40"), "#") %></li>
+  <li><%= link_to "Hippopotamus", "#" %></li>
+<% end %>
+
+<div class="panel">
+  <%= render partial: "lorem" %>
+</div>
+
