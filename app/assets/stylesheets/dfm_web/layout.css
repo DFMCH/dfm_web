@@ -17,6 +17,7 @@ html {
 
 body {
   margin: 0 0 100px 0;      /* space for footer & some slack */
+  background-color: transparent;
 }
 
 #notice, #alert {
