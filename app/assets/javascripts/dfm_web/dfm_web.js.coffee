@@ -57,6 +57,23 @@ DfmWeb.activate_dfm_web = ->
         console.log("failed to load " + data_path)
         return false
 
+  # This is specialized for people index page
+  success_counter = 0
+  $(".ajax_people_load").each ->
+    data_target = $(this)
+    data_path = data_target.data('path')
+    people_count = $('#th-name').data("peopleCount")
+    $.get data_path, (response, status, xhr) ->
+    # If the response is big something probably went wrong.
+      if status == 'success' && response.length < 2048
+        data_target.html(response)
+        success_counter++
+        if success_counter == people_count
+          location.reload();
+      else
+        console.log("failed to load " + data_path)
+        return false
+
   # Activate DatePicker (add to text_field)
   $('.datepicker').datepicker dateFormat: "yy-mm-dd"  unless typeof(datepicker) == "undefined"
 
