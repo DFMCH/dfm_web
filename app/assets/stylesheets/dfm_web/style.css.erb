@@ -70,11 +70,11 @@ footer {
 }
 
 /* Special style for warn and alert.  box-shadow instead of border-width so the content doesn't shift */
-.panel.okay       { background-color: rgba(0, 255, 0, 0.11);    border-color: rgba(0, 162, 0, 0.45);    box-shadow: inset 4px 0 0 0 rgb(0, 183, 0);   }
-.panel.highlight  { background-color: rgba(255, 255, 0, 0.16);  border-color: rgba(204, 203, 21, 0.88); box-shadow: inset 4px 0 0 0 rgb(200, 200, 52); }
-.panel.warn       { background-color: rgba(255, 147, 0, 0.11);  border-color: rgba(199, 115, 0, 0.43);  box-shadow: inset 4px 0 0 0 rgb(255, 147, 0); }
-.panel.alert      { background-color: rgba(255, 0, 0, 0.09);    border-color: rgba(168, 1, 0, .25);     box-shadow: inset 4px 0 0 0 rgb(168, 1, 0); }
-.panel.gray       { background-color: rgba(0, 0, 0, 0.1);       border-color: rgba(0, 0, 0, 0.25);      box-shadow: inset 4px 0 0 0 rgb(0, 0, 0);     }
+.panel.okay       { background-color: rgba(0, 255, 0, 0.11);    border-color: rgb(0, 183, 0);     box-shadow: inset 4px 0 0 0 rgb(0, 183, 0);   }
+.panel.highlight  { background-color: rgba(255, 255, 0, 0.16);  border-color: rgb(200, 200, 52);  box-shadow: inset 4px 0 0 0 rgb(200, 200, 52); }
+.panel.warn       { background-color: rgba(255, 147, 0, 0.11);  border-color: rgb(255, 147, 0);   box-shadow: inset 4px 0 0 0 rgb(255, 147, 0); }
+.panel.alert      { background-color: rgba(255, 0, 0, 0.09);    border-color: rgb(168, 1, 0);     box-shadow: inset 4px 0 0 0 rgb(168, 1, 0); }
+.panel.gray       { background-color: rgba(0, 0, 0, 0.1);       border-color: rgb(128, 128, 128); box-shadow: inset 4px 0 0 0 rgb(128, 128, 128); }
 
 
 /* Simulate a print-out */
@@ -166,6 +166,13 @@ p a, p a:visited { line-height: inherit; }
 /* Lists */
 ul, ol { margin: 0; padding: 0 0 0 1em; }
 ul li, ol li { margin: .5em 0 .5em 0; }
+
+li.okay       { color: rgb(0, 180, 0); }
+li.highlight  { color: rgb(177, 171, 40); }
+li.warn       { color: rgb(198, 118, 0); }
+li.alert      { color: rgb(233, 0, 0); }
+li.gray       { color: rgb(122, 122, 122); }
+
 
 /* Reveal subtext on hover */
 /* transitions don't work with width: auto, so a large-enough max-width is used instead */

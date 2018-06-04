@@ -209,6 +209,7 @@
 <div class='panel gray'>DIV: panel gray</div>
 
 
+
 <hr>
 
 
@@ -307,7 +308,6 @@
 <hr>
 
 <div class="pure-g">
-
   <div class="pure-u-1 pure-u-lg-1-3">
     <h1>Unordered List</h1>
     <ul>
@@ -340,15 +340,12 @@
     <h1>List in a panel</h1>
     <div class="panel">
       <ul>
-        <li>Wisconsin</li>
-        <li>Hawaii
-          <ol>
-            <li>Waikiki</li>
-            <li>Punaluu</li>
-          </ol>
-        </li>
-        <li>Florida</li>
-        <li>California</li>
+        <li class="">Normal</li>
+        <li class="okay">Okay</li>
+        <li class="highlight">Highlight</li>
+        <li class="warn">Warn</li>
+        <li class="alert">Alert</li>
+        <li class="gray">Gray</li>
       </ul>
     </div>
   </div>
@@ -369,18 +366,18 @@
 <table>
   <thead>
   <tr>
-    <th><%= link_to "TH Link", "#" %></th>
-    <td><%= link_to "TD Link", "#" %></td>
+    <th colspan="2"><%= link_to "TH Link", "#" %></th>
+    <td colspan="2"><%= link_to "TD Link", "#" %></td>
   </tr>
   </thead>
   <tbody>
     <tr>
-      <th>
+      <th colspan="2">
         <%= link_to "TH Button", "#", class: 'button' %>
         <%= link_to "TH Button", "#", class: 'button warn' %>
         <%= link_to "TH Button", "#", class: 'button alert' %>
       </th>
-      <td>
+      <td colspan="2">
         <%= link_to "TD Button", "#", class: 'button' %>
         <%= link_to "TD Button", "#", class: 'button warn' %>
         <%= link_to "TD Button", "#", class: 'button alert' %>
@@ -390,10 +387,14 @@
     <tr>
       <th>
         <%= text_field_tag "th_input", "Text Field" %>
+      </th>
+      <th>
         <%= link_to "TH Button", "#", class: 'button' %>
       </th>
       <td>
         <%= text_field_tag "td_input", "Text Field" %>
+      </td>
+      <td>
         <%= link_to "TD Button", "#", class: 'button' %>
       </td>
     </tr>
@@ -401,10 +402,14 @@
     <tr>
       <th>
         <%= select_tag "input", options_for_select(["Select Tag"]) %>
+      </th>
+      <th>
         <%= link_to "TH Button", "#", class: 'button' %>
       </th>
       <td>
         <%= select_tag "input", options_for_select(["Select Tag"]) %>
+      </td>
+      <td>
         <%= link_to "TD Button", "#", class: 'button' %>
       </td>
     </tr>
