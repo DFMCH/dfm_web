@@ -70,17 +70,12 @@ footer {
 }
 
 /* Special style for warn and alert.  box-shadow instead of border-width so the content doesn't shift */
-.panel.warn{
-  box-shadow: inset 3px 0 0 0 rgb(199, 122, 0);
-  border-color: rgba(199, 122, 0, .25);
-  background-color: rgba(199, 122, 0, .08);
-}
+.panel.okay       { background-color: rgba(0, 255, 0, 0.11);    border-color: rgba(0, 162, 0, 0.45);    box-shadow: inset 4px 0 0 0 rgb(0, 183, 0);   }
+.panel.highlight  { background-color: rgba(255, 255, 0, 0.16);  border-color: rgba(204, 203, 21, 0.88); box-shadow: inset 4px 0 0 0 rgb(200, 200, 52); }
+.panel.warn       { background-color: rgba(255, 147, 0, 0.11);  border-color: rgba(199, 115, 0, 0.43);  box-shadow: inset 4px 0 0 0 rgb(255, 147, 0); }
+.panel.alert      { background-color: rgba(255, 0, 0, 0.09);    border-color: rgba(168, 1, 0, .25);     box-shadow: inset 4px 0 0 0 rgb(168, 1, 0); }
+.panel.gray       { background-color: rgba(0, 0, 0, 0.1);       border-color: rgba(0, 0, 0, 0.25);      box-shadow: inset 4px 0 0 0 rgb(0, 0, 0);     }
 
-.panel.alert{
-  box-shadow: inset 3px 0 0 0 rgb(168, 1, 14);
-  border-color: rgba(168, 1, 0, .25);
-  background-color: rgba(168, 1, 0, .05);
-}
 
 /* Simulate a print-out */
 .paper {
@@ -120,12 +115,13 @@ p  { font-size: 1em;  line-height: 1.3em; margin: 0; }
 
 
 /* Alert and Warn rules are added to specific elements.  Buttons, Typography, panels all are totally different */
-h1.alert, h2.alert, h3.alert, p.alert, span.alert {
-  color: rgb(168, 1, 14);
-}
-h1.warn, h2.warn, h3.warn, p.warn, span.warn {
-  color: rgb(199, 122, 0);
-}
+
+
+h1.okay, h2.okay, h3.okay, p.okay, span.okay { color: rgb(0, 168, 0); }
+h1.highlight, h2.highlight, h3.highlight, p.highlight, span.highlight { color: rgb(191, 188, 0); }
+h1.warn,  h2.warn,  h3.warn,  p.warn,  span.warn {color: rgb(199, 122, 0); }
+h1.alert, h2.alert, h3.alert, p.alert, span.alert { color: rgb(168, 1, 14); }
+h1.gray, h2.gray, h3.gray, p.gray, span.gray { color: rgb(166, 166, 166); }
 
 
 /* Header right before .button  */

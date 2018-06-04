@@ -161,48 +161,56 @@
 
 <hr>
 
-<h1>Alert & Warn classes</h1>
+<h1>Modifier classes</h1>
 
 <p>Use a <span class='alert'>span</span> if you don't want to change an entire element.</p>
 
 <div class="pure-g">
   <div class="pure-u-1 pure-u-lg-1-4">
     <h1>H1: (no classes)</h1>
+    <h1 class='okay'>H1: okay</h1>
+    <h1 class='highlight'>H1: highlight</h1>
     <h1 class='warn'>H1: warn</h1>
     <h1 class='alert'>H1: alert</h1>
+    <h1 class='gray'>H1: gray</h1>
   </div>
   <div class="pure-u-1 pure-u-lg-1-4">
     <h2>H2: (no classes)</h2>
+    <h2 class='okay'>H2: okay</h2>
+    <h2 class='highlight'>H2: highlight</h2>
     <h2 class='warn'>H2: warn</h2>
     <h2 class='alert'>H2: alert</h2>
+    <h2 class='gray'>H2: gray</h2>
   </div>
   <div class="pure-u-1 pure-u-lg-1-4">
     <h3>H3: (no classes)</h3>
+    <h3 class='okay'>H3: okay</h3>
+    <h3 class='highlight'>H3: highlight</h3>
     <h3 class='warn'>H3: warn</h3>
     <h3 class='alert'>H3: alert</h3>
+    <h3 class='gray'>H3: gray</h3>
   </div>
   <div class="pure-u-1 pure-u-lg-1-4">
     <p>P: (no classes)</p>
+    <p class='okay'>P: okay</p>
+    <p class='highlight'>P: highlight</p>
     <p class='warn'>P: warn</p>
     <p class='alert'>P: alert</p>
+    <p class='gray'>P: gray</p>
   </div>
 </div>
 
 
 <div class='panel'>DIV: panel</div>
+<div class='panel okay'>DIV: panel okay</div>
+<div class='panel highlight'>DIV: panel highlight</div>
 <div class='panel warn'>DIV: panel warn</div>
 <div class='panel alert'>DIV: panel alert</div>
-
+<div class='panel gray'>DIV: panel gray</div>
 
 
 <hr>
 
-<h1>H1: Errors</h1>
-<p>...not yet implemented</p>
-<%= form_tag do %>
-  <%= submit_tag 'Break Something', class: 'alert' %>     <!-- TODO: Create nice Error templates -->
-<% end %>
-<hr>
 
 <h1 class="hover_span">H1: H<span>over&nbsp;</span>over<span>&nbsp;me to see the</span> Span<span>&nbsp;content</span></h1>
 <h1 class="hover_span">LD<span>AP&nbsp;</span>E<span>n</span>R<span>ichment&nbsp;</span>P<span>rogram</span></h1>
@@ -270,14 +278,22 @@
 
     <h2>Links with button</h2>
     <%= link_to "button", "#", class: 'button' %>
-    <%= link_to "button alert", "#", class: 'button alert' %>
+    <%= link_to "button okay", "#", class: 'button okay' %>
+    <%= link_to "button highlight", "#", class: 'button highlight' %>
     <%= link_to "button warn", "#", class: 'button warn' %>
+    <%= link_to "button alert", "#", class: 'button alert' %>
+    <%= link_to "button gray", "#", class: 'button gray' %>
+    <%= link_to "button disabled", "#", class: 'button disabled' %>
 
     <h2>Form Submit</h2>
     <%= form_tag nil, method: :get do %>
       <%= submit_tag "submit" %>
-      <%= submit_tag "submit alert", class: 'alert' %>
+      <%= submit_tag "submit okay", class: 'okay' %>
+      <%= submit_tag "submit highlight", class: 'highlight' %>
       <%= submit_tag "submit warn", class: 'warn' %>
+      <%= submit_tag "submit alert", class: 'alert' %>
+      <%= submit_tag "submit gray", class: 'gray' %>
+      <%= submit_tag "submit disabled", disabled: 'disabled' %>
     <% end %>
 
 

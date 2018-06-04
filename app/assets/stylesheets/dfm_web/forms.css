@@ -90,7 +90,6 @@ input[type=submit], .button
   padding: 10px 20px;
   margin: 3px 0 10px 0;   /* Unfortunately we need 3px for the button:active outline. */
                           /* Anything that lines up with button will need 3px as well. */
-  background: linear-gradient(rgba(0, 82, 136, 1), rgba(0, 82, 136, 0.78));
   border: none;
   color: white !important;
   text-decoration: none;
@@ -106,13 +105,21 @@ input[type=submit]:focus, .button:focus {
   outline: 3px solid rgba(135, 206, 250, 0.66);
 }
 
-input[type=submit].alert, .button.alert {
-  background: linear-gradient(rgb(168, 1, 14), rgba(199, 3, 0, 0.78));
+input[type=submit],           .button           { background: linear-gradient(rgb(0, 129, 198), rgb(0, 122, 201));    text-shadow: 1px 1px 0 #434446; }
+input[type=submit].okay,      .button.okay      { background: linear-gradient(rgb(96, 180, 111), rgb(103, 190, 118)); text-shadow: 1px 1px 0 #4c8e58; }
+input[type=submit].highlight, .button.highlight { background: linear-gradient(rgb(203, 199, 0), rgb(209, 205, 0));    text-shadow: 1px 1px 0 #959000; }
+input[type=submit].warn,      .button.warn      { background: linear-gradient(rgb(220, 129, 0), rgb(211, 132, 0));    text-shadow: 1px 1px 0 #9f5d00; }
+input[type=submit].alert,     .button.alert     { background: linear-gradient(rgb(217, 54, 54), rgb(240, 60, 60));    text-shadow: 1px 1px 0 #9d2727; }
+input[type=submit].gray,      .button.gray      { background: linear-gradient(rgb(177, 177, 177), rgb(189, 189, 189)); }
+input[type=submit]:disabled,  .button.disabled,
+input[type=submit]:hover:disabled, .button:hover.disabled  {
+  background: linear-gradient(rgb(204, 204, 204), rgb(204, 204, 204));
+  box-shadow: none;
+  text-shadow: 1px 1px 0 #8d8f94;
+  pointer-events: none;
 }
 
-input[type=submit].warn, .button.warn {
-  background: linear-gradient(rgb(168, 84, 0), rgba(199, 122, 0, 0.78));
-}
+
 
 .field_with_errors label {
   color: red;
