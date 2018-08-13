@@ -10,6 +10,11 @@ Update:
   The basic visibility classes should never break from user styles.
   !important is a bad practice in general, but this was the only way to ensure expected behavior.
 
+| Extra Small |    Small    |    Medium    |     Large     | Extra Large |
+| <------ 399 | 400 --- 639 | 640 --- 1023 | 1024 --- 1279 | 1280 -----> |
+
+show-for-xsmall-only
+
 show-for-small-up
 show-for-small-only
 
@@ -35,7 +40,7 @@ show-for-xlarge-only
 }
 
 /* Pure Large */
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1279px) {
   .show-for-xlarge-up{display:none !important;}
 
   .show-for-xsmall-only{display:none !important;}
@@ -46,7 +51,7 @@ show-for-xlarge-only
 }
 
 /* Pure Medium (iPad Portrait) */
-@media screen and (max-width:1024px) {
+@media screen and (max-width:1023px) {
   .show-for-large-up{display:none !important;}
   .show-for-xlarge-up{display:none !important;}
 
@@ -58,7 +63,7 @@ show-for-xlarge-only
 }
 
 /* Pure Small */
-@media screen and (max-width:640px) {
+@media screen and (max-width:639px) {
   .show-for-medium-up{display:none !important;}
   .show-for-large-up{display:none !important;}
   .show-for-xlarge-up{display:none !important;}
@@ -71,7 +76,7 @@ show-for-xlarge-only
 }
 
 /* Pure Extra Small */
-@media screen and (max-width:400px) {
+@media screen and (max-width:399px) {
   .show-for-small-up{display:none !important;}
   .show-for-medium-up{display:none !important;}
   .show-for-large-up{display:none !important;}
