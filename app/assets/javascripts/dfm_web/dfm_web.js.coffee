@@ -10,8 +10,8 @@ window.DfmWeb = {};
 # See below for the binding.
 filter_table_rows = (searched) ->
   $('.live_table > tbody > tr').show().filter(->
-    text = $(this).text()
-    ! ~text.indexOf(searched)
+    text = $(this).text().toLowerCase()
+    ! ~text.indexOf(searched.toLowerCase())
   ).hide()
 
 
@@ -62,8 +62,16 @@ DfmWeb.activate_dfm_web = ->
 
   # Live search a table
   filter_table_rows($('#live_search').val())  # Initial Page Load
+
+  live_search_timer = -1
   $('#live_search').keyup ->                  # Refresh with user input.
-    filter_table_rows($(this).val())
+    query = $(this).val()
+    window.clearTimeout live_search_timer if live_search_timer != -1
+    live_search_timer = window.setTimeout((->
+      filter_table_rows(query)
+      live_search_timer = -1
+    ), 300)
+
 
   # Submit Form on element change
   $(".auto_submit").change ->
