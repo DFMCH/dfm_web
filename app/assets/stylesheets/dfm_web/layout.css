@@ -55,13 +55,19 @@ main {
   overflow: hidden;
 }
 
-
+/* By default, the footer will be at the bottom of the window, following content.
 footer {
   position: absolute;
   left: 0;
   bottom: 0;
   padding: 0;
   width: 100%;
+}
+
+/* To make the entire footer fixed (always visible), give it the 'fixed' class. */
+footer.fixed
+{
+  position: fixed;
 }
 
 /* Footer elements you want to float in position instead of being only at the bottom */

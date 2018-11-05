@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.1.8"
+  VERSION = "2.1.9"
 end
 
 
 # Version History
 
+# 2.1.9   Built in support for always visible footer.
 # 2.1.8   Table search feature now case sensitive and rate limited.
 # 2.1.7   Shifted the visibility media queries by 1 px (except xlarge). Most important, large starts at 1024px instead of 1025px.
 # 2.1.6   Added okay/highlight/warn/alert/gray class rules to panel, lists, headers, buttons, p where missing.
