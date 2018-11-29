@@ -25,13 +25,25 @@
     font-size: 12pt;
   }
 
-  html        { font-size: 75%;}
+  html        { font-size: 75%; margin: 2px; }
   a           { text-decoration: none;}
   table th,
   table td    { padding: 3px; }
 
   /* Stuff to hide */
+  /* NOTE: "display: none" breaks unrelated table printing in Chrome */
   nav, footer, .button, .no_print, input[type=submit] {
-    display: none !important;
+    position: absolute;
+    visibility: hidden;
+  }
+  /* Hide Tablesorter sorting indicators */
+  table.tablesorter thead th {
+    background-image: none;
+    padding-left: 3px;
+  }
+
+  /* contents of "table_hover" cells should appear in printouts. */
+  table tr td.table_hover{
+    color: black !important;
   }
 }

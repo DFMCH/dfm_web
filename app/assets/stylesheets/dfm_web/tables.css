@@ -168,3 +168,13 @@ table tfoot tr:hover {
   box-shadow: inset 0 0 2px black;
   transition: box-shadow 0.05s;
 }
+
+/* Hide less important or sensitive information unless the user hovers the table */
+table tr td.table_hover{
+  color: rgba(0,0,0,0);
+  transition: color 0.2s;
+}
+table:hover tr td.table_hover{
+  color: inherit;
+  transition: color 0.1s;
+}

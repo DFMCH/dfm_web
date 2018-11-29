@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.2.0"
+  VERSION = "2.2.1"
 end
 
 
 # Version History
 
+# 2.2.1   Fix Chrome table printing bug.  Add "table_hover" class for cells you only want to display on hover.
 # 2.2.0   Update CSS comments dealing with footer options.
 # 2.1.9   Built in support for always visible footer.
 # 2.1.8   Table search feature now case sensitive and rate limited.
