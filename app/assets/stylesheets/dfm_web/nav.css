@@ -155,8 +155,8 @@ nav #nav form input[type="text"] {
   background-clip: padding-box;
 }
 
-/* Prevent the right-most item's drop down from going off screen */
-#nav ul.right li:last-child ul {
+/* Prevent the right side drop down from going off screen */
+#nav ul.right li ul {
   left: auto;
   right: 0;
 }
