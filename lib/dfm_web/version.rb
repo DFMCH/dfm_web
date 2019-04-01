@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.2.2"
+  VERSION = "2.2.3"
 end
 
 
 # Version History
 
+# 2.2.3   Fixed small discrepancy in size definitions between Pure Grids and Visibility.
 # 2.2.2   Force right-side NAV dropdown menus to use space to the left.  Prevents menus from causing document level horizontal scroll bars.
 # 2.2.1   Fix Chrome table printing bug.  Add "table_hover" class for cells you only want to display on hover.
 # 2.2.0   Update CSS comments dealing with footer options.

@@ -4,7 +4,17 @@ Copyright 2014 Yahoo! Inc. All rights reserved.
 Licensed under the BSD License.
 https://github.com/yahoo/pure/blob/master/LICENSE.md
 */
-@media screen and (min-width: 35.5em) {
+
+/*
+Local Modification:
+
+| Extra Small |    Small    |    Medium    |     Large     | Extra Large |
+| <------ 359 | 360 --- 639 | 640 --- 1023 | 1024 --- 1279 | 1280 -----> |
+
+*/
+
+/* SMALL */
+@media screen and (min-width: 360px) {
     .pure-u-sm-1,
     .pure-u-sm-1-1,
     .pure-u-sm-1-2,
@@ -218,7 +228,8 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
     }
 }
 
-@media screen and (min-width: 48em) {
+/* MEDIUM */
+@media screen and (min-width: 640px) {
     .pure-u-md-1,
     .pure-u-md-1-1,
     .pure-u-md-1-2,
@@ -432,7 +443,8 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
     }
 }
 
-@media screen and (min-width: 64em) {
+/* LARGE */
+@media screen and (min-width: 1024px) {
     .pure-u-lg-1,
     .pure-u-lg-1-1,
     .pure-u-lg-1-2,
@@ -646,7 +658,8 @@ https://github.com/yahoo/pure/blob/master/LICENSE.md
     }
 }
 
-@media screen and (min-width: 80em) {
+/* EXTRA LARGE */
+@media screen and (min-width: 1280px) {
     .pure-u-xl-1,
     .pure-u-xl-1-1,
     .pure-u-xl-1-2,

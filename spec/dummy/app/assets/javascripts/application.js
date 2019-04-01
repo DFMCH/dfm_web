@@ -18,4 +18,6 @@
 // See dfm_web/dfm_web.js.coffee for information
 $(document).on('ready page:load', function() {
     DfmWeb.activate_dfm_web();
+    $("#window_width").html(window.innerWidth);
+    window.addEventListener('resize', () => {$("#window_width").html(window.innerWidth);} );
 });
