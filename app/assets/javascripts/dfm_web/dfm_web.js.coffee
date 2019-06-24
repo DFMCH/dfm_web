@@ -27,7 +27,8 @@ filter_table_rows = (searched) ->
 DfmWeb.activate_dfm_web = ->
 
   # Activate Tablesorter (add to table)
-  $('.tablesorter').tablesorter({widgets: ['zebra']})
+  if typeof tablesorter != 'undefined'
+    $('.tablesorter').tablesorter({widgets: ['zebra']})
 
   # Hide the #notice and #alert messages by clicking the [X] or pressing escape key
   # stop(true) removes any pending animations.
