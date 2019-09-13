@@ -20,4 +20,5 @@ $(document).on('ready page:load', function() {
     DfmWeb.activate_dfm_web();
     $("#window_width").html(window.innerWidth);
     window.addEventListener('resize', () => {$("#window_width").html(window.innerWidth);} );
+    $('.tablesorter').tablesorter({widgets: ['zebra']})
 });

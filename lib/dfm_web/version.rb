@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "2.2.4"
+  VERSION = "3.0.0"
 end
 
 
 # Version History
 
+# 3.0.0   Removed all Javascript that didn't specifically power the DfmWeb UI.  May require some copy-paste form v2 to your app to upgrade.
 # 2.2.4   Check that tablesorter is defined before setting its defaults.
 # 2.2.3   Fixed small discrepancy in size definitions between Pure Grids and Visibility.
 # 2.2.2   Force right-side NAV dropdown menus to use space to the left.  Prevents menus from causing document level horizontal scroll bars.

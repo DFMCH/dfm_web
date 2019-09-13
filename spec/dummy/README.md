@@ -1,7 +1,9 @@
 # DFM Web
 
-This dummy folder is where a kitchen sink of html structures we support should live.
+This dummy folder is where a kitchen sink of html structures live.
  
-If there's CSS for it, JS etc it should have an example here with any explanation of how things should be done.
+Start the dev server and see examples of everything.
 
-See that it is barren.  It should not be.  It should be awesome.
+Note: I decided to keep the tablesorter CSS even though it's not required
+in the gem anymore.  It's pretty universal though, so I made it a development
+dependency and kept the examples.

@@ -4,17 +4,6 @@
 # https://robots.thoughtbot.com/module-pattern-in-javascript-and-coffeescript
 window.DfmWeb = {};
 
-# Method to filter Table rows by a search query
-# Your table must have the class live_table
-# Your search field must have the class live_search
-# See below for the binding.
-filter_table_rows = (searched) ->
-  $('.live_table > tbody > tr').show().filter(->
-    text = $(this).text().toLowerCase()
-    ! ~text.indexOf(searched.toLowerCase())
-  ).hide()
-
-
 # Add this method within your initialization block:
 # Vanilla:
 # $(document).on 'ready page:load', ->
@@ -25,10 +14,6 @@ filter_table_rows = (searched) ->
 #   DfmWeb.activate_dfm_web();
 #
 DfmWeb.activate_dfm_web = ->
-
-  # Activate Tablesorter (add to table)
-  if typeof tablesorter != 'undefined'
-    $('.tablesorter').tablesorter({widgets: ['zebra']})
 
   # Hide the #notice and #alert messages by clicking the [X] or pressing escape key
   # stop(true) removes any pending animations.
@@ -42,51 +27,8 @@ DfmWeb.activate_dfm_web = ->
       $('#notice, #alert').stop(true)
       $('#notice, #alert').slideUp('slow')
 
-  # Load anything you want with ajax easily.
-  # Add ajax_load class to a div and set path html5 data attrib.
-  # Response limited to 2KB.
-  #
-  # Example: <div class="ajax_load" data-path="/api/v1/people/time.text"></div>
-  $(".ajax_load").each ->
-    data_target = $(this)
-    data_path = data_target.data('path')
-    $.get data_path, (response, status, xhr) ->
-      # If the response is big something probably went wrong.
-      if status == 'success' && response.length < 2048
-        data_target.html(response)
-      else
-        console.log("failed to load " + data_path)
-        return false
-
-  # Activate DatePicker (add to text_field)
-  $('.datepicker').datepicker dateFormat: "yy-mm-dd"  unless typeof(datepicker) == "undefined"
-
-  # Live search a table
-  filter_table_rows($('#live_search').val())  # Initial Page Load
-
-  live_search_timer = -1
-  $('#live_search').keyup ->                  # Refresh with user input.
-    query = $(this).val()
-    window.clearTimeout live_search_timer if live_search_timer != -1
-    live_search_timer = window.setTimeout((->
-      filter_table_rows(query)
-      live_search_timer = -1
-    ), 300)
-
-
-  # Submit Form on element change
-  $(".auto_submit").change ->
-    if this.form.hasAttribute("data-remote")
-      $(this).submit()  # Remote form must call submit on a JQuery object
-    else
-      this.form.submit()  # Regular HTML submit
-
-  # Override an HTML autofocus attribute (nav search bar etc) by adding class: autofocus
-  # Javascript is a bad language, so we have to set a zero second delay for this to work.
-  setTimeout (-> $('.autofocus').focus()), 0
 
   ### NAV BAR ###
-
   # Insert the Hamburger if there are menu 2+ items
   # Add "has_hamburger" class to the ul so CSS can know which way to show it.
   if $('#nav ul.right li').length > 1
@@ -113,5 +55,4 @@ DfmWeb.activate_dfm_web = ->
   # Deal with Really long menus
   $("#nav > ul > li > ul").each ->
     if $(this).children('li').length > 10
-      # console.log("REALLY LONG MENU DETECTED! " + $(this).children('li').length);
       $(this).addClass('crowded')
