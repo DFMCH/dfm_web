@@ -1,9 +1,29 @@
+/*
+UW RED	$uw-red	#c5050c	UW–Madison’s primary color. Used for design elements, navigation bars, nonlinked headers, and backgrounds. Not used for links.
+UW RED DARK	$uw-red-dark	#9b0000	Accent color. Used in alternating boxes component.
+UW PAGE BACKGROUND	$uw-page-bg	#f7f7f7	Background color.
+UW GRAY-BLUE	$uw-gray-blue	#dadfe1	Background and accent color.
+UW GRAY DARKER	$uw-gray-darker	#646569	Design element background color and accent color.
+UW GRAY DARKEST	$uw-gray-darkest	#282728	Design element background color, accent color, and footer background color. Often used in place of black.
+UW BODY FONT	$uw-body-font	#494949	Used for standard text on a white background.
+UW ANCHOR COLOR	$uw-anchor-color	#0479a8	Used for links in standard text on a white background.
+UW GRAY FOOTER TEXT	$uw-gray-footer-text	#adadad	Used for footer text.
+UW GRAY FOOTER TEXT HOVER	$uw-gray-footer-text-hover	#f9f9f9	Used for links in footer text.
+*/
+
+/* The Verlag license prevents it's inclusion                                                                                                 here.
+   Download the .css version and add to your host-app.
+   Normal availability fallback will skip it if you don't. */
+html, .pure-g, .pure-g [class *= "pure-u"] {
+  font-family: "Verlag", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /* html tag should really only have background styles */
 html {
-  background-color: #7490b6;  /* Average color of defective_monitor.jpg */
-  background-image: url(<%= asset_path 'dfm_web/molecule.png' %>), url(<%= asset_path 'dfm_web/defective_monitor.png' %>);
-  background-repeat: repeat, no-repeat;
-  background-size: auto, cover;
+  color: #494949;
+  background-color: #f7f7f7;
+  background-image: url(<%= asset_path 'dfm_web/terrace-chair.png' %>), url(<%= asset_path 'dfm_web/defective_monitor.png' %>);
+  background-size: cover;
   background-attachment: fixed;
 }
 
@@ -36,17 +56,21 @@ main #main p#notice { display: none; }
 
 
 #main {
-  background-color: rgb(255, 250, 242);
-  border-width: 6px;
-  border-color: rgba(59, 96, 140, 0.59);
-  border-style: solid;
+  background-color: #f7f7f7;
+  border: 1px solid white;
   box-shadow: -10px 10px 60px rgba(0,0,0,.5);
 }
 
 footer {
-  color: white;
-  background-color: rgba(0, 82, 136, 0.89);
+  color: #f9f9f9;
+  background-color: #494949;
   box-shadow: 0 0 60px rgba(255,255,255,.5);
+}
+
+footer #footer {
+  padding: 0;
+  line-height: 32px;
+  vertical-align: middle;
 }
 
 /* Generic panel to isolate content visually */
@@ -140,6 +164,10 @@ h1 + .button {
 p              { margin: 0 0 1em 0; }
 
 
+.inline {
+  display: inline;
+}
+
 img {
   margin: 0;
   vertical-align: top; /* vertical align fixes the mystery padding below img tags. */
@@ -160,7 +188,7 @@ hr {
 
 /* #Links
 ================================================== */
-a, a:visited { color: #505aff; text-decoration: none; outline: 0; transition:color .33s; }
+a, a:visited { color: #0479a8; text-decoration: none; outline: 0; transition:color .33s; }
 p a, p a:visited { line-height: inherit; }
 
 /* Lists */

@@ -2,8 +2,9 @@ nav {
   position:fixed;
   width: 100%;
   top: 0;
-  height: 75px;
+  height: 44px;
   float: left;
+  z-index: 400;
 }
 
 #nav{
@@ -28,16 +29,26 @@ nav {
 #nav h1,
 #nav span {
   padding: 0;
-  margin-right: 20px;
+  margin-right: 10px;
   vertical-align: middle;
-  line-height: 73px;
-  font-size: 1.9em;
+  line-height: unset;
+  font-size: 26px;
 }
+
+/* Superscript "MED" */
+#nav span sup {
+  font-size: 15px;
+  margin-left: 4px;
+  border: 0 solid white;
+  border-width: 0 0 1.5px 0;
+}
+
 
 /* TODO: Input fields don't want to vertically center */
 /* TODO: Had to eyeball it. */
 nav #nav form input[type="text"] {
-  margin-top: 19px;
+  margin: 6px auto;
+  height: 32px;
 }
 
 #nav ul,
@@ -45,7 +56,7 @@ nav #nav form input[type="text"] {
   padding: 0;
   list-style: none;
   margin: 0;
-    font-size: 20px;
+  font-size: 16px;
 }
 
 #nav ul {
@@ -57,6 +68,8 @@ nav #nav form input[type="text"] {
   float: left;
   min-height: 1px;
   vertical-align: middle;
+  line-height: 42px; /* TODO: Kludge.  It's getting some height from nothing in CSS... Humm.. */
+
 }
 
 #nav ul li.hover,
@@ -167,7 +180,7 @@ nav #nav form input[type="text"] {
 }
 
 #nav > ul > li > a {
-  line-height: 75px;
+  line-height: unset;
 }
 
 nav > #nav > ul.right {
@@ -178,11 +191,11 @@ nav > #nav > ul.right {
 #nav #hamburger {
   display: none;
   position: absolute;
-  margin: 20px;
+  margin: 9px;
   top: 0;
   right: 0;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 26px;
   z-index: 999999;
   background:linear-gradient(to bottom, #fff 0%, #fff 15%,
                                         transparent 15%, transparent 42.5%,
