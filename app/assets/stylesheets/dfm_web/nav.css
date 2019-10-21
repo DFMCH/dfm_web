@@ -35,15 +35,6 @@ nav {
   font-size: 26px;
 }
 
-/* Superscript "MED" */
-#nav span sup {
-  font-size: 15px;
-  margin-left: 4px;
-  border: 0 solid white;
-  border-width: 0 0 1.5px 0;
-}
-
-
 /* TODO: Input fields don't want to vertically center */
 /* TODO: Had to eyeball it. */
 nav #nav form input[type="text"] {

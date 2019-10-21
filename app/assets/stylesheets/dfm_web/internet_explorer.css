@@ -1,0 +1,22 @@
+/* IE10+ CSS styles go here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+
+  /* Left Menus */
+  #nav ul.left>li>a {
+    padding-top: 7px;
+    height: 44px;
+  }
+
+  /* Right Menus: eyeball vertical align.  */
+  #nav ul.right>li>a {
+    padding-top: 14px;
+    height: 44px;
+  }
+
+
+
+
+
+
+}

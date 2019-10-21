@@ -19,6 +19,11 @@ nav {
 #nav li:hover  {
   background-color: #9b0000;
 }
+#nav ul li ul li:hover  {
+  background-color: #b40000;
+}
+
+
 nav #nav ul.has_hamburger {
   background: #c5050c;
 }
