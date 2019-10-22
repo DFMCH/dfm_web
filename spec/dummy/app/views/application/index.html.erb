@@ -287,7 +287,7 @@
     <%= link_to "button disabled", "#", class: 'button disabled' %>
 
     <h2>Form Submit</h2>
-    <%= form_tag nil, method: :get do %>
+    <%= form_tag form_submit_path do %>
       <%= submit_tag "submit" %>
       <%= submit_tag "submit okay", class: 'okay' %>
       <%= submit_tag "submit highlight", class: 'highlight' %>
@@ -416,3 +416,7 @@
 
   </tbody>
 </table>
+<p>
+  Rails: <%= Rails.version %><br/>
+  DfmWeb: <%= DfmWeb::VERSION %>
+</p>

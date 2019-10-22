@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
   def index
   end
 
+  def form_submit
+    sleep 2
+    redirect_to root_url
+  end
+
   def news
   end
 
