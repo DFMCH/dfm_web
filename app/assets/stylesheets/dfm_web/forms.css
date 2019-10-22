@@ -126,9 +126,9 @@ input[type=submit]:hover:disabled, .button:hover.disabled  {
 }
 
 .nested-fields, .field, .actions {
-  padding-left: 5px; /* Cheat a little space so */
+  padding: 5px; /* Cheat a little space so */
   margin-left: -5px; /* button & submit outlines don't get cropped off */
-  margin-bottom: 1em;
+  margin-bottom: 5px;
   display: block;
   overflow-y: auto;  /* This makes floated elements such as checkboxes still consume vertical space */
 }
