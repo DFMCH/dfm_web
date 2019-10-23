@@ -32,59 +32,55 @@ show-for-xlarge-only
 
 /* Pure Extra Large */
 @media screen and (min-width:1280px) {
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:none !important;}
-  .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{display:inherit !important;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-only {visibility:visible; position: inherit;}
 }
 
 /* Pure Large */
 @media screen and (max-width:1279px) {
-  .show-for-xlarge-up{display:none !important;}
-
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:none !important;}
-  .show-for-large-only{display:inherit !important;}
-  .show-for-xlarge-only{display:none !important;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-only  {visibility:visible; position: inherit;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
 }
 
 /* Pure Medium (iPad Portrait) */
 @media screen and (max-width:1023px) {
-  .show-for-large-up{display:none !important;}
-  .show-for-xlarge-up{display:none !important;}
-
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:inherit !important;}
-  .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{display:none !important;}
+  .show-for-large-up    {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-only {visibility:visible; position: inherit;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
 }
 
 /* Pure Small */
 @media screen and (max-width:639px) {
-  .show-for-medium-up{display:none !important;}
-  .show-for-large-up{display:none !important;}
-  .show-for-xlarge-up{display:none !important;}
-
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:inherit !important;}
-  .show-for-medium-only{display:none !important;}
-  .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{display:none !important;}
+  .show-for-medium-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-up    {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-small-only  {visibility:visible; position: inherit;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
 }
 
 /* Pure Extra Small */
 @media screen and (max-width:359px) {
-  .show-for-small-up{display:none !important;}
-  .show-for-medium-up{display:none !important;}
-  .show-for-large-up{display:none !important;}
-  .show-for-xlarge-up{display:none !important;}
-
-  .show-for-xsmall-only{display:inherit !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:none !important;}
-  .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{display:none !important;}
+  .show-for-small-up    {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-up    {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xsmall-only {visibility:visible; position: inherit;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
 }

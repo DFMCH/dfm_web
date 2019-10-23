@@ -28,7 +28,7 @@
   content: "\00d7";
   cursor: pointer;
   pointer-events: auto;
-  padding: 0 7px 3px 7px;
+  padding: 0 8px 3px 8px;
   background-color: rgba(255,255,255,.2);
   transition: background-color .3s;
 }
