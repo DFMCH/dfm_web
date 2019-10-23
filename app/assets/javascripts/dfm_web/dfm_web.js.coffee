@@ -21,11 +21,11 @@ DfmWeb.activate_dfm_web = ->
   # Example: $('#notice').delay(5000).slideUp('slow')
   $('#notice, #alert').click ->
     $(this).stop(true)
-    $(this).slideUp('slow')
+    $(this).animate({height: 'toggle'}, 300)
   $(document).keyup (e) ->
     if e.keyCode == 27
       $('#notice, #alert').stop(true)
-      $('#notice, #alert').slideUp('slow')
+      $('#notice, #alert').animate({height: 'toggle'}, 300)
 
 
   ### NAV BAR ###

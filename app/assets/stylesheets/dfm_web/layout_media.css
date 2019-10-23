@@ -10,7 +10,7 @@
     margin-bottom: 2em;      /* space for footer only */
   }
 
-  main {
+  main, #notice, #alert {
     margin: 0;
     transition: margin 0s;
   }
@@ -24,10 +24,6 @@
     position: relative;
     top:0;
     transition: margin 0s;
-  }
-
-  #notice, #alert {
-    margin-top: 0;
   }
 
   html {
@@ -52,7 +48,7 @@
   /* Nav with 2 or more menu items has_hamburger added via javascript */
   nav #nav ul.has_hamburger {
     position: relative;
-    background-color: rgba(0, 82, 136, .98);
+    background-color: #b40000;
     top: 0;
     right: 0;
     display: none;

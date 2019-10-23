@@ -122,7 +122,6 @@ nav #nav form input[type="text"] {
 #nav > ul {
   *display: inline-block;
 }
-
 #nav:after,
 #nav ul:after {
   content: '';

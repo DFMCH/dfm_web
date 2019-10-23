@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def notice
-    flash[:notice] = "This is a notice message"
+    flash[:notice] = "This is a notice message.<br>It can be <i>long</i> and include <b>basic</b> HTML."
     redirect_to root_url
   end
 

@@ -27,32 +27,7 @@ html {
   background-attachment: fixed;
 }
 
-#notice, #alert {
-  color: white;
-  background: none;
-  background-color: #338932;
-}
 
-
-/* Hover the close button to add visual cue */
-#notice:hover:after, #alert:hover:after {
-  background-color: rgba(0,0,0,.2);
-  transition: background-color 0s;
-}
-
-#alert {
-  background-color: #b94a48;
-}
-
-/* Give the notice content the same max width as the Nav */
-#notice > div, #alert > div {
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
-}
-
-/* Hide Rails scaffold notice bars */
-main #main p#notice { display: none; }
 
 
 #main {
