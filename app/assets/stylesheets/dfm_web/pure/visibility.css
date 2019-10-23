@@ -1,14 +1,6 @@
 /*
 
-Foundation's Visibility Classes ported to Pure CSS
-This is for Foundation 5, they changed it totally in 6
-I only did the show-for classes, not the hide-for
- -- JPD
-
-Update:
-  I made all the classes important.  Other display rules were getting more specificity and causing problems.
-  The basic visibility classes should never break from user styles.
-  !important is a bad practice in general, but this was the only way to ensure expected behavior.
+Visibility Classes for Pure CSS
 
 | Extra Small |    Small    |    Medium    |     Large     | Extra Large |
 | <------ 359 | 360 --- 639 | 640 --- 1023 | 1024 --- 1279 | 1280 -----> |
