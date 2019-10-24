@@ -14,9 +14,6 @@ nav {
   margin: 0 auto;
 }
 
-#nav img {
-  vertical-align: middle;
-}
 
 /* If your first nav item has a logo, give it extra margin */
 #nav ul.left li:first-child img {
@@ -24,16 +21,11 @@ nav {
 }
 
 /* We used h1 for the logo in the past, but that's treated as a section heading by screen readers. */
-/*  Please use <span>TITLE<span> */
-/*  Firefox renders text vertial-align: middle a little too high.  Goes back to at least 2009 */
-
-#nav h1,
+/* Please use <span>TITLE<span> */
 #nav span {
-  padding: 0;
   margin-right: 10px;
-  vertical-align: middle;
-  line-height: unset;
   font-size: 26px;
+  display: block;
 }
 
 /* TODO: Input fields don't want to vertically center */
@@ -115,8 +107,18 @@ nav #nav form input[type="text"] {
 #nav a {
   padding: 0 20px;
   display: block;
-  line-height: 1em;
+  max-height: 42px;
   text-decoration: none;
+}
+
+
+/* Menu drop down items */
+/* Multi-line items look bad with line-height: 42... Eyeballed it */
+#nav ul li ul li a {
+  max-height: none;
+  line-height: 1.4em;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #nav > ul {
@@ -137,7 +139,6 @@ nav #nav form input[type="text"] {
 
   border-top: 0;
   line-height: 42px;
-  xpadding: 16px 20px;
 }
 #nav ul ul ul {
   border-top: 0 none;
