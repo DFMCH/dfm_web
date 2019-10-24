@@ -14,8 +14,6 @@
   padding: 10px 10px 10px 25px; /* This also controls where the X button lives. */
   overflow: hidden;
   background-color: #338932;
-  min-height: 43px;
-  line-height: 1.4em;
 }
 #alert>div {
   background-color: #b94a48;

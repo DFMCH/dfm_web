@@ -2,7 +2,8 @@ nav {
   position:fixed;
   width: 100%;
   top: 0;
-  height: 44px;
+  height: 42px;
+  line-height: 42px;
   float: left;
   z-index: 400;
 }
@@ -59,8 +60,7 @@ nav #nav form input[type="text"] {
   float: left;
   min-height: 1px;
   vertical-align: middle;
-  line-height: 42px; /* TODO: Kludge.  It's getting some height from nothing in CSS... Humm.. */
-
+  line-height: 42px;
 }
 
 #nav ul li.hover,
@@ -135,9 +135,9 @@ nav #nav form input[type="text"] {
 
 #nav ul ul a {
 
-  border-top: 0 none;
-  line-height: 150%;
-  padding: 16px 20px;
+  border-top: 0;
+  line-height: 42px;
+  xpadding: 16px 20px;
 }
 #nav ul ul ul {
   border-top: 0 none;
