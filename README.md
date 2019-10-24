@@ -50,8 +50,17 @@ config/initializers/assets.rb
 ```
 Rails.application.config.assets.precompile += %w( dfm_web/* )
 ```
+### Notes on Version 4:
+* Now using the UW look and feel.
+* UW font (verlag) cannot be added to the repo per licensing requirements.
+  - To use it in your site add verlag.css to your host app (provided by UW).
+  - It will be used if available with fallback to Helvetica etc.
+* Navbar img is no longer vertically centered in CSS.
+  - Pad your PNG/SVG with transparency.
+  - Image be scaled to 42px, but PNG should be at least double that.
 
-### Notes on Version 3:
+
+### Notes on Version 3+:
 * Javascript to do things other than run the the actual layout has been removed. Specifically:
   - ajax_load
   - auto_submit
