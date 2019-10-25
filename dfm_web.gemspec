@@ -18,8 +18,19 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir["spec/**/*"]
 
 
-  spec.add_dependency "rails", ">= 3.2"           # Tested 3.2, 4.1, 4.2, 5.0
-  spec.add_dependency "coffee-rails", ">= 3.2"    # But it should work on 3.2+ with the Asset Pipeline enabled.
+  # Sprockets | Rails | Result
+  # 3.7.2     | 5.0.7 | FAIL
+  # 3.7.2     | 5.1.7 | OK
+  # 3.7.2     | 5.2.3 | OK
+  # 3.7.2     | 6.0.0 | OK
+
+  # 4.0.0     | 5.0.7 | FAIL
+  # 4.0.0     | 5.1.7 | OK
+  # 4.0.0     | 5.2.3 | OK
+  # 4.0.0     | 6.0.0 | OK
+
+
+  spec.add_dependency "rails", ">=5.1"            # Rails 5.1+
   spec.add_dependency 'jquery-rails'              # Jquery
 
   spec.add_development_dependency 'jquery-tablesorter'
