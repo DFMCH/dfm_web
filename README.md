@@ -75,20 +75,17 @@ Rails.application.config.assets.precompile += %w( dfm_web/* )
 * `scaffold.css`
 * `<p id="notice"><%= notice %></p>` Anywhere in your app.
 
+### Notes on Sprocket 4.0
+* A new [manifest.js](app/assets/config/dfm_web/manifest.js) file has been added for compatibility with Sprockets 4+.
+* Please report any issues or suggestions with this new configuration.
+
+### Notes on Webpack
+* Webpack may be incompatible at the moment.
+  - See https://github.com/DFMCH/dfm_web/issues/74.
+  - Help wanted.
+
 ## Kitchen Sink:
 * To see the Kitchen Sink, go to spec/dummy and run `rails server`
-
-### Notes on Sprocket 4.0
-If you're having trouble running the spec/dummy under sprocket 4.0, that means you'll need to force your sprocket version to stay below 4.0 or include a `manifest.js` file inside `spec/dummy/app/assets/config/`.  Here's a example of how it should look like in manifest.js file:
-```
-//= link_tree ../images
-//= link_directory ../javascripts .js
-//= link_directory ../stylesheets .css
-//= link dfm_web/apple-touch-icon.png
-//= link dfm_web/uwcrest.png
-```
-
-We have to include the apple-touch-icon and uwcrest seperately here to load them correctly for the dummy.  More info can be found on this [issue here](https://github.com/rails/sprockets-rails/issues/444).
 
 #### Large Screen:
 ![README.png](README.png)
