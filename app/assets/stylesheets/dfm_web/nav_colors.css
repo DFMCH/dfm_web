@@ -1,8 +1,8 @@
 /* Top Menus */
 
 nav {
-  background-color: rgb(0, 82, 136); /* IE 9 and below */
-  background: linear-gradient(rgb(0, 82, 136), rgb(0, 96, 158));
+  background-color: #c5050c;
+  background: linear-gradient(#cb050c, #c1050c);
   color: white;
 }
 
@@ -12,10 +12,18 @@ nav {
 
 /* Drop down menus */
 #nav ul ul li {
-  background: rgba(0, 82, 136, 0.98);
+  background: #9b0000;
 }
 
 /* Hover Color */
 #nav li:hover  {
-  background-color: #00426e;
+  background-color: #9b0000;
+}
+#nav ul li ul li:hover  {
+  background-color: #b40000;
+}
+
+
+nav #nav ul.has_hamburger {
+  background: #c5050c;
 }

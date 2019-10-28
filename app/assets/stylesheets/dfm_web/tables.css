@@ -23,7 +23,7 @@ td, th {
 }
 
 thead th {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: #dadfe1;
   color:  rgba(0,0,0,.6);
   font-weight: normal;
 }

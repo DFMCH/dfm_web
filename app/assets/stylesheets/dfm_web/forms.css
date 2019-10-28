@@ -105,7 +105,7 @@ input[type=submit]:focus, .button:focus {
   outline: 3px solid rgba(135, 206, 250, 0.66);
 }
 
-input[type=submit],           .button           { background: linear-gradient(rgb(0, 129, 198), rgb(0, 122, 201));    text-shadow: 1px 1px 0 #434446; }
+input[type=submit],           .button           { background: linear-gradient(rgb(4, 121, 168 ), rgb(4, 125, 171));    text-shadow: 1px 1px 0 #434446; }
 input[type=submit].okay,      .button.okay      { background: linear-gradient(rgb(96, 180, 111), rgb(103, 190, 118)); text-shadow: 1px 1px 0 #4c8e58; }
 input[type=submit].highlight, .button.highlight { background: linear-gradient(rgb(203, 199, 0), rgb(209, 205, 0));    text-shadow: 1px 1px 0 #959000; }
 input[type=submit].warn,      .button.warn      { background: linear-gradient(rgb(220, 129, 0), rgb(211, 132, 0));    text-shadow: 1px 1px 0 #9f5d00; }
@@ -126,9 +126,9 @@ input[type=submit]:hover:disabled, .button:hover.disabled  {
 }
 
 .nested-fields, .field, .actions {
-  padding-left: 5px; /* Cheat a little space so */
+  padding: 5px; /* Cheat a little space so */
   margin-left: -5px; /* button & submit outlines don't get cropped off */
-  margin-bottom: 1em;
+  margin-bottom: 5px;
   display: block;
   overflow-y: auto;  /* This makes floated elements such as checkboxes still consume vertical space */
 }

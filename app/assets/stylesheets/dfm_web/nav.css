@@ -2,8 +2,10 @@ nav {
   position:fixed;
   width: 100%;
   top: 0;
-  height: 75px;
+  height: 42px;
+  line-height: 42px;
   float: left;
+  z-index: 400;
 }
 
 #nav{
@@ -12,9 +14,6 @@ nav {
   margin: 0 auto;
 }
 
-#nav img {
-  vertical-align: middle;
-}
 
 /* If your first nav item has a logo, give it extra margin */
 #nav ul.left li:first-child img {
@@ -22,22 +21,18 @@ nav {
 }
 
 /* We used h1 for the logo in the past, but that's treated as a section heading by screen readers. */
-/*  Please use <span>TITLE<span> */
-/*  Firefox renders text vertial-align: middle a little too high.  Goes back to at least 2009 */
-
-#nav h1,
+/* Please use <span>TITLE<span> */
 #nav span {
-  padding: 0;
-  margin-right: 20px;
-  vertical-align: middle;
-  line-height: 73px;
-  font-size: 1.9em;
+  margin-right: 10px;
+  font-size: 26px;
+  display: block;
 }
 
 /* TODO: Input fields don't want to vertically center */
 /* TODO: Had to eyeball it. */
 nav #nav form input[type="text"] {
-  margin-top: 19px;
+  margin: 6px auto;
+  height: 32px;
 }
 
 #nav ul,
@@ -45,7 +40,7 @@ nav #nav form input[type="text"] {
   padding: 0;
   list-style: none;
   margin: 0;
-    font-size: 20px;
+  font-size: 16px;
 }
 
 #nav ul {
@@ -57,6 +52,7 @@ nav #nav form input[type="text"] {
   float: left;
   min-height: 1px;
   vertical-align: middle;
+  line-height: 42px;
 }
 
 #nav ul li.hover,
@@ -106,19 +102,29 @@ nav #nav form input[type="text"] {
 
 #nav ul ul li {
   font-weight: normal;
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 #nav a {
   padding: 0 20px;
   display: block;
-  line-height: 1em;
+  max-height: 42px;
   text-decoration: none;
+}
+
+
+/* Menu drop down items */
+/* Multi-line items look bad with line-height: 42... Eyeballed it */
+#nav ul li ul li a {
+  max-height: none;
+  line-height: 1.4em;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #nav > ul {
   *display: inline-block;
 }
-
 #nav:after,
 #nav ul:after {
   content: '';
@@ -132,9 +138,8 @@ nav #nav form input[type="text"] {
 
 #nav ul ul a {
 
-  border-top: 0 none;
-  line-height: 150%;
-  padding: 16px 20px;
+  border-top: 0;
+  line-height: 42px;
 }
 #nav ul ul ul {
   border-top: 0 none;
@@ -167,7 +172,7 @@ nav #nav form input[type="text"] {
 }
 
 #nav > ul > li > a {
-  line-height: 75px;
+  line-height: unset;
 }
 
 nav > #nav > ul.right {
@@ -178,11 +183,11 @@ nav > #nav > ul.right {
 #nav #hamburger {
   display: none;
   position: absolute;
-  margin: 20px;
+  margin: 9px;
   top: 0;
   right: 0;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 26px;
   z-index: 999999;
   background:linear-gradient(to bottom, #fff 0%, #fff 15%,
                                         transparent 15%, transparent 42.5%,
@@ -194,7 +199,6 @@ nav > #nav > ul.right {
 /* If a menu is really long, Javascript will add "crowded" class to it. */
 #nav ul.crowded a {
   font-size: 15px;
-  border-bottom: 1px solid rgba(255,255,255,.2);
   padding: 6px 10px;
 }
 

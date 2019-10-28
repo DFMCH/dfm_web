@@ -1,14 +1,6 @@
 /*
 
-Foundation's Visibility Classes ported to Pure CSS
-This is for Foundation 5, they changed it totally in 6
-I only did the show-for classes, not the hide-for
- -- JPD
-
-Update:
-  I made all the classes important.  Other display rules were getting more specificity and causing problems.
-  The basic visibility classes should never break from user styles.
-  !important is a bad practice in general, but this was the only way to ensure expected behavior.
+Visibility Classes for Pure CSS
 
 | Extra Small |    Small    |    Medium    |     Large     | Extra Large |
 | <------ 359 | 360 --- 639 | 640 --- 1023 | 1024 --- 1279 | 1280 -----> |
@@ -32,59 +24,55 @@ show-for-xlarge-only
 
 /* Pure Extra Large */
 @media screen and (min-width:1280px) {
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:none !important;}
-  .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{display:inherit !important;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-only {visibility:visible; position: inherit;}
 }
 
 /* Pure Large */
 @media screen and (max-width:1279px) {
-  .show-for-xlarge-up{display:none !important;}
-
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:none !important;}
-  .show-for-large-only{display:inherit !important;}
-  .show-for-xlarge-only{display:none !important;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-only  {visibility:visible; position: inherit;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
 }
 
 /* Pure Medium (iPad Portrait) */
 @media screen and (max-width:1023px) {
-  .show-for-large-up{display:none !important;}
-  .show-for-xlarge-up{display:none !important;}
-
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:inherit !important;}
-  .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{display:none !important;}
+  .show-for-large-up    {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-only {visibility:visible; position: inherit;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
 }
 
 /* Pure Small */
 @media screen and (max-width:639px) {
-  .show-for-medium-up{display:none !important;}
-  .show-for-large-up{display:none !important;}
-  .show-for-xlarge-up{display:none !important;}
-
-  .show-for-xsmall-only{display:none !important;}
-  .show-for-small-only{display:inherit !important;}
-  .show-for-medium-only{display:none !important;}
-  .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{display:none !important;}
+  .show-for-medium-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-up    {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-small-only  {visibility:visible; position: inherit;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
 }
 
 /* Pure Extra Small */
 @media screen and (max-width:359px) {
-  .show-for-small-up{display:none !important;}
-  .show-for-medium-up{display:none !important;}
-  .show-for-large-up{display:none !important;}
-  .show-for-xlarge-up{display:none !important;}
-
-  .show-for-xsmall-only{display:inherit !important;}
-  .show-for-small-only{display:none !important;}
-  .show-for-medium-only{display:none !important;}
-  .show-for-large-only{display:none !important;}
-  .show-for-xlarge-only{display:none !important;}
+  .show-for-small-up    {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-up    {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xsmall-only {visibility:visible; position: inherit;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
 }

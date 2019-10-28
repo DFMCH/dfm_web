@@ -1,0 +1,44 @@
+/* Similar to main */
+#notice, #alert {
+  color: white;
+  margin: 70px 25px -70px 25px;        /* Space for the NAV, and min side margin */
+  display: block;
+  pointer-events: none;
+  background: none;
+}
+
+/* Similar to #main */
+#notice>div, #alert>div {
+  margin: 0 auto;               /* Centered with max width */
+  max-width: 1800px;
+  padding: 10px 10px 10px 25px; /* This also controls where the X button lives. */
+  overflow: hidden;
+  background-color: #338932;
+}
+#alert>div {
+  background-color: #b94a48;
+}
+
+
+/* HTML-free close button */
+#notice > div:before, #alert > div:before {
+  float: right;
+  content: "\00d7";
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 0 6px 3px 6px;
+  background-color: rgba(255,255,255,.2);
+  transition: background-color .3s;
+}
+
+
+
+/* Hover the close button to add visual cue */
+#notice:hover:after, #alert:hover:after {
+  background-color: rgba(0,0,0,.2);
+  transition: background-color 0s;
+}
+
+
+/* Hide Rails scaffold notice bars */
+main #main p#notice { display: none; }

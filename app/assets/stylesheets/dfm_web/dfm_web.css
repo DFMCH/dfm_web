@@ -4,6 +4,7 @@
  *= require ./pure/visibility
  *= require ./pure/gutter
  *= require ./layout.css
+ *= require ./flash.css
  *= require ./nav.css
  *= require ./nav_colors.css
  *= require ./style.css
@@ -13,4 +14,5 @@
  *= require ./print.css
  */
 
-.debug { box-shadow: 0 0 1px red; }
+.debug { box-shadow: 0 0 1px red, 0 0 2px black; }
+.debug-all, .debug-all * { box-shadow: 0 0 1px white, 0 0 2px black; }
