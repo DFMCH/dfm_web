@@ -10,5 +10,5 @@
 //= link dfm_web/uwcrest.png
 //= link dfm_web/word.png
 //
-//= link application.css
-//= link application.js
+//= link dfm_web/dfm_web.css
+//= link dfm_web/dfm_web.js
