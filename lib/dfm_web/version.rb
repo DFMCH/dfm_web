@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "4.0.1"
+  VERSION = "4.0.2"
 end
 
 
 # Version History
 
+# 4.0.2   Optimize png files and add spacing to word/excel.
 # 4.0.1   Minor tweak to manifest.js files
 # 4.0.0   Adopted UW design language.
 # 3.0.0   Removed all Javascript that didn't specifically power the DfmWeb UI.  May require some copy-paste form v2 to your app to upgrade.
