@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "4.0.2"
+  VERSION = "4.0.3"
 end
 
 
 # Version History
 
+# 4.0.3   Removed incorrect html background-color from <= Large sizes.
 # 4.0.2   Optimize png files and add spacing to word/excel.
 # 4.0.1   Minor tweak to manifest.js files
 # 4.0.0   Adopted UW design language.
