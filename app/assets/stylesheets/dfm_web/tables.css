@@ -4,7 +4,7 @@ table {
   width: 100%;
   border: 1px solid rgba(0,0,0,.2);
   margin-bottom: 20px;
-  font-weight: lighter;
+  font-weight: 300;
   background-color: white; /* Override this in your app to match your style. */
 }
 table thead  { display: table-header-group; }
@@ -25,15 +25,15 @@ td, th {
 thead th {
   background-color: #dadfe1;
   color:  rgba(0,0,0,.6);
-  font-weight: normal;
+  font-weight: 400;
 }
 
 tbody th {
   background-color: rgba(0, 0, 0, 0.08);
-  font-weight: lighter;
+  font-weight: 300;
 }
 tfoot th {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 
