@@ -1,3 +1,9 @@
+/* This fixes the zero print margin issue without adding extra */
+@page {
+  size: auto;
+  margin: 0;
+}
+
 @media print and (color) {
   * {
     /* Prevent browsers from discarding the majority of color info */
@@ -8,6 +14,7 @@
 
 
   body, html, main, #main {
+    background-image: none; /* Safari */
     background-color: white;
     border: none;
     box-shadow: none;
@@ -25,17 +32,21 @@
     font-size: 12pt;
   }
 
-  html        { font-size: 75%; margin: 2px; }
-  a           { text-decoration: none;}
+  /* General tweaks */
+  html        { font-size: 80%; margin: 0.25in; min-height: 0; }
+  a           { text-decoration: none; }
+  .field      { page-break-inside: avoid; }
+  hr          { display: none; }
   table th,
   table td    { padding: 3px; }
 
   /* Stuff to hide */
   /* NOTE: "display: none" breaks unrelated table printing in Chrome */
-  nav, footer, .button, .no_print, input[type=submit] {
+  nav, footer, .button, .no_print, input[type=submit], #notice, #alert {
     position: absolute;
     visibility: hidden;
   }
+
   /* Hide Tablesorter sorting indicators */
   table.tablesorter thead th {
     background-image: none;
@@ -45,5 +56,18 @@
   /* contents of "table_hover" cells should appear in printouts. */
   table tr td.table_hover{
     color: black !important;
+  }
+
+  /* The plain panel divs clutter up the page in print. */
+  /* Remove their style.  Note we add it back to modifier panels below. */
+  .panel {
+    border-width: 0;
+    padding: 0;
+  }
+
+  /* Add back the panel padding when there is a modifier class as well. */
+  .panel.okay, .panel.highlight, .panel.warn, .panel.alert, .panel.gray {
+    border-width: 1px;
+    padding: 20px;
   }
 }
