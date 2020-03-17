@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "4.0.5"
+  VERSION = "4.0.6"
 end
 
 
 # Version History
 
+# 4.0.6   Updated Mailer template.
 # 4.0.5   Improved Print CSS.
 # 4.0.4   Improved font appearance in tables when verlog.css isn't available.
 # 4.0.3   Removed incorrect html background-color from <= Large sizes.
