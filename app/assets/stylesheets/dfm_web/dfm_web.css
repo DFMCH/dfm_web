@@ -11,6 +11,7 @@
  *= require ./forms.css
  *= require ./tables.css
  *= require ./layout_media.css
+ *= require ./dark_mode.css
  *= require ./print.css
  */
 

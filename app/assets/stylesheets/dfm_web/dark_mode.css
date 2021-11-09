@@ -1,0 +1,59 @@
+@media (prefers-color-scheme: dark) {
+
+
+  html, main #main { background-color: #323132; }
+  .panel { background-color: #414141; }
+  table { background-color: #3c3c3c; color: #b0b0b0; border-color: #787878; }
+
+  td, th { background-color: #111010; border-color: #787878; }
+  table thead th { background-color: rgb(47, 47, 47); color: white; }
+  table thead th img { filter: invert(1); }
+
+  .tablesorter-default tr.even td, tbody tr:nth-child(even) td { background-color: #242626; }
+  table.tablesorter thead th { background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAANzSzwAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAABACwAAAAAFQAJAAACF4yPgMsJ2mJ4VDKKrd4GVz5lYPeMiVUAADs=); }
+  .tablesorter-default thead .tablesorter-headerAsc { background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAANzSzwAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAABACwAAAAAFQAEAAACDYyPAcmtsJyDVDKKWQEAOw==); }
+  .tablesorter-default thead .tablesorter-headerDesc { background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAANzSzwAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAABACwAAAAAFQAEAAACDYwfoAvoz9qbZ9FrJC0AOw==); }
+
+  .highcharts, .chart {
+    background-color: #525252 !important;
+    border: 1px solid #787878 !important;
+  }
+  .highcharts-background{
+    fill: #525252;
+  }
+  .highcharts-container text {
+    fill: #f7f7f7 !important;
+  }
+
+  .highcharts-data-label text {
+    fill: black !important;
+  }
+
+  p, h1, h2, h3, h4, h5, li, .panel { color: #dedede; }
+
+  footer {
+    box-shadow: 0 0 60px rgba(0,0,0,.5);
+  }
+
+  label { color: #dedede; }
+
+  input[type="text"], input[type="date"], input[type="password"], input[type="email"], input[type="number"], input[type="file"], textarea, select,
+  .panel input[type="text"], .panel input[type="date"], .panel input[type="password"], .panel input[type="email"], .panel input[type="number"], .panel input[type="file"], .panel textarea, .panel select
+  {
+    background-color: #8d8f94;
+    color: #f7f7f7;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    color: #f7f7f7;
+  }
+
+  .paper {
+    background-color: #8d8f94;
+  }
+
+
+}
