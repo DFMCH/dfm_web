@@ -81,12 +81,15 @@
   .panel input[type="text"], .panel input[type="date"],    .panel input[type="password"], .panel input[type="email"], .panel input[type="number"], .panel input[type="file"], .panel textarea, .panel select,
   input[type="text"]:focus,  input[type="password"]:focus, input[type="email"]:focus,     textarea:focus
   {
-    background-color: rgba(4, 121, 168, .1);
+    background-color: rgb(23, 23, 23);
     border-color: rgb(4, 121, 168);
     color: white;
     opacity: 80%;
     border-radius: 6px;
   }
+
+  /* Webkit browsers use a black icon even in dark mode as of 2021 */
+  ::-webkit-calendar-picker-indicator { filter: invert(100%) brightness(80%); }
 
   /* Buttons */
   input[type=submit], .button {

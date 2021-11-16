@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "4.1.0"
+  VERSION = "4.1.1"
 end
 
 
 # Version History
 
+# 4.1.1   Remove alpha channel on option/select background as it's unsupported in Windows.
 # 4.1.0   Add dark-mode (automatic based on system dark/light mode)
 # 4.0.7   Fix deprecation with Rails 6+. Removed insecure excel_icon helper.
 # 4.0.6   Updated Mailer template.
