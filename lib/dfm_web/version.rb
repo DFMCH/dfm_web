@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "4.1.1"
+  VERSION = "4.1.2"
 end
 
 
 # Version History
 
+# 4.1.2   Add example theme-colors to dummy & Update NAV CSS. Added a nav search box.
 # 4.1.1   Remove alpha channel on option/select background as it's unsupported in Windows.
 # 4.1.0   Add dark-mode (automatic based on system dark/light mode)
 # 4.0.7   Fix deprecation with Rails 6+. Removed insecure excel_icon helper.

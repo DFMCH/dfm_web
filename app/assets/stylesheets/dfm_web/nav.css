@@ -31,8 +31,8 @@ nav {
 /* TODO: Input fields don't want to vertically center */
 /* TODO: Had to eyeball it. */
 nav #nav form input[type="text"] {
-  margin: 6px auto;
-  height: 32px;
+  margin: 5px auto 0 auto;
+  height: 31px;
 }
 
 #nav ul,

@@ -1,6 +1,6 @@
 /* Top Menus */
 
-nav {
+nav, nav ul li {
   background-color: #c5050c;
   background: linear-gradient(#cb050c, #c1050c);
   color: white;
@@ -16,7 +16,8 @@ nav {
 }
 
 /* Hover Color */
-#nav li:hover  {
+#nav ul li:hover  {
+  background-image: none;
   background-color: #9b0000;
 }
 #nav ul li ul li:hover  {
