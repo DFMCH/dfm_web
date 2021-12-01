@@ -39,17 +39,22 @@
   hr          { display: none; }
   table th,
   table td    { padding: 3px; }
+  thead       { display: table-row-group; }
 
   /* Stuff to hide */
-  /* NOTE: "display: none" breaks unrelated table printing in Chrome */
   nav, footer, .button, .no_print, input[type=submit], #notice, #alert {
     position: absolute;
     visibility: hidden;
+    display: none;
+  }
+
+  .print_only {
+    display: inherit !important;
   }
 
   /* Hide Tablesorter sorting indicators */
-  table.tablesorter thead th {
-    background-image: none;
+  table.tablesorter thead tr th {
+    background-image: none !important;
     padding-left: 3px;
   }
 
@@ -70,4 +75,9 @@
     border-width: 1px;
     padding: 20px;
   }
+}
+
+/* Add for content which should only show in print */
+.print_only {
+  display: none;
 }

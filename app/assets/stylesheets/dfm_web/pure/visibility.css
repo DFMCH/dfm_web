@@ -24,55 +24,55 @@ show-for-xlarge-only
 
 /* Pure Extra Large */
 @media screen and (min-width:1280px) {
-  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xlarge-only {visibility:visible; position: inherit;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; display: none;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; display: none;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; display: none;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xlarge-only {visibility:visible; position: inherit;  display: inherit;}
 }
 
 /* Pure Large */
 @media screen and (max-width:1279px) {
-  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-large-only  {visibility:visible; position: inherit;}
-  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; display: none;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; display: none;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; display: none;}
+  .show-for-large-only  {visibility:visible; position: inherit;  display: inherit;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; display: none;}
 }
 
 /* Pure Medium (iPad Portrait) */
 @media screen and (max-width:1023px) {
-  .show-for-large-up    {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-medium-only {visibility:visible; position: inherit;}
-  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-large-up    {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; display: none;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; display: none;}
+  .show-for-medium-only {visibility:visible; position: inherit;  display: inherit;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; display: none;}
 }
 
 /* Pure Small */
 @media screen and (max-width:639px) {
-  .show-for-medium-up   {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-large-up    {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xsmall-only {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-small-only  {visibility:visible; position: inherit;}
-  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-medium-up   {visibility:hidden;  position: absolute; display: none;}
+  .show-for-large-up    {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xsmall-only {visibility:hidden;  position: absolute; display: none;}
+  .show-for-small-only  {visibility:visible; position: inherit;  display: inherit;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; display: none;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; display: none;}
 }
 
 /* Pure Extra Small */
 @media screen and (max-width:359px) {
-  .show-for-small-up    {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-medium-up   {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-large-up    {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xlarge-up   {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xsmall-only {visibility:visible; position: inherit;}
-  .show-for-small-only  {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-medium-only {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-large-only  {visibility:hidden;  position: absolute; left: -9999px;}
-  .show-for-xlarge-only {visibility:hidden;  position: absolute; left: -9999px;}
+  .show-for-small-up    {visibility:hidden;  position: absolute; display: none;}
+  .show-for-medium-up   {visibility:hidden;  position: absolute; display: none;}
+  .show-for-large-up    {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xlarge-up   {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xsmall-only {visibility:visible; position: inherit;  display: inherit;}
+  .show-for-small-only  {visibility:hidden;  position: absolute; display: none;}
+  .show-for-medium-only {visibility:hidden;  position: absolute; display: none;}
+  .show-for-large-only  {visibility:hidden;  position: absolute; display: none;}
+  .show-for-xlarge-only {visibility:hidden;  position: absolute; display: none;}
 }
