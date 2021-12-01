@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "4.1.2"
+  VERSION = "4.1.3"
 end
 
 
 # Version History
 
+# 4.1.3   Accessibility and Print media improvements. Added /print demo to Dummy app.
 # 4.1.2   Add example theme-colors to dummy & Update NAV CSS. Added a nav search box.
 # 4.1.1   Remove alpha channel on option/select background as it's unsupported in Windows.
 # 4.1.0   Add dark-mode (automatic based on system dark/light mode)
