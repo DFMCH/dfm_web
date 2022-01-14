@@ -16,24 +16,20 @@ window.DfmWeb = {};
 
 DfmWeb.activate_dfm_web = function() {
 
-    // Hide the #notice and #alert messages by clicking the [X] or pressing escape key
-    // stop(true) removes any pending animations.
-    // This allows you to have an autohide in your app without breaking the click / ESC action.
-    // Example: $('#notice').delay(5000).slideUp('slow')
-    $('#notice, #alert').click(function() {
-        $(this).stop(true);
-        return $(this).animate({
-            height: 'toggle'
-        }, 300);
+  // Hide the #notice and #alert messages by clicking the [X] or pressing escape key
+  document.querySelectorAll('#notice, #alert').forEach(node => {
+    node.addEventListener('click', (event) => {
+      console.log(node);
+      node.style.display = 'none';
     });
-    $(document).keyup(function(e) {
-        if (e.keyCode === 27) {
-            $('#notice, #alert').stop(true);
-            return $('#notice, #alert').animate({
-                height: 'toggle'
-            }, 300);
-        }
+
+    // If either ID exists, close by pressing Escape
+    document.addEventListener('keyup', (key) => {
+      if (key.code == 'Escape') {
+        node.style.display = 'none';
+      }
     });
+  });
 
     // NAV BAR
     //
