@@ -16,34 +16,40 @@ window.DfmWeb = {};
 
 DfmWeb.activate_dfm_web = function() {
 
-  // Hide the #notice and #alert messages by clicking the [X] or pressing escape key
-  document.querySelectorAll('#notice, #alert').forEach(node => {
-    node.addEventListener('click', (event) => {
-      console.log(node);
-      node.style.display = 'none';
-    });
+    // Hide the #notice and #alert messages by clicking the [X] or pressing escape key
+    document.querySelectorAll('#notice, #alert').forEach(node => {
+        node.addEventListener('click', () => {
+            node.style.display = 'none';
+        });
 
-    // If either ID exists, close by pressing Escape
-    document.addEventListener('keyup', (key) => {
-      if (key.code == 'Escape') {
-        node.style.display = 'none';
-      }
+        // If either ID exists, close by pressing Escape
+        document.addEventListener('keyup', (key) => {
+            if (key.code == 'Escape') {
+                node.style.display = 'none';
+            }
+        });
     });
-  });
 
     // NAV BAR
     //
     // Insert the Hamburger if there are menu 2+ items
     // Add "has_hamburger" class to the ul so CSS can know which way to show it.
-    if ($('#nav ul.right li').length > 1) {
-        $('ul.right').after('<div id="hamburger"></div>');
-        $('ul.right').addClass('has_hamburger');
+    if (document.querySelectorAll('#nav ul.right>li').length > 1) {
+        hamburger = document.createElement("div")
+        hamburger.setAttribute('id', 'hamburger')
+        document.querySelector('#nav ul.right').after(hamburger);
+        document.querySelector('ul.right').classList.add('has_hamburger');
     }
 
     // Show the Mobile Menu on Hamburger Click
-    $('nav #hamburger').click(function() {
-        return $("nav #nav ul.has_hamburger").toggle();
+    document.querySelectorAll('nav #hamburger').forEach(node => {
+        node.addEventListener('click', () => {
+            document.querySelectorAll("nav #nav ul.has_hamburger").forEach(node => {
+                node.style.display = node.style.display === 'inline-block' ? 'none' : 'inline-block';
+            });
+        });
     });
+
 
     // If you've toggled the Mobile menu it breaks larger sizes.  Reset on resize.
     window.onresize = function() {
