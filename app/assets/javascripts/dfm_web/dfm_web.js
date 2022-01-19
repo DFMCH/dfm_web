@@ -53,7 +53,7 @@ DfmWeb.activate_dfm_web = function() {
 
     // If you've toggled the Mobile menu it breaks larger sizes.  Reset on resize.
     window.onresize = function() {
-        if (window.innerWidth > 1023) {
+        if (document.window.innerWidth >= 1024) {
             document.querySelectorAll("nav #nav ul.has_hamburger").forEach(node => {
                 node.style.display = 'inline-block';
             });
@@ -67,7 +67,7 @@ DfmWeb.activate_dfm_web = function() {
     // iPads don't have :hover, so hide the menu if the user clicks anything in <main>
     document.querySelectorAll('main').forEach(node => {
         node.addEventListener('click', () => {
-            if (window.innerWidth <= 1023) {
+            if (document.documentElement.clientWidth < 1024) {
                 document.querySelectorAll("nav #nav ul.has_hamburger").forEach(node => {
                     node.style.display = 'none';
                 });
