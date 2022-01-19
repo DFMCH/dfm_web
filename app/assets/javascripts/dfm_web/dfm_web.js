@@ -54,22 +54,32 @@ DfmWeb.activate_dfm_web = function() {
     // If you've toggled the Mobile menu it breaks larger sizes.  Reset on resize.
     window.onresize = function() {
         if (window.innerWidth > 1023) {
-            return $("nav #nav ul.has_hamburger").css('display', 'inline-block');
+            document.querySelectorAll("nav #nav ul.has_hamburger").forEach(node => {
+                node.style.display = 'inline-block';
+            });
         } else {
-            return $("nav #nav ul.has_hamburger").css('display', 'none');
+            document.querySelectorAll("nav #nav ul.has_hamburger").forEach(node => {
+                node.style.display = 'none';
+            });
         }
     };
 
     // iPads don't have :hover, so hide the menu if the user clicks anything in <main>
-    $('main').click(function() {
-        if (window.innerWidth <= 1023) {
-            return $("nav #nav ul.has_hamburger").css('display', 'none');
-        }
+    document.querySelectorAll('main').forEach(node => {
+        node.addEventListener('click', () => {
+            if (window.innerWidth <= 1023) {
+                document.querySelectorAll("nav #nav ul.has_hamburger").forEach(node => {
+                    node.style.display = 'none';
+                });
+            }
+        });
     });
+
     // Deal with Really long menus
-    return $("#nav > ul > li > ul").each(function() {
-        if ($(this).children('li').length > 10) {
-            return $(this).addClass('crowded');
+    // Add "crowded" class to make them more compact.
+    document.querySelectorAll("#nav > ul > li > ul").forEach(node => {
+        if (node.children.length > 10) {
+            node.classList.add('crowded');
         }
     });
 };
