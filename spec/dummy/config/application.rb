@@ -5,8 +5,6 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
-require 'jquery-rails'
-require 'jquery-tablesorter'
 
 
 Bundler.require(*Rails.groups)
