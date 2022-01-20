@@ -18,12 +18,12 @@ class ApplicationController < ActionController::Base
   def pure
   end
 
-  def notice
+  def notice_example
     flash[:notice] = "This is a notice message.<br>It can be <i>long</i> and include <b>basic</b> HTML."
     redirect_to root_url
   end
 
-  def alert
+  def alert_example
     flash[:alert] = "This is an alert message"
     redirect_to root_url
   end

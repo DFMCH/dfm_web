@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 
-  get 'alert'  => 'application#alert'
-  get 'notice' => 'application#notice'
+  get 'alert'  => 'application#alert_example'
+  get 'notice' => 'application#notice_example'
   get 'news'   => 'application#news'
   get 'print'  => 'application#print'
   get 'pure'   => 'application#pure'
