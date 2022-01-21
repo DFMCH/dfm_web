@@ -4,17 +4,20 @@
 // https://robots.thoughtbot.com/module-pattern-in-javascript-and-coffeescript
 window.DfmWeb = {};
 
-// Add this method within your initialization block:
-// jQuery
-// $(document).on 'ready page:load', ->
-//   DfmWeb.activate_dfm_web();
+// To use the dfm_web.js code, you need to call `DfmWeb.activate_dfm_web();`
+// Here are some examples of how you might do that in your application.js
 
-// jQuery + Turbolinks
-// $(document).on 'turbolinks:load', ->
-//   DfmWeb.activate_dfm_web();
+// Rails 6 Javascript
+// document.addEventListener("DOMContentLoaded", function() { DfmWeb.activate_dfm_web(); });
 
-// Vanilla
-// document.addEventListener("DOMContentLoaded",function() {DfmWeb.activate_dfm_web();});
+// Rails 7 Javascript + Turbo (esbuild in my test)
+// document.addEventListener("turbo:load", function() { DfmWeb.activate_dfm_web(); })
+
+// Rails 6 jQuery
+// $(document).on('ready page:load', function() { DfmWeb.activate_dfm_web(); });
+
+// Rails 6 jQuery + Turbolinks
+// $(document).on('turbolinks:load', function() { DfmWeb.activate_dfm_web(); });
 
 
 DfmWeb.activate_dfm_web = function() {

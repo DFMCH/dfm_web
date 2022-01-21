@@ -10,9 +10,51 @@ Gemfile
 gem 'dfm_web'
 ```
 
+Terminal:
 ```bash
 bundle install
 ```
+
+application.html.erb
+```
+  <body>
+    <%= render 'layouts/nav' %>
+    <%= render 'layouts/flash' %>
+    <%= render 'layouts/main' %>
+    <%= render 'layouts/footer' %>
+  </body>
+```
+
+
+# Rails 7
+* Tested using esbuild and sass
+* If not using Turbo, see dfm_web.js for variations on the activation step.
+
+application.html.erb
+```
+<%= stylesheet_link_tag "dfm_web/dfm_web", "data-turbo-track": "reload" %>
+<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+<%= javascript_include_tag "dfm_web/dfm_web", "data-turbo-track": "reload", defer: true %>
+<%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+```
+
+application.js
+```js
+document.addEventListener("turbo:load", function() {
+  DfmWeb.activate_dfm_web();
+})
+```
+
+manifest.js
+```
+//= link dfm_web/manifest.js
+```
+
+-------------------------------------------------------------------------------
+
+# Rails 5/6
+* Webpacker doesn't support assets from gems.
+* We're assuming a traditional sprockets asset-pipeline setup.
 
 application.css
 ```
@@ -36,21 +78,21 @@ $(document).on 'ready page:load', ->
 ```
 
 
-application.html.erb
-```
-  <body>
-    <%= render 'layouts/nav' %>
-    <%= render 'layouts/flash' %>
-    <%= render 'layouts/main' %>
-    <%= render 'layouts/footer' %>
-  </body>
-```
 
 config/initializers/assets.rb
 ```
 Rails.application.config.assets.precompile += %w( dfm_web/* )
 ```
-### Notes on Version 4:
+
+# Changelog:
+
+### Version 5:
+* jQuery is no longer a requirement, though it will work just fine if you use it.
+* All jQuery based code has been rewritten in Javascript (ES6)
+* Updated README and comments on use with Rails 7 (Turbo or plain).
+  - Rails 7 tests were performed on an esbuild + sass setup
+
+### Version 4:
 * Now using the UW look and feel.
 * UW font (verlag) cannot be added to the repo per licensing requirements.
   - To use it in your site add verlag.css to your host app (provided by UW).
@@ -60,7 +102,7 @@ Rails.application.config.assets.precompile += %w( dfm_web/* )
   - Image be scaled to 42px, but PNG should be at least double that.
 
 
-### Notes on Version 3+:
+### Version 3:
 * Javascript to do things other than run the the actual layout has been removed. Specifically:
   - ajax_load
   - auto_submit
@@ -70,19 +112,6 @@ Rails.application.config.assets.precompile += %w( dfm_web/* )
   - live_table
   - tablesorter
 * If you used these features you'll need to pull the javascript from [version 2](https://github.com/DFMCH/dfm_web/blob/518833db5cbbc9aabcfd7ea60dc9960ae67d3406/app/assets/javascripts/dfm_web/dfm_web.js.coffee)
-
-### Things to remove from your app:
-* `scaffold.css`
-* `<p id="notice"><%= notice %></p>` Anywhere in your app.
-
-### Notes on Sprocket 4.0
-* A new [manifest.js](app/assets/config/dfm_web/manifest.js) file has been added for compatibility with Sprockets 4+.
-* Please report any issues or suggestions with this new configuration.
-
-### Notes on Webpack
-* Webpack may be incompatible at the moment.
-  - See https://github.com/DFMCH/dfm_web/issues/74.
-  - Help wanted.
 
 ## Kitchen Sink:
 * To see the Kitchen Sink, go to spec/dummy and run `rails server`
