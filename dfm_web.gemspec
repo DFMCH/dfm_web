@@ -28,11 +28,12 @@ Gem::Specification.new do |spec|
   # 4.0.0     | 5.1.7 | OK
   # 4.0.0     | 5.2.3 | OK
   # 4.0.0     | 6.0.0 | OK
-
+  # 4.0.2     | 7.0.1 | OK
 
   spec.add_dependency "rails", ">=5.1"            # Rails 5.1+
-  spec.add_dependency 'jquery-rails'              # Jquery
 
-  spec.add_development_dependency 'jquery-tablesorter'
+  #spec.add_development_dependency 'jquery-tablesorter'
+  spec.add_development_dependency 'puma'
   spec.add_development_dependency "rspec-rails", '>= 3.5.0beta3'
+  spec.add_development_dependency 'sprockets-rails'
 end

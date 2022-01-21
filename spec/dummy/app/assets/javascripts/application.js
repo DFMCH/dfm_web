@@ -10,16 +10,15 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery2
-//= require jquery_ujs
-//= require jquery-tablesorter
 //= require dfm_web/dfm_web
 //= require_self
 
-// See dfm_web/dfm_web.js.coffee for information
-$(document).on('ready page:load', function() {
+// See dfm_web/dfm_web.js for information
+document.addEventListener("DOMContentLoaded",function() {
     DfmWeb.activate_dfm_web();
-    $("#window_width").html(window.innerWidth);
-    window.addEventListener('resize', () => {$("#window_width").html(window.innerWidth);} );
-    $('.tablesorter').tablesorter({widgets: ['zebra']})
+    document.getElementById("window_width").innerHTML = window.innerWidth;
+})
+
+window.addEventListener("resize", function() {
+    document.getElementById("window_width").innerHTML = window.innerWidth;
 });

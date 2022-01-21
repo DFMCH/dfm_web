@@ -1,73 +1,90 @@
 // DFM Web Javascript
-// Originally written in coffeescript, converted to JS with http://js2.coffee/
 
 // DfmWeb Namespace
 // https://robots.thoughtbot.com/module-pattern-in-javascript-and-coffeescript
 window.DfmWeb = {};
 
-// Add this method within your initialization block:
-// Vanilla:
-// $(document).on 'ready page:load', ->
-//   DfmWeb.activate_dfm_web();
+// To use the dfm_web.js code, you need to call `DfmWeb.activate_dfm_web();`
+// Here are some examples of how you might do that in your application.js
 
-// Turbolinks:
-// $(document).on 'turbolinks:load', ->
-//   DfmWeb.activate_dfm_web();
+// Rails 6 Javascript
+// document.addEventListener("DOMContentLoaded", function() { DfmWeb.activate_dfm_web(); });
+
+// Rails 7 Javascript + Turbo (esbuild in my test)
+// document.addEventListener("turbo:load", function() { DfmWeb.activate_dfm_web(); })
+
+// Rails 6 jQuery
+// $(document).on('ready page:load', function() { DfmWeb.activate_dfm_web(); });
+
+// Rails 6 jQuery + Turbolinks
+// $(document).on('turbolinks:load', function() { DfmWeb.activate_dfm_web(); });
+
 
 DfmWeb.activate_dfm_web = function() {
-
-    // Hide the #notice and #alert messages by clicking the [X] or pressing escape key
-    // stop(true) removes any pending animations.
-    // This allows you to have an autohide in your app without breaking the click / ESC action.
-    // Example: $('#notice').delay(5000).slideUp('slow')
-    $('#notice, #alert').click(function() {
-        $(this).stop(true);
-        return $(this).animate({
-            height: 'toggle'
-        }, 300);
-    });
-    $(document).keyup(function(e) {
-        if (e.keyCode === 27) {
-            $('#notice, #alert').stop(true);
-            return $('#notice, #alert').animate({
-                height: 'toggle'
-            }, 300);
-        }
+  // Hide the #notice and #alert messages by clicking the [X] or pressing escape key
+  document.querySelectorAll('#notice, #alert').forEach((node) => {
+    node.addEventListener('click', () => {
+      node.style.display = 'none';
     });
 
-    // NAV BAR
-    //
-    // Insert the Hamburger if there are menu 2+ items
-    // Add "has_hamburger" class to the ul so CSS can know which way to show it.
-    if ($('#nav ul.right li').length > 1) {
-        $('ul.right').after('<div id="hamburger"></div>');
-        $('ul.right').addClass('has_hamburger');
+    // If either ID exists, close by pressing Escape
+    document.addEventListener('keyup', (key) => {
+      if (key.code == 'Escape') {
+        node.style.display = 'none';
+      }
+    });
+  });
+
+  // NAV BAR
+  //
+  // Insert the Hamburger if there are menu 2+ items
+  // Add "has_hamburger" class to the ul so CSS can know which way to show it.
+  if (document.querySelectorAll('#nav ul.right>li').length > 1) {
+    const hamburger = document.createElement('div');
+    hamburger.setAttribute('id', 'hamburger');
+    document.querySelector('#nav ul.right').after(hamburger);
+    document.querySelector('ul.right').classList.add('has_hamburger');
+  }
+
+  // Show the Mobile Menu on Hamburger Click
+  document.querySelectorAll('nav #hamburger').forEach((node) => {
+    node.addEventListener('click', () => {
+      document.querySelectorAll('nav #nav ul.has_hamburger').forEach((node) => {
+        node.style.display = node.style.display === 'inline-block' ? 'none' : 'inline-block';
+      });
+    });
+  });
+
+
+  // If you've toggled the Mobile menu it breaks larger sizes.  Reset on resize.
+  window.onresize = function() {
+    if (window.innerWidth >= 1024) {
+      document.querySelectorAll('nav #nav ul.has_hamburger').forEach((node) => {
+        node.style.display = 'inline-block';
+      });
+    } else {
+      document.querySelectorAll('nav #nav ul.has_hamburger').forEach((node) => {
+        node.style.display = 'none';
+      });
     }
+  };
 
-    // Show the Mobile Menu on Hamburger Click
-    $('nav #hamburger').click(function() {
-        return $("nav #nav ul.has_hamburger").toggle();
+  // iPads don't have :hover, so hide the menu if the user clicks anything in <main>
+  document.querySelectorAll('main').forEach((node) => {
+    node.addEventListener('click', () => {
+      if (window.innerWidth < 1024) {
+        document.querySelectorAll('nav #nav ul.has_hamburger').forEach((node) => {
+          node.style.display = 'none';
+        });
+      }
     });
+  });
 
-    // If you've toggled the Mobile menu it breaks larger sizes.  Reset on resize.
-    window.onresize = function() {
-        if (window.innerWidth > 1023) {
-            return $("nav #nav ul.has_hamburger").css('display', 'inline-block');
-        } else {
-            return $("nav #nav ul.has_hamburger").css('display', 'none');
-        }
-    };
-
-    // iPads don't have :hover, so hide the menu if the user clicks anything in <main>
-    $('main').click(function() {
-        if (window.innerWidth <= 1023) {
-            return $("nav #nav ul.has_hamburger").css('display', 'none');
-        }
-    });
-    // Deal with Really long menus
-    return $("#nav > ul > li > ul").each(function() {
-        if ($(this).children('li').length > 10) {
-            return $(this).addClass('crowded');
-        }
-    });
+  // Deal with Really long menus
+  // Add "crowded" class to make them more compact.
+  document.querySelectorAll('#nav > ul > li > ul').forEach((node) => {
+    if (node.children.length > 10) {
+      node.classList.add('crowded');
+    }
+  });
 };

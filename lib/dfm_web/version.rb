@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "4.1.3"
+  VERSION = "5.0.0"
 end
 
 
 # Version History
 
+# 5.0.0   Remove jQuery as a requirement and update README etc for Rails 7.
 # 4.1.3   Accessibility and Print media improvements. Added /print demo to Dummy app.
 # 4.1.2   Add example theme-colors to dummy & Update NAV CSS. Added a nav search box.
 # 4.1.1   Remove alpha channel on option/select background as it's unsupported in Windows.
