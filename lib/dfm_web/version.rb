@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "5.0.0"
+  VERSION = "5.0.1"
 end
 
 
 # Version History
 
+# 5.0.1   Restore compatibility with Internet Explorer 11.
 # 5.0.0   Remove jQuery as a requirement and update README etc for Rails 7.
 # 4.1.3   Accessibility and Print media improvements. Added /print demo to Dummy app.
 # 4.1.2   Add example theme-colors to dummy & Update NAV CSS. Added a nav search box.
