@@ -10,6 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// Note: The internet_explorer require below is optional.
+//       Add if you wish to support Internet Explorer 11.
+//       It adds two polyfills used by dfm_web
+//
+//= require dfm_web/internet_explorer
 //= require dfm_web/dfm_web
 //= require_self
 
