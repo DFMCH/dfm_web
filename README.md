@@ -25,9 +25,31 @@ application.html.erb
   </body>
 ```
 
+# Rails 7 - Vanilla
+* `rails new myapp`
 
-# Rails 7
-* Tested using esbuild and sass
+application.html.erb
+```
+<%= stylesheet_link_tag "dfm_web/dfm_web", "data-turbo-track": "reload" %>
+```
+
+application.js
+```
+import "dfm_web"
+
+document.addEventListener("turbo:load", function() {
+  DfmWeb.activate_dfm_web();
+})
+```
+
+importmap.rb
+```
+pin "dfm_web", to: "dfm_web/dfm_web.js", preload: true
+```
+
+
+# Rails 7 - esbuild + sass
+* `rails new myapp --javascript=esbuild --css=sass`
 * If not using Turbo, see dfm_web.js for variations on the activation step.
 
 application.html.erb
