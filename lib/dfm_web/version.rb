@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "5.0.2"
+  VERSION = "5.0.3"
 end
 
 
 # Version History
 
+# 5.0.2   Scale the new font to 88% to match the old one and use black instead of dark gray for the base.
 # 5.0.2   Added RedHat font now used by UW Madison as the official marketing font.
 # 5.0.1   Restore compatibility with Internet Explorer 11.
 # 5.0.0   Remove jQuery as a requirement and update README etc for Rails 7.
