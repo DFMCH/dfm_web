@@ -1,10 +1,11 @@
 module DfmWeb
-  VERSION = "5.0.3"
+  VERSION = "5.0.4"
 end
 
 
 # Version History
 
+# 5.0.4   Removed verlag font from the font-family list as no one should be using it.  Font itself was never present.
 # 5.0.2   Scale the new font to 88% to match the old one and use black instead of dark gray for the base.
 # 5.0.2   Added RedHat font now used by UW Madison as the official marketing font.
 # 5.0.1   Restore compatibility with Internet Explorer 11.

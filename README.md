@@ -113,15 +113,14 @@ Rails.application.config.assets.precompile += %w( dfm_web/* )
 * All jQuery based code has been rewritten in Javascript (ES6)
 * Updated README and comments on use with Rails 7 (Turbo or plain).
   - Rails 7 tests were performed on an esbuild + sass setup
+* The default font has changed to Red Hat Text.
+  - https://fonts.google.com/specimen/Red+Hat+Text
 
 ### Version 4:
 * Now using the UW look and feel.
-* UW font (verlag) cannot be added to the repo per licensing requirements.
-  - To use it in your site add verlag.css to your host app (provided by UW).
-  - It will be used if available with fallback to Helvetica etc.
 * Navbar img is no longer vertically centered in CSS.
   - Pad your PNG/SVG with transparency.
-  - Image be scaled to 42px, but PNG should be at least double that.
+  - Image will be scaled to 42px, but a raster image should be at least double that.
 
 
 ### Version 3:
