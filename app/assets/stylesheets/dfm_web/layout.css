@@ -29,7 +29,7 @@ main {
   margin: 0 auto;           /* Centered with max width */
   max-width: 1800px;
   padding: 20px;
-  overflow: hidden;
+  /* overflow: hidden;         This line breaks floating table headers */
 }
 
 /* By default, the footer will be at the bottom of the window, following content. */

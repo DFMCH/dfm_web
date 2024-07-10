@@ -7,7 +7,11 @@ table {
   font-weight: 300;
   background-color: white; /* Override this in your app to match your style. */
 }
-table thead  { display: table-header-group; }
+table thead  {
+  display: table-header-group;
+  position: sticky;
+  top: -1px; /* hide the 1px top gap where TD content can be seen */
+}
 
 table thead td, table thead th {
   border-left-width: 0;
