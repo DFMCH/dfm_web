@@ -7,10 +7,11 @@ table {
   font-weight: 300;
   background-color: white; /* Override this in your app to match your style. */
 }
+
 table thead  {
   display: table-header-group;
   position: sticky;
-  top: -1px; /* hide the 1px top gap where TD content can be seen */
+  top: 41px; /* Position below the NAV bar.  Notes:  This is adjusted in layout_media for smaller layouts */
 }
 
 table thead td, table thead th {

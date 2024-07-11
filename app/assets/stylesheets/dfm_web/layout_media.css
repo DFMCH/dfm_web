@@ -26,6 +26,10 @@
     transition: margin 0s;
   }
 
+  table thead  {
+    top: -1px; /* Remove the space for the fixed NAV in the largest size.  */
+  }
+
   html {
     background-image: none;
   }
