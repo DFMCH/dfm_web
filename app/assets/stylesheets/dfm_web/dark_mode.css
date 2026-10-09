@@ -3,6 +3,10 @@
   /* This older declaration is still required for the scrollbar on most browsers in 2021 */
   :root { color-scheme: dark; }
 
+  html::before {
+    display: none;
+  }
+
   html, main #main {
     background: none;
     border: none;

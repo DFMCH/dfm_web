@@ -19,7 +19,6 @@ html::before {
   min-height: 100vh;
   pointer-events: none;
   z-index: -1;
-  background: rgb(211 211 211 / 16.1%);
   clip-path: shape(evenodd
     from 0% 0%, line to 100% 0%, line to 100% 100%, line to 0% 100%, close,
     move to 59.7% 100%, curve by -2.5% -19.1% with -.5% -6.5% / -1.6% -12.8%, curve by -2.2% -7.3% with -.1% -.6% / -.9% -6.9%, curve by -.7% 9.5% with -1.2% 1.9% / -.6% 8.5%, curve by 1% 16.9% with .1% 1.6% / .4% 14.6%, close,
@@ -43,4 +42,10 @@ html::before {
     move to 22.6% 0%, curve by 4.5% 7.4% with .4% 3.6% / 0% .2%, curve by 12.2% 15.5% with 3% 4.6% / 7.8% 14.7%, curve by -1.9% -6.9% with 1.2% -1.5% / -1.1% -4.8%, curve by -8.5% -16% with -5% -10.1% / -2.2% -4.7%, close,
     move to 0% 0%, curve by 10% 12.3% with -.1% 4.4% / 9.5% 11.8%, curve by 25.7% 18.4% with 7.6% 6.7% / 16.8% 17.3%, curve by -2.8% -5.6% with 1.4% -.9% / -1.7% -4.1%, curve by -6% -6.2% with -3.3% -3.7% / -1.3% -1.5%, curve by -24.1% -18.9% with -7.8% -7.1% / -15.7% -13.9%, close
   );
+}
+
+@supports (clip-path: shape(from 0% 0%, line to 100% 0%, close)) {
+  html::before {
+    background: rgb(211 211 211 / 16.1%);
+  }
 }

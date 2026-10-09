@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'print'  => 'application#print'
   get 'pure'   => 'application#pure'
   post 'form_submit' => 'application#form_submit'
+  %w[show explicit manual opt_out fragment json download streaming with_validators secure blocked].each do |fixture_action|
+    get "asset_inclusion/#{fixture_action}", to: "asset_inclusion##{fixture_action}"
+  end
   root 'application#index' #You can have the root of your site routed with "root"
 
 

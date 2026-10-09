@@ -29,6 +29,10 @@
   html {
     background-image: none;
   }
+
+  html::before {
+    display: none;
+  }
 }
 
 
@@ -58,6 +62,10 @@
 
   #nav #hamburger {
     display: block;
+  }
+
+  nav #nav ul.has_hamburger.is_open {
+    display: inline-block;
   }
 
 }

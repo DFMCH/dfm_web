@@ -1,90 +1,103 @@
-// DFM Web Javascript
-
-// DfmWeb Namespace
-// https://robots.thoughtbot.com/module-pattern-in-javascript-and-coffeescript
-window.DfmWeb = {};
-
-// To use the dfm_web.js code, you need to call `DfmWeb.activate_dfm_web();`
-// Here are some examples of how you might do that in your application.js
-
-// Rails 6 Javascript
-// document.addEventListener("DOMContentLoaded", function() { DfmWeb.activate_dfm_web(); });
-
-// Rails 7 Javascript + Turbo (esbuild in my test)
-// document.addEventListener("turbo:load", function() { DfmWeb.activate_dfm_web(); })
-
-// Rails 6 jQuery
-// $(document).on('ready page:load', function() { DfmWeb.activate_dfm_web(); });
-
-// Rails 6 jQuery + Turbolinks
-// $(document).on('turbolinks:load', function() { DfmWeb.activate_dfm_web(); });
-
-
-DfmWeb.activate_dfm_web = function() {
-  // Hide the #notice and #alert messages by clicking the [X] or pressing escape key
-  document.querySelectorAll('#notice, #alert').forEach(function (node) {
-    node.addEventListener('click', function () {
-      node.style.display = 'none';
-    });
-
-    // If either ID exists, close by pressing Escape
-    document.addEventListener('keyup', function (key) {
-      if (key.code == 'Escape') {
-        node.style.display = 'none';
-      }
-    });
-  });
-
-  // NAV BAR
-  //
-  // Insert the Hamburger if there are menu 2+ items
-  // Add "has_hamburger" class to the ul so CSS can know which way to show it.
-  if (document.querySelectorAll('#nav ul.right>li').length > 1) {
-    var hamburger = document.createElement('div');
-    hamburger.setAttribute('id', 'hamburger');
-    document.querySelector('#nav ul.right').after(hamburger);
-    document.querySelector('ul.right').classList.add('has_hamburger');
+(function () {
+  const dfmWeb = window.DfmWeb || (window.DfmWeb = {});
+  if (dfmWeb.eventsRegistered) {
+    dfmWeb.activate_dfm_web();
+    return;
   }
 
-  // Show the Mobile Menu on Hamburger Click
-  document.querySelectorAll('nav #hamburger').forEach(function (node) {
-    node.addEventListener('click', function () {
-      document.querySelectorAll('nav #nav ul.has_hamburger').forEach(function (node) {
-        node.style.display = node.style.display === 'inline-block' ? 'none' : 'inline-block';
-      });
+  function isDesktop() {
+    return window.matchMedia("(min-width: 1024px)").matches;
+  }
+
+  function setMenuOpen(menu, open) {
+    menu.classList.toggle("is_open", open);
+    const toggle = menu.parentElement.querySelector("[data-dfm-menu-toggle]");
+    if (toggle) toggle.setAttribute("aria-expanded", String(isDesktop() || open));
+  }
+
+  function resetMenus() {
+    document.querySelectorAll("nav #nav ul.has_hamburger").forEach(function (menu) {
+      setMenuOpen(menu, false);
     });
-  });
+  }
 
+  dfmWeb.activate_dfm_web = function () {
+    document.querySelectorAll("nav #nav ul.right").forEach(function (menu, index) {
+      if (menu.children.length < 2) return;
+      menu.classList.add("has_hamburger");
+      if (!menu.id) menu.id = "dfm-web-menu-" + index;
+      let toggle = menu.parentElement.querySelector("[data-dfm-menu-toggle]");
+      if (!toggle) {
+        toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.id = "hamburger";
+        toggle.setAttribute("data-dfm-menu-toggle", "");
+        toggle.setAttribute("aria-label", "Toggle navigation");
+        toggle.setAttribute("aria-controls", menu.id);
+        menu.after(toggle);
+      }
+      setMenuOpen(menu, menu.classList.contains("is_open"));
+    });
 
-  // If you've toggled the Mobile menu it breaks larger sizes.  Reset on resize.
-  window.onresize = function() {
-    if (window.innerWidth >= 1024) {
-      document.querySelectorAll('nav #nav ul.has_hamburger').forEach(function (node) {
-        node.style.display = 'inline-block';
-      });
-    } else {
-      document.querySelectorAll('nav #nav ul.has_hamburger').forEach(function (node) {
-        node.style.display = 'none';
-      });
-    }
+    document.querySelectorAll("#notice > div, #alert > div").forEach(function (message) {
+      if (message.querySelector("[data-dfm-dismiss]")) return;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "dfm_flash_close";
+      button.setAttribute("data-dfm-dismiss", "");
+      button.setAttribute("aria-label", "Dismiss " + message.parentElement.id);
+      button.textContent = "\u00d7";
+      message.prepend(button);
+    });
+
+    document.querySelectorAll("#nav > ul > li > ul").forEach(function (menu) {
+      menu.classList.toggle("crowded", menu.children.length > 10);
+    });
   };
 
-  // iPads don't have :hover, so hide the menu if the user clicks anything in <main>
-  document.querySelectorAll('main').forEach(function (node) {
-    node.addEventListener('click', function () {
-      if (window.innerWidth < 1024) {
-        document.querySelectorAll('nav #nav ul.has_hamburger').forEach(function (node) {
-          node.style.display = 'none';
-        });
-      }
+  document.addEventListener("click", function (event) {
+    if (!(event.target instanceof Element)) return;
+    const toggle = event.target.closest("nav [data-dfm-menu-toggle]");
+    if (toggle) {
+      const menu = document.getElementById(toggle.getAttribute("aria-controls"));
+      if (menu) setMenuOpen(menu, !menu.classList.contains("is_open"));
+      return;
+    }
+    const dismiss = event.target.closest("[data-dfm-dismiss]");
+    if (dismiss) {
+      const message = dismiss.closest("#notice, #alert");
+      if (message) message.hidden = true;
+      return;
+    }
+    if (!isDesktop() && event.target.closest("main")) resetMenus();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+    const openMenu = document.querySelector("nav #nav ul.has_hamburger.is_open");
+    resetMenus();
+    if (openMenu) {
+      const toggle = openMenu.parentElement.querySelector("[data-dfm-menu-toggle]");
+      if (toggle && !isDesktop()) toggle.focus();
+    }
+    document.querySelectorAll("#notice, #alert").forEach(function (message) {
+      message.hidden = true;
     });
   });
 
-  // Deal with Really long menus
-  // Add "crowded" class to make them more compact.
-  document.querySelectorAll('#nav > ul > li > ul').forEach(function (node) {
-    if (node.children.length > 10) {
-      node.classList.add('crowded');
-    }
+  window.addEventListener("resize", resetMenus);
+  document.addEventListener("turbo:load", dfmWeb.activate_dfm_web);
+  document.addEventListener("turbo:frame-load", dfmWeb.activate_dfm_web);
+  document.addEventListener("turbo:before-cache", function () {
+    resetMenus();
+    document.querySelectorAll("#notice, #alert").forEach(function (message) {
+      message.remove();
+    });
   });
-};
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", dfmWeb.activate_dfm_web, { once: true });
+  } else {
+    dfmWeb.activate_dfm_web();
+  }
+  dfmWeb.eventsRegistered = true;
+})();
