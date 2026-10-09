@@ -1,0 +1,82 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: ["3.2", "3.4"]
+        rails: ["8.0", "8.1"]
+        pipeline: [propshaft, sprockets]
+    env:
+      RAILS_VERSION: "~> ${{ matrix.rails }}.0"
+      ASSET_PIPELINE: ${{ matrix.pipeline }}
+      ASSET_PREFIX: /dfm-test-assets
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+          cache-version: rails-${{ matrix.rails }}-${{ matrix.pipeline }}
+      - name: Check readable assets
+        run: bundle exec rake dfm_web:assets:check
+      - name: Reject ERB assets and removed IE polyfills
+        run: |
+          ruby -e 'abort "ERB assets remain" unless Dir["{app,spec/dummy/app}/assets/**/*.erb"].empty?; abort "IE polyfills remain" if File.exist?("app/assets/javascripts/dfm_web/internet_explorer.js")'
+      - name: Request, helper, and browser specs
+        run: bundle exec rspec
+      - name: Real Turbo navigation and restoration
+        env:
+          WITH_TURBO: "1"
+        run: bundle exec rspec spec/system/dfm_web_spec.rb --tag real_turbo
+      - name: Rails autoload check
+        working-directory: spec/dummy
+        run: bundle exec rails zeitwerk:check
+      - name: Production asset compilation
+        working-directory: spec/dummy
+        env:
+          RAILS_ENV: production
+          SECRET_KEY_BASE_DUMMY: "1"
+        run: bundle exec rails assets:precompile
+      - name: Browser failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-ruby-${{ matrix.ruby }}-rails-${{ matrix.rails }}-${{ matrix.pipeline }}
+          path: spec/dummy/tmp/capybara
+          if-no-files-found: ignore
+
+  package:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        pipeline: [propshaft, sprockets]
+        mode: [development, production]
+    env:
+      RAILS_VERSION: "~> 8.1.0"
+      ASSET_PIPELINE: ${{ matrix.pipeline }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+          cache-version: rails-8.1-${{ matrix.pipeline }}
+      - name: Build gem
+        run: bundle exec rake build
+      - name: Verify isolated packaged host and asset delivery
+        run: bundle exec ruby spec/verify_release.rb "${{ matrix.pipeline }}" "${{ matrix.mode }}"

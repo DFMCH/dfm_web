@@ -4,9 +4,6 @@
 //= link dfm_web/apple-touch-icon.png
 //= link dfm_web/defective_monitor.png
 //= link dfm_web/excel.png
-//= link dfm_web/lock.png
-//= link dfm_web/molecule.png
-//= link dfm_web/terrace-chair.png
 //= link dfm_web/uwcrest.png
 //= link dfm_web/word.png
 //

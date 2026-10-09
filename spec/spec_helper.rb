@@ -17,9 +17,7 @@
 #
 ENV["RAILS_ENV"] ||= 'test'
 
-require 'action_controller/railtie'     # So we can test the Helper.
-require 'rspec/rails'                   # So we can test the Helper.
-require 'dfm_web'
+require 'rspec/core'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|

@@ -3,9 +3,10 @@
   color: white;
   margin: 70px 25px -70px 25px;        /* Space for the NAV, and min side margin */
   display: block;
-  pointer-events: none;
   background: none;
 }
+
+#notice[hidden], #alert[hidden] { display: none; }
 
 /* Similar to #main */
 #notice>div, #alert>div {
@@ -20,12 +21,13 @@
 }
 
 
-/* HTML-free close button */
-#notice > div:before, #alert > div:before {
+#notice .dfm_flash_close, #alert .dfm_flash_close {
   float: right;
-  content: "\00d7";
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  font: inherit;
   cursor: pointer;
-  pointer-events: auto;
   padding: 0 6px 3px 6px;
   background-color: rgba(255,255,255,.2);
   transition: background-color .3s;
@@ -34,11 +36,16 @@
 
 
 /* Hover the close button to add visual cue */
-#notice:hover:after, #alert:hover:after {
+#notice .dfm_flash_close:hover, #alert .dfm_flash_close:hover {
   background-color: rgba(0,0,0,.2);
   transition: background-color 0s;
 }
 
 
 /* Hide Rails scaffold notice bars */
+.dfm_flash_close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
 main #main p#notice { display: none; }

@@ -20,7 +20,7 @@ html {
   font-size: 0.88em;
   color: black;
   background-color: #f7f7f7;
-  background-image: url(<%= asset_path 'dfm_web/terrace-chair.png' %>), url(<%= asset_path 'dfm_web/defective_monitor.png' %>);
+  /* Embedded background images are defined in style_background.css. */
   background-size: cover;
   background-attachment: fixed;
 }

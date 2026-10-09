@@ -81,7 +81,8 @@ nav #nav form input[type="text"] {
   width: 190px;
 }
 
-#nav ul li:hover > ul {
+#nav ul li:hover > ul,
+#nav ul li:focus-within > ul {
   visibility: visible;
 }
 
@@ -181,6 +182,11 @@ nav > #nav > ul.right {
 }
 
 #nav #hamburger {
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  cursor: pointer;
   display: none;
   position: absolute;
   margin: 9px;
@@ -197,6 +203,11 @@ nav > #nav > ul.right {
 }
 
 /* If a menu is really long, Javascript will add "crowded" class to it. */
+#nav a:focus-visible, #nav #hamburger:focus-visible {
+  outline: 2px solid white;
+  outline-offset: -2px;
+}
+
 #nav ul.crowded a {
   font-size: 15px;
   padding: 6px 10px;

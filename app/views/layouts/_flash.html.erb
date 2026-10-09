@@ -1,3 +1,11 @@
 <div style="clear:both"><!-- For smooth animation --></div>
-<%= content_tag(:div, content_tag(:div, sanitize(flash[:notice])), id: :notice) if flash[:notice] %>
-<%= content_tag(:div, content_tag(:div, sanitize(flash[:alert])),  id: :alert)  if flash[:alert]  %>
+<% [:notice, :alert].each do |kind| %>
+	<% if flash[kind] %>
+		<div id="<%= kind %>" role="<%= kind == :alert ? 'alert' : 'status' %>">
+			<div>
+				<button type="button" class="dfm_flash_close" data-dfm-dismiss aria-label="Dismiss <%= kind %>">&times;</button>
+				<%= sanitize(flash[kind]) %>
+			</div>
+		</div>
+	<% end %>
+<% end %>

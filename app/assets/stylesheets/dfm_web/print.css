@@ -5,6 +5,10 @@
 }
 
 @media print and (color) {
+  html::before {
+    display: none;
+  }
+
   * {
     /* Prevent browsers from discarding the majority of color info */
     -webkit-print-color-adjust: exact;
