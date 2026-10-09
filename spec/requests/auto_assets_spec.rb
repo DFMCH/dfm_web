@@ -34,6 +34,23 @@ RSpec.describe "Automatic DFM asset inclusion", type: :request, auto_assets: tru
     expect(head.index(parsed_document.at_css("base"))).to be < head.index(parsed_document.at_css("link"))
   end
 
+  [false, true].each do |multiple_comments|
+    it "includes assets with #{multiple_comments ? 'multiple leading comments including a multiline comment' : 'a leading Rails view annotation'}" do
+      get "/asset_inclusion/annotated", params: { multiple_comments: multiple_comments }
+
+      expect(response).to have_http_status(:ok)
+      parsed_document = document
+      expect(parsed_document.internal_subset.name).to eq("html")
+      expect(parsed_document.css("head > link[data-dfm-web='stylesheet']").length).to eq(1)
+      expect(parsed_document.css("head > script[data-dfm-web='script']").length).to eq(1)
+      expect(response.body).to include("<!-- BEGIN app/views/layouts/application.html.erb -->",
+        "<!-- END app/views/layouts/application.html.erb -->")
+      if multiple_comments
+        expect(response.body).to include("<!-- Additional annotation\non multiple lines -->")
+      end
+    end
+  end
+
   it "leaves existing explicit asset tags in place without adding duplicates" do
     get "/asset_inclusion/explicit"
 

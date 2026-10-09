@@ -1,6 +1,6 @@
 # DfmWeb 8.0.0 Release Plan
 
-Status: Implementation and local automated verification complete. The user confirmed focused checks, both full suites with Turbo enabled, bundle freshness, the 8.0.0 build, and all four packaged-host scenarios pass. CI matrix/autoload and remaining visual/browser compatibility checks are pending before final release approval. Nothing has been published.
+Status: Prior local automated verification passed, including both full suites and all four packaged-host scenarios. The subsequent leading Rails view-annotation fix is also verified: the user confirmed automatic-inclusion request specs pass on both pipelines and rebuilt the 8.0.0 gem with the fix. CI matrix/autoload and remaining visual/browser compatibility checks are still pending. Nothing has been published.
 
 ## Release Requirements
 
@@ -40,6 +40,7 @@ Status: Implementation and local automated verification complete. The user confi
 - [GitHub Actions](../../.github/workflows/test.yml) defines Ruby 3.2/3.4, Rails 8.0/8.1, and both-pipeline verification, real Turbo checks, production compilation, and packaged-host checks. The workflow has not run. Local full suites and packaged development/production hosts passed; CI version-matrix/autoload verification remains pending.
 - The user confirmed both full suites with `WITH_TURBO=1`, `dfm_web:assets:check`, and `rake build` pass. The resulting local artifact is `pkg/dfm_web-8.0.0.gem`; this is a build, not a published release.
 - The user confirmed `dfm_web:release:check` passes all four packaged-host scenarios: Propshaft development/production and Sprockets development/production. [verify_release.rb](../../spec/verify_release.rb) checks package contents, automatic inclusion, host CSS ordering, seven asset responses, production fingerprints, and that the engine was loaded from the extracted package. Runtime dependencies come from the installed bundle; host files and compiled assets are temporary. CI uses the same fixture. Corrections removed a duplicate ERB asset, canonicalized macOS temporary paths, and refreshed Sprockets' boot-time manifest after in-process compilation; these fixture lifecycle fixes do not enable runtime compilation.
+- A downstream development app exposed skipped inclusion when Rails prepends view-annotation comments. The guard now accepts single, multiple, and multiline leading comments while retaining full-document requirements. The user confirmed the expanded automatic-inclusion request specs pass on Propshaft and Sprockets and rebuilt `pkg/dfm_web-8.0.0.gem`. Full-suite and packaged-host results above predate this follow-up; they are not claimed as rerun afterward.
 
 ## Current Findings
 
@@ -94,10 +95,14 @@ Depends on Phases 2 and 3. This is the highest-risk addition and needs a separat
 
 Implemented design:
 
-The implementation below passed user-run request/browser and packaged-host checks. It conservatively
-handles HTML5 documents with an explicit doctype, `html`, and `head` at the start,
+The implementation below passed user-run request/browser and packaged-host checks before the annotation follow-up. It conservatively
+handles HTML5 documents with an explicit doctype, `html`, and `head`, allowing whitespace and leading HTML comments before the doctype,
 and skips documents with parsing errors. Existing bundled integrations must opt
 out because bundled DFM assets cannot reliably be detected.
+
+The leading-comment guard fix and request examples for a single Rails annotation
+and multiple/multiline comments passed on both pipelines in the user's laptop runs.
+The user rebuilt the gem afterward, so the local artifact includes the fix.
 
 1. Register a focused `ActionController::Base` concern through the railtie. Use an after-action hook on rendered, buffered HTML rather than replacing layouts, monkey-patching the view renderer, or buffering arbitrary Rack response bodies.
 2. Default `config.dfm_web.auto_include_assets` to true and provide application/controller/action opt-outs. Use Rails asset helpers and CSP nonce helpers, with deferred external JavaScript and Turbo reload tracking. Apply the same behavior to both pipelines.
@@ -189,4 +194,4 @@ This automatically checks Propshaft/Sprockets in development/production, compile
 
 ## Status and Next Decision
 
-Implementation, documentation, and all local automated gates are complete according to the user's runs, including packaged development/production hosts on both pipelines. The built artifact is `pkg/dfm_web-8.0.0.gem`. Before final release approval, run the GitHub Actions version matrix/autoload checks and inspect background support/fallback, dark mode, and print across the application's supported browsers. Publication, commits, and tags require separate authorization. Copilot must not execute tests or the release verification task.
+Implementation and documentation are complete. Prior full-suite and packaged-host gates passed, and the later annotation fix passed focused request specs on both pipelines; the user rebuilt `pkg/dfm_web-8.0.0.gem` with that fix. Verify the downstream development app without its workaround. Before final release approval, run the GitHub Actions version matrix/autoload checks and inspect background support/fallback, dark mode, and print across the application's supported browsers. Publication, commits, and tags require separate authorization. Copilot must not execute tests or the release verification task.

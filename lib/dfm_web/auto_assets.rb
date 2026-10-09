@@ -23,7 +23,7 @@ module DfmWeb
       return unless parts.is_a?(String) || (parts.is_a?(Array) && parts.all? { |part| part.is_a?(String) })
 
       body = Array(parts).join
-      return unless body.match?(/\A\s*<!doctype\s+html\b[^>]*>\s*<html\b[^>]*>\s*<head\b/i)
+      return unless body.match?(/\A(?:\s*<!--.*?-->)*\s*<!doctype\s+html\b[^>]*>\s*<html\b[^>]*>\s*<head\b/im)
 
       document = parse_dfm_web_document(body)
       return unless document && document.errors.empty?

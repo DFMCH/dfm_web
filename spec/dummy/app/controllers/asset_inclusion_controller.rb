@@ -5,6 +5,15 @@ class AssetInclusionController < ActionController::Base
     render html: sample_document, layout: false
   end
 
+  def annotated
+    prefix = "\n<!-- BEGIN app/views/layouts/application.html.erb -->\n"
+    if params[:multiple_comments] == "true"
+      prefix += "\n<!-- Additional annotation\non multiple lines -->\n"
+    end
+    render html: (prefix + sample_document + "<!-- END app/views/layouts/application.html.erb -->\n").html_safe,
+      layout: false
+  end
+
   def explicit
     tags = view_context.stylesheet_link_tag("dfm_web/dfm_web") +
       view_context.javascript_include_tag("dfm_web/dfm_web")

@@ -34,6 +34,7 @@ application.html.erb
 
 DfmWeb 8 automatically adds its readable CSS and vanilla JavaScript to successful,
 buffered HTML documents with an HTML doctype and explicit `html`/`head` elements.
+Leading HTML comments, including Rails' development view annotations, are allowed.
 It supports both Propshaft and Sprockets. No activation call, import map, or
 consumer build tool is needed. Layout partials still need to be rendered by the
 application, as above.
